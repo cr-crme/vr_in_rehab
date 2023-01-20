@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '/models/theme.dart';
 import '/providers.dart/locale_text.dart';
+import '/screens/general_screen.dart';
 import '/screens/home_screen.dart';
 
 void main() {
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         initialRoute: HomeScreen.route,
         routes: {
           HomeScreen.route: (ctx) => const HomeScreen(),
+          GeneralScreen.route: (ctx) => const GeneralScreen(),
         },
       ),
     );

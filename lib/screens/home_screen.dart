@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '/providers.dart/locale_text.dart';
+import '/screens/general_screen.dart';
 import '/widgets/main_menu_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,10 +34,22 @@ class HomeScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      MainMenuButton(title: texts.descriptionAndGenerality),
-                      MainMenuButton(title: texts.consoles),
-                      MainMenuButton(title: texts.forum),
-                      MainMenuButton(title: texts.ressources),
+                      MainMenuButton(
+                        title: texts.descriptionAndGenerality,
+                        route: GeneralScreen.route,
+                      ),
+                      MainMenuButton(
+                        title: texts.consoles,
+                        route: GeneralScreen.route,
+                      ),
+                      MainMenuButton(
+                        title: texts.forum,
+                        route: GeneralScreen.route,
+                      ),
+                      MainMenuButton(
+                        title: texts.ressources,
+                        route: GeneralScreen.route,
+                      ),
                     ],
                   ),
                 ),

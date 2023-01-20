@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 
 class MainMenuButton extends StatelessWidget {
-  const MainMenuButton({super.key, required this.title});
+  const MainMenuButton({super.key, required this.title, required this.route});
 
   final String title;
+  final String route;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: null,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () => Navigator.of(context).pushNamed(route),
         child: SizedBox(
           width: 250,
           height: 60,
