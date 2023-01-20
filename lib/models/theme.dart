@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 
 ThemeData myTheme() {
+  const textTitleSize = 36.0;
+  const textSize = 20.0;
+  const textButtonSize = 20.0;
+
   return ThemeData(
-    // Define the default brightness and colors.
     brightness: Brightness.dark,
     primaryColor: Colors.lightBlue[800],
-
-    // Define the default font family.
-    fontFamily: 'Georgia',
-
-    // Define the default `TextTheme`. Use this to specify the default
-    // text styling for headlines, titles, bodies of text, and more.
+    fontFamily: 'Hind',
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(
+            const Color.fromARGB(255, 106, 128, 146)),
+      ),
+    ),
     textTheme: const TextTheme(
-      //headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-      titleLarge: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
-      //bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
+      titleLarge:
+          TextStyle(fontSize: textTitleSize, fontStyle: FontStyle.italic),
+      labelLarge: TextStyle(fontSize: textButtonSize),
+      bodyMedium: TextStyle(fontSize: textSize),
     ),
   );
 }

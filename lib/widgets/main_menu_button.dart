@@ -7,9 +7,20 @@ class MainMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: null,
-      child: Text(title),
+    return GestureDetector(
+      onTap: null,
+      child: ElevatedButton(
+        onPressed: () {},
+        child: SizedBox(
+          width: 250,
+          height: 60,
+          child: Center(
+              child: Text(
+            title,
+            textAlign: TextAlign.center,
+          )),
+        ),
+      ),
     );
   }
 }

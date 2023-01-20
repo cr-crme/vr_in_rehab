@@ -19,4 +19,20 @@ class LocaleText with ChangeNotifier {
         'en': 'Virtual reality in readapt',
         'fr': 'La réalité virtuelle en réadaptation',
       }[language]!;
+  String get descriptionAndGenerality => {
+        'en': 'Description and generality',
+        'fr': 'Description et généralité',
+      }[language]!;
+  String get consoles => {
+        'en': 'Consoles',
+        'fr': 'Consoles',
+      }[language]!;
+  String get forum => {
+        'en': 'Forum',
+        'fr': 'Forum',
+      }[language]!;
+  String get ressources => {
+        'en': 'Ressources',
+        'fr': 'Ressources',
+      }[language]!;
 }
