@@ -40,19 +40,11 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Image.network(
-                    'https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png',
-                    loadingBuilder: (context, child, loadingProgress) {
-                  return loadingProgress == null
-                      ? SizedBox(
-                          width: MediaQuery.of(context).size.width / 3,
-                          height: MediaQuery.of(context).size.height / 3,
-                          child: FittedBox(fit: BoxFit.contain, child: child))
-                      : const Center(
-                          child: CircularProgressIndicator(
-                          color: Colors.white,
-                        ));
-                }),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 3,
+                  height: MediaQuery.of(context).size.height / 3,
+                  child: Image.asset('assets/images/placeholder.png'),
+                ),
               ],
             ),
           ),

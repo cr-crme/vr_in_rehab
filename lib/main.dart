@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         theme: myTheme(),
-        home: const HomeScreen(),
+        initialRoute: HomeScreen.route,
+        routes: {
+          HomeScreen.route: (ctx) => const HomeScreen(),
+        },
       ),
     );
   }
