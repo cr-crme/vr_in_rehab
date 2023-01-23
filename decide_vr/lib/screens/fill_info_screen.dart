@@ -54,7 +54,7 @@ class _FillingInfoContentScreen extends StatelessWidget {
   Future<List<Game>> _analyseResults(
       BuildContext context, DecisionAlgorithm algo) async {
     final allGames =
-        await readGames('common/assets/game_analyses/all_games.json');
+        await readGames('packages/common/assets/game_analyses/all_games.json');
     return algo.findCompatibleGames(allGames);
   }
 

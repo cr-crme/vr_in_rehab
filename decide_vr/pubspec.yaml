@@ -37,3 +37,5 @@ flutter:
           style: italic
         - asset: fonts/Lato/Lato-Bold.ttf
           weight: 700
+  assets:
+    - packages/common/assets/game_analyses/all_games.json
