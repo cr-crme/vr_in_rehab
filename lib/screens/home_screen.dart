@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:technotheque_vr_website/widgets/scaffold_navigation.dart';
 
 import '/providers.dart/locale_text.dart';
-import '/screens/consoles.dart';
-import '/screens/general_screen.dart';
 import '/widgets/main_menu_button.dart';
+import 'consoles_screen.dart';
+import 'forum_screen.dart';
+import 'general_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -34,12 +35,12 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: 25),
                   MainMenuButton(
                     title: texts.consoles,
-                    route: Consoles.route,
+                    route: ConsolesScreen.route,
                   ),
                   const SizedBox(height: 25),
                   MainMenuButton(
                     title: texts.forum,
-                    route: GeneralScreen.route,
+                    route: ForumScreen.route,
                   ),
                   const SizedBox(height: 25),
                   MainMenuButton(

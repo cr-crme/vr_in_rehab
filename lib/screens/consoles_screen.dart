@@ -4,8 +4,8 @@ import '/providers.dart/locale_text.dart';
 import '/widgets/hidable_paragraph.dart';
 import '/widgets/scaffold_navigation.dart';
 
-class Consoles extends StatelessWidget {
-  const Consoles({super.key});
+class ConsolesScreen extends StatelessWidget {
+  const ConsolesScreen({super.key});
 
   static const String route = '/consoles';
 

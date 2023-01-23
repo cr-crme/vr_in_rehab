@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 
 import '/models/theme.dart';
 import '/providers.dart/locale_text.dart';
-import '/screens/consoles.dart';
+import '/screens/consoles_screen.dart';
+import '/screens/forum_screen.dart';
 import '/screens/general_screen.dart';
 import '/screens/home_screen.dart';
 
@@ -29,7 +30,8 @@ class MyApp extends StatelessWidget {
         routes: {
           HomeScreen.route: (ctx) => const HomeScreen(),
           GeneralScreen.route: (ctx) => const GeneralScreen(),
-          Consoles.route: (ctx) => const Consoles(),
+          ConsolesScreen.route: (ctx) => const ConsolesScreen(),
+          ForumScreen.route: (ctx) => const ForumScreen(),
         },
       ),
     );
