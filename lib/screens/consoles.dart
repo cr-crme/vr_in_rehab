@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '/providers.dart/locale_text.dart';
 import '/widgets/hidable_paragraph.dart';
+import '/widgets/scaffold_navigation.dart';
 
 class Consoles extends StatelessWidget {
   const Consoles({super.key});
@@ -112,43 +113,18 @@ class Consoles extends StatelessWidget {
       ],
     ];
 
-    return Scaffold(
-      body: SingleChildScrollView(
+    return ScaffoldNavigation(
+        mainTitle: texts.mainTitle,
+        subTitle: texts.consoles,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(width: double.infinity),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Column(
-                children: [
-                  Text(
-                    texts.mainTitle,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  Text(
-                    texts.consoles,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleMedium,
-                  ),
-                ],
-              ),
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: consoles
-                  .map<Widget>((e) => HidableParagraph(
-                      title: Text(e[0] as String,
-                          style: Theme.of(context).textTheme.titleSmall),
-                      paragraph: e[1] as Widget))
-                  .toList(),
-            ),
-          ],
-        ),
-      ),
-    );
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: consoles
+              .map<Widget>((e) => HidableParagraph(
+                  title: Text(e[0] as String,
+                      style: Theme.of(context).textTheme.titleSmall),
+                  paragraph: e[1] as Widget))
+              .toList(),
+        ));
   }
 }
 
