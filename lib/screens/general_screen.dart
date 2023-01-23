@@ -11,6 +11,13 @@ class GeneralScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
+    final textSections = [
+      [texts.whatIsVrTitle, texts.whatIsVrText],
+      [texts.immersiveVsNonImmersiveTitle, texts.immersiveVsNonImmersiveText],
+      [texts.prosOfVrTitle, texts.prosOfVrText],
+      [texts.contraindicationVrTitle, texts.contraindicationVrText],
+      [texts.websiteNavigationTitle, texts.websiteNavigationText],
+    ];
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -28,20 +35,10 @@ class GeneralScreen extends StatelessWidget {
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                ExpandableParagraph(
-                  title: texts.whatIsVrTitle,
-                  text: texts.whatIsVrText,
-                ),
-                ExpandableParagraph(
-                  title: texts.immersiveVsNonImmersiveTitle,
-                  text: texts.immersiveVsNonImmersiveText,
-                ),
-                ExpandableParagraph(
-                  title: texts.prosOfVrTitle,
-                  text: texts.prosOfVrText,
-                ),
-              ],
+              children: textSections
+                  .map<Widget>(
+                      (e) => ExpandableParagraph(title: e[0], text: e[1]))
+                  .toList(),
             ),
           ],
         ),

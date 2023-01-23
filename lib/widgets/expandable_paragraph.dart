@@ -42,7 +42,7 @@ class _ExpandableParagraphState extends State<ExpandableParagraph>
         duration: const Duration(milliseconds: 500), vsync: this);
     _expandAnimation = CurvedAnimation(
       parent: _expandController,
-      curve: Curves.decelerate,
+      curve: Curves.easeInOut,
     );
   }
 
@@ -58,21 +58,22 @@ class _ExpandableParagraphState extends State<ExpandableParagraph>
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: GestureDetector(
-        onTap: _clickExpand,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(widget.title, style: Theme.of(context).textTheme.titleMedium),
-            SizeTransition(
-              sizeFactor: _expandAnimation,
-              child: Text(
-                widget.text,
-                
-              ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          GestureDetector(
+              onTap: _clickExpand,
+              child: MouseRegion(
+                  cursor: SystemMouseCursors.click,
+                  child: Text(widget.title,
+                      style: Theme.of(context).textTheme.titleMedium))),
+          SizeTransition(
+            sizeFactor: _expandAnimation,
+            child: SelectableText(
+              widget.text,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 String get tab => '    ';
+String get bullet => '\u2022';
 
 class LocaleText with ChangeNotifier {
   LocaleText({required this.language});
@@ -65,17 +66,47 @@ class LocaleText with ChangeNotifier {
         'fr': 'Avantages de la réalité virtuelle en réadaptation pédiatrique',
       }[language]!;
   String get prosOfVrText => {
-        'en': '$tab- Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab- adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab- ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab- ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab- id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab- ipsum et ultrices accumsan, quam dolor gravida felis\n',
-        'fr': '$tab- Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab- adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab- ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab- ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab- id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab- ipsum et ultrices accumsan, quam dolor gravida felis\n',
+        'en': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
+            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
+            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
+            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
+            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
+            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
+        'fr': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
+            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
+            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
+            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
+            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
+            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
+      }[language]!;
+
+  String get contraindicationVrTitle => {
+        'en': 'Contraindications and precautions',
+        'fr': 'Contre-indications et précautions',
+      }[language]!;
+  String get contraindicationVrText => {
+        'en': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
+            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
+            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
+            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
+            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
+            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
+        'fr': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
+            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
+            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
+            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
+            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
+            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
+      }[language]!;
+
+  String get websiteNavigationTitle => {
+        'en': 'Navigating this website',
+        'fr': 'Fonctionne du site internet',
+      }[language]!;
+  String get websiteNavigationText => {
+        'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue nisi, scelerisque ut dictum vitae, pulvinar ac ex. Curabitur iaculis ut magna at tincidunt. Suspendisse erat sem, vestibulum id eleifend non, auctor imperdiet nisl. Morbi fringilla, ipsum et ultrices accumsan, quam dolor gravida felis, vel elementum lectus lectus ac nunc. Aliquam mauris eros, sollicitudin at egestas ac, fringilla auctor turpis. Nunc accumsan ultrices nisl aliquam fringilla. Sed vel nunc vel augue sagittis mollis. Suspendisse pretium, massa sed scelerisque condimentum, ante nisi elementum turpis, in pharetra magna erat sed augue. Proin dictum sem in risus tempor venenatis.\n'
+            'Quisque fringilla consectetur ligula ut malesuada. Duis sagittis elit eget nunc vulputate elementum. Proin venenatis hendrerit velit, nec laoreet purus blandit non. Etiam vulputate est elit, sed hendrerit justo congue tempor. Nunc lobortis tempus risus ut sagittis. Vivamus ac placerat libero, nec dignissim tellus. Fusce vel sapien mollis, scelerisque nunc sit amet, cursus quam. Morbi faucibus sodales orci quis consequat. Nullam tempus vel urna vel varius. Maecenas purus elit, placerat iaculis convallis quis, placerat eget ante. Proin sit amet rutrum nulla. Vestibulum rutrum rhoncus dui nec luctus. Vivamus pellentesque sodales ante sit amet vulputate. Sed euismod mattis odio. Nam tellus arcu, iaculis in dapibus id, pharetra non risus.',
+        'fr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue nisi, scelerisque ut dictum vitae, pulvinar ac ex. Curabitur iaculis ut magna at tincidunt. Suspendisse erat sem, vestibulum id eleifend non, auctor imperdiet nisl. Morbi fringilla, ipsum et ultrices accumsan, quam dolor gravida felis, vel elementum lectus lectus ac nunc. Aliquam mauris eros, sollicitudin at egestas ac, fringilla auctor turpis. Nunc accumsan ultrices nisl aliquam fringilla. Sed vel nunc vel augue sagittis mollis. Suspendisse pretium, massa sed scelerisque condimentum, ante nisi elementum turpis, in pharetra magna erat sed augue. Proin dictum sem in risus tempor venenatis.\n'
+            'Quisque fringilla consectetur ligula ut malesuada. Duis sagittis elit eget nunc vulputate elementum. Proin venenatis hendrerit velit, nec laoreet purus blandit non. Etiam vulputate est elit, sed hendrerit justo congue tempor. Nunc lobortis tempus risus ut sagittis. Vivamus ac placerat libero, nec dignissim tellus. Fusce vel sapien mollis, scelerisque nunc sit amet, cursus quam. Morbi faucibus sodales orci quis consequat. Nullam tempus vel urna vel varius. Maecenas purus elit, placerat iaculis convallis quis, placerat eget ante. Proin sit amet rutrum nulla. Vestibulum rutrum rhoncus dui nec luctus. Vivamus pellentesque sodales ante sit amet vulputate. Sed euismod mattis odio. Nam tellus arcu, iaculis in dapibus id, pharetra non risus.',
       }[language]!;
 }
