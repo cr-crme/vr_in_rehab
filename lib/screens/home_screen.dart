@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '/providers.dart/locale_text.dart';
+import '/screens/consoles.dart';
 import '/screens/general_screen.dart';
 import '/widgets/main_menu_button.dart';
 
@@ -40,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                       MainMenuButton(
                         title: texts.consoles,
-                        route: GeneralScreen.route,
+                        route: Consoles.route,
                       ),
                       MainMenuButton(
                         title: texts.forum,

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class ExpandableParagraph extends StatefulWidget {
-  const ExpandableParagraph(
-      {super.key, required this.title, required this.text});
+class HidableParagraph extends StatefulWidget {
+  const HidableParagraph(
+      {super.key, required this.title, required this.paragraph});
 
-  final String title;
-  final String text;
+  final Widget title;
+  final Widget paragraph;
 
   @override
-  State<ExpandableParagraph> createState() => _ExpandableParagraphState();
+  State<HidableParagraph> createState() => _HidableParagraphState();
 }
 
-class _ExpandableParagraphState extends State<ExpandableParagraph>
+class _HidableParagraphState extends State<HidableParagraph>
     with SingleTickerProviderStateMixin {
   bool _isExpanded = false;
   late AnimationController _expandController;
@@ -64,15 +64,8 @@ class _ExpandableParagraphState extends State<ExpandableParagraph>
           GestureDetector(
               onTap: _clickExpand,
               child: MouseRegion(
-                  cursor: SystemMouseCursors.click,
-                  child: Text(widget.title,
-                      style: Theme.of(context).textTheme.titleMedium))),
-          SizeTransition(
-            sizeFactor: _expandAnimation,
-            child: SelectableText(
-              widget.text,
-            ),
-          ),
+                  cursor: SystemMouseCursors.click, child: widget.title)),
+          SizeTransition(sizeFactor: _expandAnimation, child: widget.paragraph),
         ],
       ),
     );

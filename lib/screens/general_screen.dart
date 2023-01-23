@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '/providers.dart/locale_text.dart';
-import '/widgets/expandable_paragraph.dart';
+import '/widgets/hidable_paragraph.dart';
 
 class GeneralScreen extends StatelessWidget {
   const GeneralScreen({super.key});
@@ -36,8 +36,10 @@ class GeneralScreen extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: textSections
-                  .map<Widget>(
-                      (e) => ExpandableParagraph(title: e[0], text: e[1]))
+                  .map<Widget>((e) => HidableParagraph(
+                      title: Text(e[0],
+                          style: Theme.of(context).textTheme.titleMedium),
+                      paragraph: SelectableText(e[1])))
                   .toList(),
             ),
           ],
