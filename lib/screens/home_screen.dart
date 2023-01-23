@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:technotheque_vr_website/widgets/scaffold_navigation.dart';
 
 import '/providers.dart/locale_text.dart';
 import '/screens/consoles.dart';
@@ -14,56 +15,45 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
 
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          const SizedBox(width: double.infinity),
-          Padding(
-            padding: const EdgeInsets.only(top: 20.0),
-            child: Text(
-              texts.mainTitle,
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-          ),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                SizedBox(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      MainMenuButton(
-                        title: texts.descriptionAndGenerality,
-                        route: GeneralScreen.route,
-                      ),
-                      MainMenuButton(
-                        title: texts.consoles,
-                        route: Consoles.route,
-                      ),
-                      MainMenuButton(
-                        title: texts.forum,
-                        route: GeneralScreen.route,
-                      ),
-                      MainMenuButton(
-                        title: texts.ressources,
-                        route: GeneralScreen.route,
-                      ),
-                    ],
+    return ScaffoldNavigation(
+        mainTitle: texts.mainTitle,
+        child: Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  MainMenuButton(
+                    title: texts.descriptionAndGenerality,
+                    route: GeneralScreen.route,
                   ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 3,
-                  height: MediaQuery.of(context).size.height / 3,
-                  child: Image.asset('assets/images/placeholder.png'),
-                ),
-              ],
-            ),
+                  const SizedBox(height: 25),
+                  MainMenuButton(
+                    title: texts.consoles,
+                    route: Consoles.route,
+                  ),
+                  const SizedBox(height: 25),
+                  MainMenuButton(
+                    title: texts.forum,
+                    route: GeneralScreen.route,
+                  ),
+                  const SizedBox(height: 25),
+                  MainMenuButton(
+                    title: texts.ressources,
+                    route: GeneralScreen.route,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 250,
+                child: Image.asset('assets/images/placeholder.png'),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
+        ));
   }
 }

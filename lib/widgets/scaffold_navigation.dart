@@ -4,43 +4,42 @@ class ScaffoldNavigation extends StatelessWidget {
   const ScaffoldNavigation({
     super.key,
     required this.mainTitle,
-    required this.subTitle,
+    this.subTitle,
     required this.child,
   });
 
   final String mainTitle;
-  final String subTitle;
+  final String? subTitle;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            const SizedBox(width: double.infinity),
-            Padding(
-              padding: const EdgeInsets.only(top: 20.0),
-              child: Column(
-                children: [
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Column(
+              children: [
+                Text(
+                  mainTitle,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.titleLarge,
+                ),
+                if (subTitle != null)
                   Text(
-                    mainTitle,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  Text(
-                    subTitle,
+                    subTitle!,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
-                ],
-              ),
+              ],
             ),
-            child
-          ],
-        ),
+          ),
+          Flexible(child: SingleChildScrollView(child: child)),
+        ],
       ),
     );
   }
