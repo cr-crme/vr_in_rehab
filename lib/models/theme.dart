@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 ThemeData myTheme() {
   const textTitleSize = 36.0;
   const textSubtitleSize = 30.0;
-  const textSize = 20.0;
-  const textButtonSize = 20.0;
+  const textSubsubtitleSize = 24.0;
+  const textSize = 18.0;
+  const textButtonSize = 18.0;
 
   return ThemeData(
     brightness: Brightness.dark,
@@ -19,8 +20,9 @@ ThemeData myTheme() {
     textTheme: const TextTheme(
       titleLarge:
           TextStyle(fontSize: textTitleSize, fontStyle: FontStyle.italic),
-      titleMedium:
-          TextStyle(fontSize: textSubtitleSize, decoration: TextDecoration.underline),
+      titleMedium: TextStyle(fontSize: textSubtitleSize),
+      titleSmall: TextStyle(
+          fontSize: textSubsubtitleSize, decoration: TextDecoration.underline),
       labelLarge: TextStyle(fontSize: textButtonSize),
       bodyMedium: TextStyle(fontSize: textSize),
     ),

@@ -121,9 +121,19 @@ class Consoles extends StatelessWidget {
             const SizedBox(width: double.infinity),
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
-              child: Text(
-                texts.mainTitle,
-                style: Theme.of(context).textTheme.titleLarge,
+              child: Column(
+                children: [
+                  Text(
+                    texts.mainTitle,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  Text(
+                    texts.consoles,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
               ),
             ),
             Column(
@@ -131,7 +141,7 @@ class Consoles extends StatelessWidget {
               children: consoles
                   .map<Widget>((e) => HidableParagraph(
                       title: Text(e[0] as String,
-                          style: Theme.of(context).textTheme.titleMedium),
+                          style: Theme.of(context).textTheme.titleSmall),
                       paragraph: e[1] as Widget))
                   .toList(),
             ),

@@ -28,9 +28,19 @@ class GeneralScreen extends StatelessWidget {
             const SizedBox(width: double.infinity),
             Padding(
               padding: const EdgeInsets.only(top: 20.0),
-              child: Text(
-                texts.mainTitle,
-                style: Theme.of(context).textTheme.titleLarge,
+              child: Column(
+                children: [
+                  Text(
+                    texts.mainTitle,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                  Text(
+                    texts.descriptionAndGenerality,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleMedium,
+                  ),
+                ],
               ),
             ),
             Column(
@@ -38,7 +48,7 @@ class GeneralScreen extends StatelessWidget {
               children: textSections
                   .map<Widget>((e) => HidableParagraph(
                       title: Text(e[0],
-                          style: Theme.of(context).textTheme.titleMedium),
+                          style: Theme.of(context).textTheme.titleSmall),
                       paragraph: SelectableText(e[1])))
                   .toList(),
             ),
