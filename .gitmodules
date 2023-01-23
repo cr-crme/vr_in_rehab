@@ -1,0 +1,3 @@
+[submodule "plugins/enhanced_containers"]
+	path = plugins/enhanced_containers
+	url = https://github.com/cr-crme/enhanced_containers/
