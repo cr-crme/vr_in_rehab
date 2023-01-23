@@ -33,4 +33,12 @@ class Console {
         return "Error";
     }
   }
+
+  @override
+  bool operator ==(covariant Console other) {
+    return runtimeType == other.runtimeType && other.choice == choice;
+  }
+
+  @override
+  int get hashCode => choice.hashCode;
 }

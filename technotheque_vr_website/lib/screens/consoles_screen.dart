@@ -1,6 +1,7 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
+import '/screens/games_screen.dart';
 import '/widgets/hidable_paragraph.dart';
 import '/widgets/scaffold_navigation.dart';
 
@@ -9,14 +10,22 @@ class ConsolesScreen extends StatelessWidget {
 
   static const String route = '/consoles';
 
+  void _clickedConsole(BuildContext context, Console console) async {
+    final navigator = Navigator.of(context);
+    final allGames =
+        await readGames('packages/common/assets/game_analyses/all_games.json');
+    final games = allGames.where((game) => game.console == console).toList();
+    navigator.pushNamed(GamesScreen.route, arguments: [console, games]);
+  }
+
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
+
     final consoles = [
       [
         texts.consoleBootleBlastTitle,
         _ConsoleDescription(
-          'bootleBlast',
           immersive: texts.consoleBootleBlastImmersive,
           target: texts.consoleBootleBlastTarget,
           requiredSpace: texts.consoleBootleBlastRequiredSpace,
@@ -24,13 +33,12 @@ class ConsolesScreen extends StatelessWidget {
           equipments: texts.consoleBootleBlastEquipments,
           costs: texts.consoleBootleBlastCosts,
           imagePath: 'packages/common/assets/images/placeholder.png',
-          routeOnClick: null,
+          onTap: () => _clickedConsole(context, Console.bootleBlast),
         )
       ],
       [
         texts.consoleHabilupTitle,
         _ConsoleDescription(
-          'habilup',
           immersive: texts.consoleHabilupImmersive,
           target: texts.consoleHabilupTarget,
           requiredSpace: texts.consoleHabilupRequiredSpace,
@@ -38,13 +46,12 @@ class ConsolesScreen extends StatelessWidget {
           equipments: texts.consoleHabilupEquipments,
           costs: texts.consoleHabilupCosts,
           imagePath: 'packages/common/assets/images/placeholder.png',
-          routeOnClick: null,
+          onTap: () => _clickedConsole(context, Console.habilup),
         )
       ],
       [
         texts.consoleViveTitle,
         _ConsoleDescription(
-          'vive',
           immersive: texts.consoleViveImmersive,
           target: texts.consoleViveTarget,
           requiredSpace: texts.consoleViveRequiredSpace,
@@ -52,13 +59,12 @@ class ConsolesScreen extends StatelessWidget {
           equipments: texts.consoleViveEquipments,
           costs: texts.consoleViveCosts,
           imagePath: 'packages/common/assets/images/placeholder.png',
-          routeOnClick: null,
+          onTap: () => _clickedConsole(context, Console.vive),
         )
       ],
       [
         texts.consoleJintronixTitle,
         _ConsoleDescription(
-          'jintronix',
           immersive: texts.consoleJintronixImmersive,
           target: texts.consoleJintronixTarget,
           requiredSpace: texts.consoleJintronixRequiredSpace,
@@ -66,13 +72,12 @@ class ConsolesScreen extends StatelessWidget {
           equipments: texts.consoleJintronixEquipments,
           costs: texts.consoleJintronixCosts,
           imagePath: 'packages/common/assets/images/placeholder.png',
-          routeOnClick: null,
+          onTap: () => _clickedConsole(context, Console.jintronix),
         )
       ],
       [
         texts.consoleNintendoSwitchTitle,
         _ConsoleDescription(
-          'nintendo switch',
           immersive: texts.consoleNintendoSwitchImmersive,
           target: texts.consoleNintendoSwitchTarget,
           requiredSpace: texts.consoleNintendoSwitchRequiredSpace,
@@ -80,13 +85,12 @@ class ConsolesScreen extends StatelessWidget {
           equipments: texts.consoleNintendoSwitchEquipments,
           costs: texts.consoleNintendoSwitchCosts,
           imagePath: 'packages/common/assets/images/placeholder.png',
-          routeOnClick: null,
+          onTap: () => _clickedConsole(context, Console.nintendoSwitch),
         )
       ],
       [
         texts.consoleOculusTitle,
         _ConsoleDescription(
-          'oculus',
           immersive: texts.consoleOculusImmersive,
           target: texts.consoleOculusTarget,
           requiredSpace: texts.consoleOculusRequiredSpace,
@@ -94,13 +98,12 @@ class ConsolesScreen extends StatelessWidget {
           equipments: texts.consoleOculusEquipments,
           costs: texts.consoleOculusCosts,
           imagePath: 'packages/common/assets/images/placeholder.png',
-          routeOnClick: null,
+          onTap: () => _clickedConsole(context, Console.oculus),
         )
       ],
       [
         texts.consoleXboxTitle,
         _ConsoleDescription(
-          'xbox',
           immersive: texts.consoleXboxImmersive,
           target: texts.consoleXboxTarget,
           requiredSpace: texts.consoleXboxRequiredSpace,
@@ -108,7 +111,7 @@ class ConsolesScreen extends StatelessWidget {
           equipments: texts.consoleXboxEquipments,
           costs: texts.consoleXboxCosts,
           imagePath: 'packages/common/assets/images/placeholder.png',
-          routeOnClick: null,
+          onTap: () => _clickedConsole(context, Console.xbox),
         )
       ],
     ];
@@ -129,8 +132,7 @@ class ConsolesScreen extends StatelessWidget {
 }
 
 class _ConsoleDescription extends StatelessWidget {
-  const _ConsoleDescription(
-    this.consoleName, {
+  const _ConsoleDescription({
     required this.immersive,
     required this.target,
     required this.requiredSpace,
@@ -138,10 +140,8 @@ class _ConsoleDescription extends StatelessWidget {
     required this.equipments,
     required this.costs,
     required this.imagePath,
-    required this.routeOnClick,
+    required this.onTap,
   });
-
-  final String consoleName;
 
   final String immersive;
   final String target;
@@ -151,7 +151,7 @@ class _ConsoleDescription extends StatelessWidget {
   final String costs;
 
   final String imagePath;
-  final String? routeOnClick;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -173,7 +173,7 @@ class _ConsoleDescription extends StatelessWidget {
                   '$bullet ${texts.consoleEquipmentsTitle}${texts.colon} $equipments\n'
                   '$bullet ${texts.consoleCostsTitle}${texts.colon} $costs\n'),
               TextButton(
-                onPressed: () {},
+                onPressed: onTap,
                 child: Text(texts.consoleClickHereForGames),
               ),
             ],

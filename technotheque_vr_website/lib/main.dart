@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import '/models/theme.dart';
 import '/screens/consoles_screen.dart';
 import '/screens/forum_screen.dart';
+import '/screens/games_screen.dart';
 import '/screens/generality_screen.dart';
 import '/screens/home_screen.dart';
 import '/screens/ressources_screen.dart';
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
           HomeScreen.route: (ctx) => const HomeScreen(),
           GeneralityScreen.route: (ctx) => const GeneralityScreen(),
           ConsolesScreen.route: (ctx) => const ConsolesScreen(),
+          GamesScreen.route: (ctx) => const GamesScreen(),
           ForumScreen.route: (ctx) => const ForumScreen(),
           RessourcesScreen.route: (ctx) => const RessourcesScreen(),
         },
