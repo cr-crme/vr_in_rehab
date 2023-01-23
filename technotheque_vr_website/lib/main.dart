@@ -1,8 +1,8 @@
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/models/theme.dart';
-import '/providers.dart/locale_text.dart';
 import '/screens/consoles_screen.dart';
 import '/screens/forum_screen.dart';
 import '/screens/generality_screen.dart';

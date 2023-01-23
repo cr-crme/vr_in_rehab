@@ -11,7 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
   provider: ^6.0.4
+  common:
 
+dependency_overrides:
+  common:
+    path: ../common
+    
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -20,5 +25,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/
-    - assets/json/
+    - packages/common/assets/images/placeholder.png
+    - packages/common/assets/game_analyses/all_games.json

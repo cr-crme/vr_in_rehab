@@ -1,7 +1,7 @@
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 import 'package:technotheque_vr_website/widgets/scaffold_navigation.dart';
 
-import '/providers.dart/locale_text.dart';
 import '/widgets/main_menu_button.dart';
 import 'consoles_screen.dart';
 import 'forum_screen.dart';
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
     final texts = LocaleText.of(context);
 
     return ScaffoldNavigation(
-        mainTitle: texts.mainTitle,
+        mainTitle: texts.websiteTitle,
         child: Padding(
           padding: const EdgeInsets.only(top: 20.0),
           child: Row(
@@ -53,7 +53,8 @@ class HomeScreen extends StatelessWidget {
               SizedBox(
                 width: MediaQuery.of(context).size.width / 3,
                 height: 250,
-                child: Image.asset('assets/images/placeholder.png'),
+                child: Image.asset(
+                    'packages/common/assets/images/placeholder.png'),
               ),
             ],
           ),

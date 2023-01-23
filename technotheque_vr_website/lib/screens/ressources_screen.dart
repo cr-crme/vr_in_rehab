@@ -1,6 +1,6 @@
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
-import '/providers.dart/locale_text.dart';
 import '/widgets/hidable_paragraph.dart';
 import '/widgets/scaffold_navigation.dart';
 
@@ -18,7 +18,7 @@ class RessourcesScreen extends StatelessWidget {
     ];
 
     return ScaffoldNavigation(
-        mainTitle: texts.mainTitle,
+        mainTitle: texts.websiteTitle,
         subTitle: texts.ressources,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

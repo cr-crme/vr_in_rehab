@@ -1,6 +1,6 @@
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
-import '/providers.dart/locale_text.dart';
 import '/widgets/scaffold_navigation.dart';
 
 class ForumScreen extends StatelessWidget {
@@ -13,7 +13,7 @@ class ForumScreen extends StatelessWidget {
     final texts = LocaleText.of(context);
 
     return ScaffoldNavigation(
-        mainTitle: texts.mainTitle,
+        mainTitle: texts.websiteTitle,
         subTitle: texts.forum,
         child: Flexible(
           child: Column(

@@ -30,16 +30,8 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 200,
                   width: 200,
-                  child: Image.network(
-                      'https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png',
-                      loadingBuilder: (context, child, loadingProgress) {
-                    return loadingProgress == null
-                        ? FittedBox(fit: BoxFit.contain, child: child)
-                        : const Center(
-                            child: CircularProgressIndicator(
-                            color: Colors.white,
-                          ));
-                  }),
+                  child: Image.asset(
+                      'packages/common/assets/images/placeholder.png'),
                 ),
               ],
             ),

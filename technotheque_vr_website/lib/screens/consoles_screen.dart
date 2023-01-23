@@ -1,6 +1,6 @@
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
-import '/providers.dart/locale_text.dart';
 import '/widgets/hidable_paragraph.dart';
 import '/widgets/scaffold_navigation.dart';
 
@@ -23,7 +23,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleBootleBlastPrecautions,
           equipments: texts.consoleBootleBlastEquipments,
           costs: texts.consoleBootleBlastCosts,
-          imagePath: 'assets/images/placeholder.png',
+          imagePath: 'packages/common/assets/images/placeholder.png',
           routeOnClick: null,
         )
       ],
@@ -37,7 +37,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleHabilupPrecautions,
           equipments: texts.consoleHabilupEquipments,
           costs: texts.consoleHabilupCosts,
-          imagePath: 'assets/images/placeholder.png',
+          imagePath: 'packages/common/assets/images/placeholder.png',
           routeOnClick: null,
         )
       ],
@@ -51,7 +51,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleVivePrecautions,
           equipments: texts.consoleViveEquipments,
           costs: texts.consoleViveCosts,
-          imagePath: 'assets/images/placeholder.png',
+          imagePath: 'packages/common/assets/images/placeholder.png',
           routeOnClick: null,
         )
       ],
@@ -65,7 +65,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleJintronixPrecautions,
           equipments: texts.consoleJintronixEquipments,
           costs: texts.consoleJintronixCosts,
-          imagePath: 'assets/images/placeholder.png',
+          imagePath: 'packages/common/assets/images/placeholder.png',
           routeOnClick: null,
         )
       ],
@@ -79,7 +79,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleNintendoSwitchPrecautions,
           equipments: texts.consoleNintendoSwitchEquipments,
           costs: texts.consoleNintendoSwitchCosts,
-          imagePath: 'assets/images/placeholder.png',
+          imagePath: 'packages/common/assets/images/placeholder.png',
           routeOnClick: null,
         )
       ],
@@ -93,7 +93,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleOculusPrecautions,
           equipments: texts.consoleOculusEquipments,
           costs: texts.consoleOculusCosts,
-          imagePath: 'assets/images/placeholder.png',
+          imagePath: 'packages/common/assets/images/placeholder.png',
           routeOnClick: null,
         )
       ],
@@ -107,14 +107,14 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleXboxPrecautions,
           equipments: texts.consoleXboxEquipments,
           costs: texts.consoleXboxCosts,
-          imagePath: 'assets/images/placeholder.png',
+          imagePath: 'packages/common/assets/images/placeholder.png',
           routeOnClick: null,
         )
       ],
     ];
 
     return ScaffoldNavigation(
-        mainTitle: texts.mainTitle,
+        mainTitle: texts.websiteTitle,
         subTitle: texts.consoles,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
