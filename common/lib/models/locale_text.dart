@@ -24,7 +24,6 @@ class LocaleText with ChangeNotifier {
         'fr': 'Cette application vous aidera à choisir un jeu de RV qui '
             'correspond aux besoin de votre patient'
       }[language]!;
-
   String get appTitle =>
       {'en': 'Decide your VR game', 'fr': 'Choisi ton jeu RV'}[language]!;
   String get appProposedGames => {
@@ -47,23 +46,6 @@ class LocaleText with ChangeNotifier {
   String get dynamicOuside => {
         'en': 'Outside base support',
         'fr': 'À l\'extérieur de la base de support'
-      }[language]!;
-
-  String get sittingAbility =>
-      {'en': 'Sitting Ability', 'fr': 'Capacité d\'assise'}[language]!;
-  String get standingAbility =>
-      {'en': 'Standing Ability', 'fr': 'Capacité de support'}[language]!;
-  String get dynamicWithSupport =>
-      {'en': 'Dynamic with support', 'fr': 'Avec support dynamique'}[language]!;
-  String get dynamicNoSupport => {
-        'en': 'Dynamic without support',
-        'fr': 'Sans support dynamique'
-      }[language]!;
-  String get staticWithSupport =>
-      {'en': 'Static with support', 'fr': 'Avec support statique'}[language]!;
-  String get staticNoSupport => {
-        'en': 'Static without support',
-        'fr': 'Sans support statique'
       }[language]!;
 
   String get gameGoal =>

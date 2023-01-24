@@ -6,8 +6,6 @@ class DecisionAlgorithm extends ChangeNotifier {
   DecisionAlgorithm({
     upperExtremity,
     lowerExtremity,
-    sittingAbility,
-    standingAbility,
     gameGoal,
     environment,
     contraindications,
@@ -16,9 +14,6 @@ class DecisionAlgorithm extends ChangeNotifier {
     saveResuls,
   })  : _upperExtremity = upperExtremity ?? UpperExtremity.noArm,
         _lowerExtremity = lowerExtremity ?? LowerExtremity.static,
-        _sittingAbility = sittingAbility ?? SittingAbility.dynamicWithSupport,
-        _standingAbility =
-            standingAbility ?? StandingAbility.dynamicWithSupport,
         _gameGoal = gameGoal ?? GameGoal.endurance,
         _environment = environment ?? Environment.clinic,
         _contraindications = contraindications ?? Contraindications.none,
@@ -40,20 +35,6 @@ class DecisionAlgorithm extends ChangeNotifier {
   LowerExtremity get lowerExtremity => _lowerExtremity;
   void setLowerExtremity(LowerExtremity value, {notify = true}) {
     _lowerExtremity = value;
-    if (notify) notifyListeners();
-  }
-
-  SittingAbility _sittingAbility;
-  SittingAbility get sittingAbility => _sittingAbility;
-  void setSittingAbility(SittingAbility value, {notify = true}) {
-    _sittingAbility = value;
-    if (notify) notifyListeners();
-  }
-
-  StandingAbility _standingAbility;
-  StandingAbility get standingAbility => _standingAbility;
-  void setStandingAbility(StandingAbility value, {notify = true}) {
-    _standingAbility = value;
     if (notify) notifyListeners();
   }
 
