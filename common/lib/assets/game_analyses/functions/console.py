@@ -6,7 +6,7 @@ class Console(Enum):
     bootle_blast = "Bootle Blast"
     jintronix = "Jintronix"
     habilup = "Habilup"
-    xbox = "Xbox"
+    xbox = "XBox"
     nintendo_switch = "Nintendo Switch"
     oculus = "Oculus"
     vive = "Vive"

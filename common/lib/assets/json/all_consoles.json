@@ -52,5 +52,140 @@
       "fr": "Lorem ipsum dolor"
     },
     "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+  },
+  "Habilup": {
+    "immersive": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "target": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "requiredSpace": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "precautions": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "equipments": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "costs": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+  },
+  "XBox": {
+    "immersive": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "target": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "requiredSpace": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "precautions": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "equipments": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "costs": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+  },
+  "Nintendo Switch  ": {
+    "immersive": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "target": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "requiredSpace": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "precautions": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "equipments": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "costs": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+  },
+  "Oculus": {
+    "immersive": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "target": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "requiredSpace": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "precautions": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "equipments": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "costs": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+  },
+  "Vive": {
+    "immersive": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "target": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "requiredSpace": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "precautions": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "equipments": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "costs": {
+      "en": "Lorem ipsum dolor", 
+      "fr": "Lorem ipsum dolor"
+    },
+    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
   }
 }
