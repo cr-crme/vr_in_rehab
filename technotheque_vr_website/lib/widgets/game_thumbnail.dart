@@ -20,7 +20,7 @@ class GameThumbnail extends StatelessWidget {
     return Ink(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage(game.videoPath), fit: BoxFit.cover),
+            image: AssetImage(game.thumbnailPath), fit: BoxFit.cover),
       ),
       child: Stack(
         children: [

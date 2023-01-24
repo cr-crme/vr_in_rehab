@@ -32,6 +32,7 @@ class GeneralityScreen extends StatelessWidget {
     return ScaffoldNavigation(
         mainTitle: texts.websiteTitle,
         subTitle: texts.generalityAndDescription,
+        withBackButton: true,
         child: Flexible(
           child: SingleChildScrollView(
             child: Column(

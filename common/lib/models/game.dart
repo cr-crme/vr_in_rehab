@@ -14,6 +14,7 @@ class Game extends ItemSerializable {
   final Console console;
 
   final String videoPath = 'packages/common/assets/images/placeholder.png';
+  final String thumbnailPath = 'packages/common/assets/images/placeholder.png';
 
   final Map<String, String> _description;
   final Map<String, String> _accessories;

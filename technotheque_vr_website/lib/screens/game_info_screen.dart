@@ -1,6 +1,7 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
+import '/widgets/game_info.dart';
 import '/widgets/scaffold_navigation.dart';
 
 class GameInfoScreen extends StatelessWidget {
@@ -16,8 +17,25 @@ class GameInfoScreen extends StatelessWidget {
 
     return ScaffoldNavigation(
       mainTitle: texts.websiteTitle,
-      subTitle: game.title,
-      child: const Text('coucou'),
+      withBackButton: true,
+      child: Flexible(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                GameInfo(game: game),
+                SizedBox(
+                    width: MediaQuery.of(context).size.width / 3,
+                    child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: Image.asset(game.videoPath)))
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

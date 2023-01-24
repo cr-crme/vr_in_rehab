@@ -6,11 +6,17 @@ class ScaffoldNavigation extends StatelessWidget {
     required this.mainTitle,
     this.subTitle,
     required this.child,
+    this.withBackButton = false,
   });
 
   final String mainTitle;
   final String? subTitle;
   final Widget child;
+  final bool withBackButton;
+
+  void _clickedBack(BuildContext context) {
+    Navigator.of(context).pop();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +32,27 @@ class ScaffoldNavigation extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20.0),
               child: Column(
                 children: [
-                  Text(
-                    mainTitle,
-                    textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.titleLarge,
+                  Row(
+                    children: [
+                      if (withBackButton)
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10.0),
+                          child: Column(
+                            children: [
+                              IconButton(
+                                  icon: const Icon(Icons.arrow_back),
+                                  onPressed: () => _clickedBack(context)),
+                            ],
+                          ),
+                        ),
+                      Expanded(
+                        child: Text(
+                          mainTitle,
+                          textAlign: TextAlign.center,
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ),
+                    ],
                   ),
                   if (subTitle != null)
                     Text(

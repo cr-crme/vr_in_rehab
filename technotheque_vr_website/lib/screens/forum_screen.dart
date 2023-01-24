@@ -15,6 +15,7 @@ class ForumScreen extends StatelessWidget {
     return ScaffoldNavigation(
         mainTitle: texts.websiteTitle,
         subTitle: texts.forum,
+        withBackButton: true,
         child: Flexible(
           child: SingleChildScrollView(
             child: Column(

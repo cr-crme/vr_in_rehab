@@ -20,6 +20,7 @@ class RessourcesScreen extends StatelessWidget {
     return ScaffoldNavigation(
         mainTitle: texts.websiteTitle,
         subTitle: texts.ressources,
+        withBackButton: true,
         child: Flexible(
           child: SingleChildScrollView(
             child: Column(

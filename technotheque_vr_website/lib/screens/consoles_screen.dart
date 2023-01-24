@@ -119,6 +119,7 @@ class ConsolesScreen extends StatelessWidget {
     return ScaffoldNavigation(
         mainTitle: texts.websiteTitle,
         subTitle: texts.consoles,
+        withBackButton: true,
         child: Flexible(
           child: SingleChildScrollView(
             child: Column(
