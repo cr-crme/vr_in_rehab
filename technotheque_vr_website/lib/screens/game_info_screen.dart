@@ -30,7 +30,7 @@ class GameInfoScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 3,
                     child: FittedBox(
                         fit: BoxFit.contain,
-                        child: Image.asset(game.videoPath)))
+                        child: Image.network(game.videoPath)))
               ],
             ),
           ),

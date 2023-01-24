@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:enhanced_containers/enhanced_containers.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
+import 'package:http/http.dart' as http;
 
 import 'locale_text.dart';
 import 'console.dart';
@@ -13,8 +13,10 @@ class Game extends ItemSerializable {
   final String collection;
   final Console console;
 
-  final String videoPath = 'packages/common/assets/images/placeholder.png';
-  final String thumbnailPath = 'packages/common/assets/images/placeholder.png';
+  final String videoPath =
+      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png';
+  final String thumbnailPath =
+      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png';
 
   final Map<String, String> _description;
   final Map<String, String> _accessories;
@@ -129,9 +131,9 @@ class Game extends ItemSerializable {
       LocaleText.of(context).informationNotAvailable;
 }
 
-Future<List<Game>> readGames(jsonPath) async {
-  final input = await rootBundle.loadString(jsonPath);
-  Map<String, dynamic> map = jsonDecode(input);
+Future<List<Game>> readGames(String jsonPath) async {
+  final input = await http.get(Uri.parse(jsonPath));
+  Map<String, dynamic> map = jsonDecode(input.body);
   List<Game> out = [];
   for (final game in map.keys) {
     out.add(Game.fromSerialized(map[game]));

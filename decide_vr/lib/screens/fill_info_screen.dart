@@ -53,8 +53,8 @@ class _FillingInfoContentScreen extends StatelessWidget {
 
   Future<List<Game>> _analyseResults(
       BuildContext context, DecisionAlgorithm algo) async {
-    final allGames =
-        await readGames('packages/common/assets/game_analyses/all_games.json');
+    final allGames = await readGames(
+        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/game_analyses/all_games.json');
     return algo.findCompatibleGames(allGames);
   }
 

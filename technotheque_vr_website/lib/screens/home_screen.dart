@@ -55,8 +55,8 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 3,
                     height: 250,
-                    child: Image.asset(
-                        'packages/common/assets/images/placeholder.png'),
+                    child: Image.network(
+                        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png'),
                   ),
                 ],
               ),

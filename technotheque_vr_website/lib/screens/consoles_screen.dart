@@ -12,8 +12,8 @@ class ConsolesScreen extends StatelessWidget {
 
   void _clickedConsole(BuildContext context, Console console) async {
     final navigator = Navigator.of(context);
-    final allGames =
-        await readGames('packages/common/assets/game_analyses/all_games.json');
+    final allGames = await readGames(
+        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/game_analyses/all_games.json');
     final games = allGames.where((game) => game.console == console).toList();
     navigator.pushNamed(GamesScreen.route, arguments: [console, games]);
   }
@@ -32,7 +32,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleBootleBlastPrecautions,
           equipments: texts.consoleBootleBlastEquipments,
           costs: texts.consoleBootleBlastCosts,
-          imagePath: 'packages/common/assets/images/placeholder.png',
+          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
           onTap: () => _clickedConsole(context, Console.bootleBlast),
         )
       ],
@@ -45,7 +45,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleHabilupPrecautions,
           equipments: texts.consoleHabilupEquipments,
           costs: texts.consoleHabilupCosts,
-          imagePath: 'packages/common/assets/images/placeholder.png',
+          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
           onTap: () => _clickedConsole(context, Console.habilup),
         )
       ],
@@ -58,7 +58,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleVivePrecautions,
           equipments: texts.consoleViveEquipments,
           costs: texts.consoleViveCosts,
-          imagePath: 'packages/common/assets/images/placeholder.png',
+          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
           onTap: () => _clickedConsole(context, Console.vive),
         )
       ],
@@ -71,7 +71,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleJintronixPrecautions,
           equipments: texts.consoleJintronixEquipments,
           costs: texts.consoleJintronixCosts,
-          imagePath: 'packages/common/assets/images/placeholder.png',
+          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
           onTap: () => _clickedConsole(context, Console.jintronix),
         )
       ],
@@ -84,7 +84,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleNintendoSwitchPrecautions,
           equipments: texts.consoleNintendoSwitchEquipments,
           costs: texts.consoleNintendoSwitchCosts,
-          imagePath: 'packages/common/assets/images/placeholder.png',
+          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
           onTap: () => _clickedConsole(context, Console.nintendoSwitch),
         )
       ],
@@ -97,7 +97,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleOculusPrecautions,
           equipments: texts.consoleOculusEquipments,
           costs: texts.consoleOculusCosts,
-          imagePath: 'packages/common/assets/images/placeholder.png',
+          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
           onTap: () => _clickedConsole(context, Console.oculus),
         )
       ],
@@ -110,7 +110,7 @@ class ConsolesScreen extends StatelessWidget {
           precautions: texts.consoleXboxPrecautions,
           equipments: texts.consoleXboxEquipments,
           costs: texts.consoleXboxCosts,
-          imagePath: 'packages/common/assets/images/placeholder.png',
+          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
           onTap: () => _clickedConsole(context, Console.xbox),
         )
       ],
@@ -188,7 +188,7 @@ class _ConsoleDescription extends StatelessWidget {
           width: MediaQuery.of(context).size.width / 3,
           height: MediaQuery.of(context).size.height / 3,
           padding: const EdgeInsets.only(right: 15),
-          child: Image.asset(imagePath),
+          child: Image.network(imagePath),
         ),
       ],
     );

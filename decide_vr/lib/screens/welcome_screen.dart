@@ -30,8 +30,8 @@ class WelcomeScreen extends StatelessWidget {
                 SizedBox(
                   height: 200,
                   width: 200,
-                  child: Image.asset(
-                      'packages/common/assets/images/placeholder.png'),
+                  child: Image.network(
+                      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png'),
                 ),
               ],
             ),

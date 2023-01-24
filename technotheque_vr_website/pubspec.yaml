@@ -24,6 +24,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  assets:
-    - packages/common/assets/images/placeholder.png
-    - packages/common/assets/game_analyses/all_games.json
