@@ -2,14 +2,14 @@ from enum import Enum
 
 
 class Console(Enum):
-    # The numbers should fit the numbers in 'console.dart'
-    bootle_blast = 0
-    jintronix = 1
-    habilup = 2
-    xbox = 3
-    nintendo_switch = 4
-    oculus = 5
-    vive = 6
+    # The numbers should fit the numbers in 'console.dart' and in the json
+    bootle_blast = "bootleBlast"
+    jintronix = "jintronix"
+    habilup = "habilup"
+    xbox = "xbox"
+    nintendo_switch = "nintendoSwitch"
+    oculus = "oculus"
+    vive = "vive"
     unspecified = ""
 
     @staticmethod
