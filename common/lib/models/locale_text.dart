@@ -33,10 +33,6 @@ class LocaleText with ChangeNotifier {
       }[language]!;
   String get all => {'en': 'All', 'fr': 'Tous'}[language]!;
 
-  String get age => {'en': 'Age', 'fr': 'Âge'}[language]!;
-  String get young => {'en': 'Young', 'fr': 'Jeune'}[language]!;
-  String get old => {'en': 'Old', 'fr': 'Vieux'}[language]!;
-
   String get upperExtremity =>
       {'en': 'Upper extremity', 'fr': 'Membres supérieurs'}[language]!;
   String get noArm => {'en': 'No arm', 'fr': 'Aucun bras'}[language]!;
@@ -117,16 +113,6 @@ class LocaleText with ChangeNotifier {
 
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
   String get start => {'en': 'Start', 'fr': 'Débuter'}[language]!;
-
-  String get bootleBlast =>
-      {'en': 'BootleBlast', 'fr': 'BootleBlast'}[language]!;
-  String get jintronix => {'en': 'Jintronix', 'fr': 'Jintronix'}[language]!;
-  String get habilup => {'en': 'Habilup', 'fr': 'Habilup'}[language]!;
-  String get xbox => {'en': 'XBox', 'fr': 'XBox'}[language]!;
-  String get nintendoSwitch =>
-      {'en': 'Nintendo Switch', 'fr': 'Nintendo Switch'}[language]!;
-  String get oculus => {'en': 'Oculus', 'fr': 'Oculus'}[language]!;
-  String get vive => {'en': 'Vive', 'fr': 'Vive'}[language]!;
 
   String get informationNotAvailable => {
         'en': 'Information not available',

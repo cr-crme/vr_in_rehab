@@ -4,7 +4,6 @@ import 'package:provider/provider.dart';
 
 class DecisionAlgorithm extends ChangeNotifier {
   DecisionAlgorithm({
-    age,
     upperExtremity,
     lowerExtremity,
     sittingAbility,
@@ -15,8 +14,7 @@ class DecisionAlgorithm extends ChangeNotifier {
     gameLength,
     difficulty,
     saveResuls,
-  })  : _age = age ?? Age.all,
-        _upperExtremity = upperExtremity ?? UpperExtremity.noArm,
+  })  : _upperExtremity = upperExtremity ?? UpperExtremity.noArm,
         _lowerExtremity = lowerExtremity ?? LowerExtremity.static,
         _sittingAbility = sittingAbility ?? SittingAbility.dynamicWithSupport,
         _standingAbility =
@@ -30,13 +28,6 @@ class DecisionAlgorithm extends ChangeNotifier {
 
   static DecisionAlgorithm of(BuildContext context, {listen = true}) =>
       Provider.of<DecisionAlgorithm>(context, listen: listen);
-
-  Age _age;
-  Age get age => _age;
-  void setAge(Age value, {notify = true}) {
-    _age = value;
-    if (notify) notifyListeners();
-  }
 
   UpperExtremity _upperExtremity;
   UpperExtremity get upperExtremity => _upperExtremity;
