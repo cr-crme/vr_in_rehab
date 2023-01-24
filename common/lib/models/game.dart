@@ -130,7 +130,10 @@ class Game extends ItemSerializable {
       LocaleText.of(context).informationNotAvailable;
 }
 
-Future<List<Game>> readGames(String jsonPath) async {
+Future<List<Game>> readGames() async {
+  const jsonPath =
+      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_games.json';
+
   final input = await http.get(Uri.parse(jsonPath));
   Map<String, dynamic> map = jsonDecode(input.body);
   List<Game> out = [];

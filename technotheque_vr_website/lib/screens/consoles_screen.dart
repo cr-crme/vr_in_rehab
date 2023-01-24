@@ -11,14 +11,12 @@ class ConsolesScreen extends StatelessWidget {
   static const String route = '/consoles';
 
   Future<List<Console>> _fetchConsoles() async {
-    return await readConsoles(
-        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_consoles.json');
+    return await readConsoles();
   }
 
   void _clickedConsole(BuildContext context, Console console) async {
     final navigator = Navigator.of(context);
-    final allGames = await readGames(
-        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_games.json');
+    final allGames = await readGames();
     final games =
         allGames.where((game) => game.console == console.title).toList();
     navigator.pushNamed(GamesScreen.route, arguments: [console, games]);

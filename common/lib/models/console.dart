@@ -40,7 +40,10 @@ Map<String, String> _toStrMap(Map<String, dynamic> map) {
   return out;
 }
 
-Future<List<Console>> readConsoles(String jsonPath) async {
+Future<List<Console>> readConsoles() async {
+  const jsonPath =
+      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_consoles.json';
+      
   final input = await http.get(Uri.parse(jsonPath));
   Map<String, dynamic> map = jsonDecode(input.body);
   List<Console> out = [];
