@@ -12,10 +12,11 @@ class Game extends ItemSerializable {
   final String collection;
   final String console;
 
-  final String videoPath =
-      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png';
-  final String thumbnailPath =
-      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png';
+  static const String assetsRoot =
+      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets';
+
+  final String videoPath = '${Game.assetsRoot}/images/placeholder.png';
+  final String thumbnailPath = '${Game.assetsRoot}/images/placeholder.png';
 
   final Map<String, String> _description;
   final Map<String, String> _accessories;
@@ -131,8 +132,7 @@ class Game extends ItemSerializable {
 }
 
 Future<List<Game>> readGames() async {
-  const jsonPath =
-      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_games.json';
+  const jsonPath = '${Game.assetsRoot}/json/all_games.json';
 
   final input = await http.get(Uri.parse(jsonPath));
   Map<String, dynamic> map = jsonDecode(input.body);

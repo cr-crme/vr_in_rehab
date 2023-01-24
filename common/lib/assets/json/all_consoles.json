@@ -24,7 +24,7 @@
       "en": "Lorem ipsum dolor", 
       "fr": "Lorem ipsum dolor"
     },
-    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+    "imagePath": "placeholder.png"    
   },
   "Jintronix": {
     "immersive": {
@@ -51,7 +51,7 @@
       "en": "Lorem ipsum dolor", 
       "fr": "Lorem ipsum dolor"
     },
-    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+    "imagePath": "placeholder.png"    
   },
   "Habilup": {
     "immersive": {
@@ -78,7 +78,7 @@
       "en": "Lorem ipsum dolor", 
       "fr": "Lorem ipsum dolor"
     },
-    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+    "imagePath": "placeholder.png"    
   },
   "XBox": {
     "immersive": {
@@ -105,7 +105,7 @@
       "en": "Lorem ipsum dolor", 
       "fr": "Lorem ipsum dolor"
     },
-    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+    "imagePath": "placeholder.png"    
   },
   "Nintendo Switch": {
     "immersive": {
@@ -132,7 +132,7 @@
       "en": "Lorem ipsum dolor", 
       "fr": "Lorem ipsum dolor"
     },
-    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+    "imagePath": "placeholder.png"    
   },
   "Oculus": {
     "immersive": {
@@ -159,7 +159,7 @@
       "en": "Lorem ipsum dolor", 
       "fr": "Lorem ipsum dolor"
     },
-    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+    "imagePath": "placeholder.png"    
   },
   "Vive": {
     "immersive": {
@@ -186,6 +186,6 @@
       "en": "Lorem ipsum dolor", 
       "fr": "Lorem ipsum dolor"
     },
-    "imagePath": "https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png"    
+    "imagePath": "placeholder.png"    
   }
 }

@@ -23,6 +23,9 @@ class Console {
   final Map<String, String> costs;
   final String imagePath;
 
+  static const String assetsRoot =
+      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets';
+
   @override
   bool operator ==(covariant Console other) {
     return runtimeType == other.runtimeType && other.title == title;
@@ -41,9 +44,8 @@ Map<String, String> _toStrMap(Map<String, dynamic> map) {
 }
 
 Future<List<Console>> readConsoles() async {
-  const jsonPath =
-      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_consoles.json';
-      
+  const jsonPath = '${Console.assetsRoot}/json/all_consoles.json';
+
   final input = await http.get(Uri.parse(jsonPath));
   Map<String, dynamic> map = jsonDecode(input.body);
   List<Console> out = [];
@@ -56,7 +58,7 @@ Future<List<Console>> readConsoles() async {
       precautions: _toStrMap(map[console]["precautions"]),
       equipments: _toStrMap(map[console]["equipments"]),
       costs: _toStrMap(map[console]["costs"]),
-      imagePath: map[console]["imagePath"],
+      imagePath: '${Console.assetsRoot}/images/${map[console]["imagePath"]}',
     ));
   }
   return out;
