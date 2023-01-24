@@ -13,8 +13,7 @@ class Game extends ItemSerializable {
   final String collection;
   final Console console;
 
-  final String videoPath =
-      'https://www.firstbenefits.org/wp-content/uploads/2017/10/placeholder-1024x1024.png';
+  final String videoPath = 'packages/common/assets/images/placeholder.png';
 
   final Map<String, String> _description;
   final Map<String, String> _accessories;

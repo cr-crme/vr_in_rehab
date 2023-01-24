@@ -16,13 +16,15 @@ class ForumScreen extends StatelessWidget {
         mainTitle: texts.websiteTitle,
         subTitle: texts.forum,
         child: Flexible(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: const [
-              SizedBox(height: 20),
-              Text('This section is probably a bad idea'),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: const [
+                SizedBox(height: 20),
+                Text('This section is probably a bad idea'),
+              ],
+            ),
           ),
         ));
   }

@@ -20,14 +20,18 @@ class RessourcesScreen extends StatelessWidget {
     return ScaffoldNavigation(
         mainTitle: texts.websiteTitle,
         subTitle: texts.ressources,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: textSections
-              .map<Widget>((e) => HidableParagraph(
-                  title:
-                      Text(e[0], style: Theme.of(context).textTheme.titleSmall),
-                  paragraph: SelectableText(e[1])))
-              .toList(),
+        child: Flexible(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: textSections
+                  .map<Widget>((e) => HidableParagraph(
+                      title: Text(e[0],
+                          style: Theme.of(context).textTheme.titleSmall),
+                      paragraph: SelectableText(e[1])))
+                  .toList(),
+            ),
+          ),
         ));
   }
 }

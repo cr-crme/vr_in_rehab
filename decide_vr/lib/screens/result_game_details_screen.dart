@@ -97,18 +97,14 @@ class _ResultGameDetailsScreenState extends State<ResultGameDetailsScreen>
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                      margin: const EdgeInsets.only(bottom: 20),
-                      height: 200,
-                      width: MediaQuery.of(context).size.width,
-                      child: Image.network(widget.game.videoPath,
-                          loadingBuilder: (context, child, loadingProgress) {
-                        return loadingProgress == null
-                            ? FittedBox(fit: BoxFit.contain, child: child)
-                            : const Center(
-                                child: CircularProgressIndicator(
-                                color: Colors.white,
-                              ));
-                      })),
+                    margin: const EdgeInsets.only(bottom: 20),
+                    height: 200,
+                    width: MediaQuery.of(context).size.width,
+                    child: FittedBox(
+                        fit: BoxFit.contain,
+                        child: Image.asset(
+                            'packages/common/assets/images/placeholder.png')),
+                  ),
                   TextWithTitle(
                     texts.description,
                     widget.game.description(context),

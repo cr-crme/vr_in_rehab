@@ -40,7 +40,7 @@ class ScaffoldNavigation extends StatelessWidget {
                 ],
               ),
             ),
-            Flexible(child: SingleChildScrollView(child: child)),
+            child,
           ],
         ),
       ),

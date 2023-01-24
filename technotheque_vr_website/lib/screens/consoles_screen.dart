@@ -119,14 +119,18 @@ class ConsolesScreen extends StatelessWidget {
     return ScaffoldNavigation(
         mainTitle: texts.websiteTitle,
         subTitle: texts.consoles,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: consoles
-              .map<Widget>((e) => HidableParagraph(
-                  title: Text(e[0] as String,
-                      style: Theme.of(context).textTheme.titleSmall),
-                  paragraph: e[1] as Widget))
-              .toList(),
+        child: Flexible(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: consoles
+                  .map<Widget>((e) => HidableParagraph(
+                      title: Text(e[0] as String,
+                          style: Theme.of(context).textTheme.titleSmall),
+                      paragraph: e[1] as Widget))
+                  .toList(),
+            ),
+          ),
         ));
   }
 }
