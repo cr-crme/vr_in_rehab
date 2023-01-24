@@ -5,13 +5,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 import 'locale_text.dart';
-import 'console.dart';
 import 'options/options.dart';
 
 class Game extends ItemSerializable {
   final String title;
   final String collection;
-  final Console console;
+  final String console;
 
   final String videoPath =
       'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png';
@@ -39,7 +38,7 @@ class Game extends ItemSerializable {
   Game.fromSerialized(Map<String, dynamic> map)
       : title = map['title'],
         collection = map['collection'],
-        console = Console.from(choice: map['console']),
+        console = map['console'],
         _description = map['information']['description'].cast<String, String>(),
         _accessories = map['information']['accessories'].cast<String, String>(),
         _time = map['information']['time'].cast<String, String>(),
@@ -78,7 +77,7 @@ class Game extends ItemSerializable {
     return {
       'title': title,
       'collection': collection,
-      'console': console.serialize(),
+      'console': console,
       'information': {
         'description': _description,
         'accessories': _accessories,

@@ -10,11 +10,17 @@ class ConsolesScreen extends StatelessWidget {
 
   static const String route = '/consoles';
 
+  Future<List<Console>> _fetchConsoles() async {
+    return await readConsoles(
+        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_consoles.json');
+  }
+
   void _clickedConsole(BuildContext context, Console console) async {
     final navigator = Navigator.of(context);
     final allGames = await readGames(
-        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/game_analyses/all_games.json');
-    final games = allGames.where((game) => game.console == console).toList();
+        'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/json/all_games.json');
+    final games =
+        allGames.where((game) => game.console == console.title).toList();
     navigator.pushNamed(GamesScreen.route, arguments: [console, games]);
   }
 
@@ -22,140 +28,46 @@ class ConsolesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
 
-    final consoles = [
-      [
-        texts.consoleBootleBlastTitle,
-        _ConsoleDescription(
-          immersive: texts.consoleBootleBlastImmersive,
-          target: texts.consoleBootleBlastTarget,
-          requiredSpace: texts.consoleBootleBlastRequiredSpace,
-          precautions: texts.consoleBootleBlastPrecautions,
-          equipments: texts.consoleBootleBlastEquipments,
-          costs: texts.consoleBootleBlastCosts,
-          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
-          onTap: () => _clickedConsole(context, Console.bootleBlast),
-        )
-      ],
-      [
-        texts.consoleHabilupTitle,
-        _ConsoleDescription(
-          immersive: texts.consoleHabilupImmersive,
-          target: texts.consoleHabilupTarget,
-          requiredSpace: texts.consoleHabilupRequiredSpace,
-          precautions: texts.consoleHabilupPrecautions,
-          equipments: texts.consoleHabilupEquipments,
-          costs: texts.consoleHabilupCosts,
-          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
-          onTap: () => _clickedConsole(context, Console.habilup),
-        )
-      ],
-      [
-        texts.consoleViveTitle,
-        _ConsoleDescription(
-          immersive: texts.consoleViveImmersive,
-          target: texts.consoleViveTarget,
-          requiredSpace: texts.consoleViveRequiredSpace,
-          precautions: texts.consoleVivePrecautions,
-          equipments: texts.consoleViveEquipments,
-          costs: texts.consoleViveCosts,
-          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
-          onTap: () => _clickedConsole(context, Console.vive),
-        )
-      ],
-      [
-        texts.consoleJintronixTitle,
-        _ConsoleDescription(
-          immersive: texts.consoleJintronixImmersive,
-          target: texts.consoleJintronixTarget,
-          requiredSpace: texts.consoleJintronixRequiredSpace,
-          precautions: texts.consoleJintronixPrecautions,
-          equipments: texts.consoleJintronixEquipments,
-          costs: texts.consoleJintronixCosts,
-          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
-          onTap: () => _clickedConsole(context, Console.jintronix),
-        )
-      ],
-      [
-        texts.consoleNintendoSwitchTitle,
-        _ConsoleDescription(
-          immersive: texts.consoleNintendoSwitchImmersive,
-          target: texts.consoleNintendoSwitchTarget,
-          requiredSpace: texts.consoleNintendoSwitchRequiredSpace,
-          precautions: texts.consoleNintendoSwitchPrecautions,
-          equipments: texts.consoleNintendoSwitchEquipments,
-          costs: texts.consoleNintendoSwitchCosts,
-          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
-          onTap: () => _clickedConsole(context, Console.nintendoSwitch),
-        )
-      ],
-      [
-        texts.consoleOculusTitle,
-        _ConsoleDescription(
-          immersive: texts.consoleOculusImmersive,
-          target: texts.consoleOculusTarget,
-          requiredSpace: texts.consoleOculusRequiredSpace,
-          precautions: texts.consoleOculusPrecautions,
-          equipments: texts.consoleOculusEquipments,
-          costs: texts.consoleOculusCosts,
-          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
-          onTap: () => _clickedConsole(context, Console.oculus),
-        )
-      ],
-      [
-        texts.consoleXboxTitle,
-        _ConsoleDescription(
-          immersive: texts.consoleXboxImmersive,
-          target: texts.consoleXboxTarget,
-          requiredSpace: texts.consoleXboxRequiredSpace,
-          precautions: texts.consoleXboxPrecautions,
-          equipments: texts.consoleXboxEquipments,
-          costs: texts.consoleXboxCosts,
-          imagePath: 'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets/images/placeholder.png',
-          onTap: () => _clickedConsole(context, Console.xbox),
-        )
-      ],
-    ];
-
     return ScaffoldNavigation(
-        mainTitle: texts.websiteTitle,
-        subTitle: texts.consoles,
-        withBackButton: true,
-        child: Flexible(
-          child: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: consoles
-                  .map<Widget>((e) => HidableParagraph(
-                      title: Text(e[0] as String,
-                          style: Theme.of(context).textTheme.titleSmall),
-                      paragraph: e[1] as Widget))
-                  .toList(),
-            ),
+      mainTitle: texts.websiteTitle,
+      subTitle: texts.consoles,
+      withBackButton: true,
+      child: Flexible(
+        child: SingleChildScrollView(
+          child: FutureBuilder<List<Console>>(
+            future: _fetchConsoles(),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return const Center(child: CircularProgressIndicator());
+              }
+
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: snapshot.data!
+                    .map<Widget>((console) => HidableParagraph(
+                        title: Text(console.title,
+                            style: Theme.of(context).textTheme.titleSmall),
+                        paragraph: _ConsoleDescription(
+                          console: console,
+                          onTap: () => _clickedConsole(context, console),
+                        )))
+                    .toList(),
+              );
+            },
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
 
 class _ConsoleDescription extends StatelessWidget {
   const _ConsoleDescription({
-    required this.immersive,
-    required this.target,
-    required this.requiredSpace,
-    required this.precautions,
-    required this.equipments,
-    required this.costs,
-    required this.imagePath,
+    required this.console,
     required this.onTap,
   });
 
-  final String immersive;
-  final String target;
-  final String requiredSpace;
-  final String precautions;
-  final String equipments;
-  final String costs;
-
-  final String imagePath;
+  final Console console;
   final VoidCallback? onTap;
 
   @override
@@ -171,12 +83,12 @@ class _ConsoleDescription extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SelectableText(
-                  '$bullet ${texts.consoleImmersiveTitle}${texts.colon} $immersive\n'
-                  '$bullet ${texts.consoleTargetTitle}${texts.colon} $target\n'
-                  '$bullet ${texts.consoleRequiredSpaceTitle}${texts.colon} $requiredSpace\n'
-                  '$bullet ${texts.consolePrecautionsTitle}${texts.colon} $precautions\n'
-                  '$bullet ${texts.consoleEquipmentsTitle}${texts.colon} $equipments\n'
-                  '$bullet ${texts.consoleCostsTitle}${texts.colon} $costs\n'),
+                  '$bullet ${texts.consoleImmersiveTitle}${texts.colon} ${console.immersive[texts.language]}\n'
+                  '$bullet ${texts.consoleTargetTitle}${texts.colon} ${console.target[texts.language]}\n'
+                  '$bullet ${texts.consoleRequiredSpaceTitle}${texts.colon} ${console.requiredSpace[texts.language]}\n'
+                  '$bullet ${texts.consolePrecautionsTitle}${texts.colon} ${console.precautions[texts.language]}\n'
+                  '$bullet ${texts.consoleEquipmentsTitle}${texts.colon} ${console.equipments[texts.language]}\n'
+                  '$bullet ${texts.consoleCostsTitle}${texts.colon} ${console.costs[texts.language]}\n'),
               TextButton(
                 onPressed: onTap,
                 child: Text(texts.consoleClickHereForGames),
@@ -188,7 +100,7 @@ class _ConsoleDescription extends StatelessWidget {
           width: MediaQuery.of(context).size.width / 3,
           height: MediaQuery.of(context).size.height / 3,
           padding: const EdgeInsets.only(right: 15),
-          child: Image.network(imagePath),
+          child: Image.network(console.imagePath),
         ),
       ],
     );

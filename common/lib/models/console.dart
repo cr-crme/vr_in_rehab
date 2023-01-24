@@ -1,44 +1,60 @@
-import 'locale_text.dart';
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 
 class Console {
-  Console.from({this.choice = -1});
+  const Console({
+    required this.title,
+    required this.immersive,
+    required this.target,
+    required this.requiredSpace,
+    required this.precautions,
+    required this.equipments,
+    required this.costs,
+    required this.imagePath,
+  });
 
-  int serialize() => choice;
-  final int choice;
-  static Console get bootleBlast => Console.from(choice: 0);
-  static Console get jintronix => Console.from(choice: 1);
-  static Console get habilup => Console.from(choice: 2);
-  static Console get xbox => Console.from(choice: 3);
-  static Console get nintendoSwitch => Console.from(choice: 4);
-  static Console get oculus => Console.from(choice: 5);
-  static Console get vive => Console.from(choice: 6);
-
-  String title(context, {listen = true}) {
-    switch (choice) {
-      case 0:
-        return LocaleText.of(context, listen: listen).bootleBlast;
-      case 1:
-        return LocaleText.of(context, listen: listen).jintronix;
-      case 2:
-        return LocaleText.of(context, listen: listen).habilup;
-      case 3:
-        return LocaleText.of(context, listen: listen).xbox;
-      case 4:
-        return LocaleText.of(context, listen: listen).nintendoSwitch;
-      case 5:
-        return LocaleText.of(context, listen: listen).oculus;
-      case 6:
-        return LocaleText.of(context, listen: listen).vive;
-      default:
-        return "Error";
-    }
-  }
+  final String title;
+  final Map<String, String> immersive;
+  final Map<String, String> target;
+  final Map<String, String> requiredSpace;
+  final Map<String, String> precautions;
+  final Map<String, String> equipments;
+  final Map<String, String> costs;
+  final String imagePath;
 
   @override
   bool operator ==(covariant Console other) {
-    return runtimeType == other.runtimeType && other.choice == choice;
+    return runtimeType == other.runtimeType && other.title == title;
   }
 
   @override
-  int get hashCode => choice.hashCode;
+  int get hashCode => title.hashCode;
+}
+
+Map<String, String> _toStrMap(Map<String, dynamic> map) {
+  Map<String, String> out = {};
+  for (final language in map.keys) {
+    out[language] = map[language] as String;
+  }
+  return out;
+}
+
+Future<List<Console>> readConsoles(String jsonPath) async {
+  final input = await http.get(Uri.parse(jsonPath));
+  Map<String, dynamic> map = jsonDecode(input.body);
+  List<Console> out = [];
+  for (final console in map.keys) {
+    out.add(Console(
+      title: map[console]["title"],
+      immersive: _toStrMap(map[console]["immersive"]),
+      target: _toStrMap(map[console]["target"]),
+      requiredSpace: _toStrMap(map[console]["requiredSpace"]),
+      precautions: _toStrMap(map[console]["precautions"]),
+      equipments: _toStrMap(map[console]["equipments"]),
+      costs: _toStrMap(map[console]["costs"]),
+      imagePath: map[console]["imagePath"],
+    ));
+  }
+  return out;
 }

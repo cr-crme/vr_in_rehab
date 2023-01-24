@@ -44,7 +44,7 @@ class ResultButton extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             AutoSizeText(
-              game.console.title(context),
+              game.console,
               maxLines: 1,
               style: Theme.of(context).textTheme.titleMedium,
               textAlign: TextAlign.center,

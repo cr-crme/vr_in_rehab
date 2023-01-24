@@ -22,7 +22,7 @@ class GamesScreen extends StatelessWidget {
 
     return ScaffoldNavigation(
         mainTitle: texts.websiteTitle,
-        subTitle: console.title(context),
+        subTitle: console.title,
         withBackButton: true,
         child: SizedBox(
           width: (nbTiles * tileWidth).toDouble(),
