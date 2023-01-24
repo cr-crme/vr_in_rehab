@@ -25,11 +25,6 @@ class LocaleText with ChangeNotifier {
             'correspond aux besoin de votre patient'
       }[language]!;
 
-  String get appSelectedOptions => {
-        'en': 'Here are the selected options',
-        'fr': 'Voici les options sélectionnées'
-      }[language]!;
-
   String get appTitle =>
       {'en': 'Decide your VR game', 'fr': 'Choisi ton jeu RV'}[language]!;
   String get appProposedGames => {

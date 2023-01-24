@@ -46,7 +46,7 @@ Future<List<Console>> readConsoles(String jsonPath) async {
   List<Console> out = [];
   for (final console in map.keys) {
     out.add(Console(
-      title: map[console]["title"],
+      title: console,
       immersive: _toStrMap(map[console]["immersive"]),
       target: _toStrMap(map[console]["target"]),
       requiredSpace: _toStrMap(map[console]["requiredSpace"]),
