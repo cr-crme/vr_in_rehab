@@ -72,7 +72,6 @@ class _ResultGameDetailsScreenState extends State<ResultGameDetailsScreen>
         color: const Color.fromARGB(255, 123, 255, 213));
 
     final textToExpand = [
-      [texts.description, widget.game.description(context)],
       [texts.time, widget.game.time(context)],
       [texts.position, widget.game.position(context)],
       [texts.numberPlayers, widget.game.numberPlayers(context)],
