@@ -25,7 +25,9 @@ class GameInfoScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                GameInfo(game: game),
+                SizedBox(
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: GameInfo(game: game)),
                 SizedBox(
                     width: MediaQuery.of(context).size.width / 3,
                     child: FittedBox(

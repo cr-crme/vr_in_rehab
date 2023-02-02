@@ -26,12 +26,12 @@
         "fr": "Le plus loin possible"
       },
       "performanceFeedback": {
-        "en": "L'avatar suit les mouvements du joueur \\n bruit lorsque l'avatar saute sur une plateforme \\n Une image miroir du joueur est en-bas de l'\u00e9cran",
-        "fr": "L'avatar suit les mouvements du joueur \\n bruit lorsque l'avatar saute sur une plateforme \\n Une image miroir du joueur est en-bas de l'\u00e9cran"
+        "en": "L'avatar suit les mouvements du joueur \n bruit lorsque l'avatar saute sur une plateforme \n Une image miroir du joueur est en-bas de l'\u00e9cran",
+        "fr": "L'avatar suit les mouvements du joueur \n bruit lorsque l'avatar saute sur une plateforme \n Une image miroir du joueur est en-bas de l'\u00e9cran"
       },
       "resultsFeedback": {
-        "en": "R\u00e9sultat final affich\u00e9 \u00e0 la fin du jeu \\n le joueur voit le pointage s'accumuler ",
-        "fr": "R\u00e9sultat final affich\u00e9 \u00e0 la fin du jeu \\n le joueur voit le pointage s'accumuler "
+        "en": "R\u00e9sultat final affich\u00e9 \u00e0 la fin du jeu \n le joueur voit le pointage s'accumuler ",
+        "fr": "R\u00e9sultat final affich\u00e9 \u00e0 la fin du jeu \n le joueur voit le pointage s'accumuler "
       },
       "physicalRequirements": {
         "en": "Flexion lat\u00e9rale du tronc en position assise",

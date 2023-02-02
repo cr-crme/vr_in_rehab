@@ -9,12 +9,35 @@ class GameInfo extends StatelessWidget {
 
   final Game game;
 
+  Widget _buildText(BuildContext context, String title, String text) {
+    final colon = LocaleText.of(context, listen: false).colon;
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          '$title$colon ',
+          style: Theme.of(context)
+              .textTheme
+              .bodyLarge!
+              .copyWith(fontWeight: FontWeight.bold),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 15.0),
+          child: Flexible(
+              child: Text(text, style: Theme.of(context).textTheme.bodyLarge!)),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Text(
           game.title,
@@ -23,44 +46,22 @@ class GameInfo extends StatelessWidget {
               .titleMedium!
               .copyWith(decoration: TextDecoration.underline),
         ),
-        Text(
-            '${texts.description}${texts.colon} ${_optionsToString(context, game.description)}'),
-        Text(
-            '${texts.time}${texts.colon} ${_optionsToString(context, game.time)}'),
-        Text(
-            '${texts.position}${texts.colon} ${_optionsToString(context, game.position)}'),
-        Text(
-            '${texts.numberPlayers}${texts.colon} ${_optionsToString(context, game.numberPlayers)}'),
-        Text(
-            '${texts.progression}${texts.colon} ${_optionsToString(context, game.progression)}'),
-        Text(
-            '${texts.performanceFeedback}${texts.colon} ${_optionsToString(context, game.performanceFeedback)}'),
-        Text(
-            '${texts.resultsFeedback}${texts.colon} ${_optionsToString(context, game.resultsFeedback)}'),
-        Text(
-            '${texts.physicalRequirements}${texts.colon} ${_optionsToString(context, game.physicalRequirements)}'),
-        Text(
-            '${texts.motorSkills}${texts.colon} ${_optionsToString(context, game.motorSkills)}'),
-        Text(
-            '${texts.sideNotes}${texts.colon} ${_optionsToString(context, game.sideNotes)}'),
-        Text(
-            '${texts.cognitiveRequirements}${texts.colon} ${_optionsToString(context, game.cognitiveRequirements)}'),
+        _buildText(context, texts.description, game.description(context)),
+        _buildText(context, texts.time, game.time(context)),
+        _buildText(context, texts.position, game.position(context)),
+        _buildText(context, texts.numberPlayers, game.numberPlayers(context)),
+        _buildText(context, texts.progression, game.progression(context)),
+        _buildText(context, texts.performanceFeedback,
+            game.performanceFeedback(context)),
+        _buildText(
+            context, texts.resultsFeedback, game.resultsFeedback(context)),
+        _buildText(context, texts.physicalRequirements,
+            game.physicalRequirements(context)),
+        _buildText(context, texts.motorSkills, game.motorSkills(context)),
+        _buildText(context, texts.sideNotes, game.sideNotes(context)),
+        _buildText(context, texts.cognitiveRequirements,
+            game.cognitiveRequirements(context)),
       ],
     );
-  }
-
-  String _optionsToString(BuildContext context, options) {
-    if (options is Option) {
-      return '\n${LocaleText.tab}${LocaleText.tab}${options.title(context)}';
-    }
-
-    final list =
-        (options as OptionList).map<String>((option) => option.title(context));
-
-    String out = '';
-    for (final e in list) {
-      out = '$out\n${LocaleText.tab}${LocaleText.tab}$e';
-    }
-    return out;
   }
 }
