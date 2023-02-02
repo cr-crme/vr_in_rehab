@@ -42,9 +42,10 @@ def read_excel_file(filepath) -> list[Game, ...]:
             game.length = [GameLength.from_tag(tag) for tag in row[8].value.split(";")]
             game.difficulty = Difficulty.from_tag(row[9].value)
             game.can_save = CanSave.from_tag(row[10].value)
+            game.image_path = row[11].value
 
-            game.information["en"] = Information.parse_all_columns([r.value for r in row[11:20]])
-            game.information["fr"] = Information.parse_all_columns([r.value for r in row[20:29]])
+            game.information["en"] = Information.parse_all_columns([r.value for r in row[12:23]])
+            game.information["fr"] = Information.parse_all_columns([r.value for r in row[23:34]])
         except RuntimeError as message:
             raise RuntimeError(f"{message.args[0]} in for the game '{row[0].value}'")
 

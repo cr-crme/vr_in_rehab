@@ -72,14 +72,17 @@ class _ResultGameDetailsScreenState extends State<ResultGameDetailsScreen>
         color: const Color.fromARGB(255, 123, 255, 213));
 
     final textToExpand = [
-      [texts.accessories, widget.game.accessories(context)],
+      [texts.description, widget.game.description(context)],
       [texts.time, widget.game.time(context)],
       [texts.position, widget.game.position(context)],
       [texts.numberPlayers, widget.game.numberPlayers(context)],
-      [texts.environment, widget.game.environment(context)],
-      [texts.performance, widget.game.performance(context)],
-      [texts.result, widget.game.result(context)],
-      [texts.physical, widget.game.physical(context)],
+      [texts.progression, widget.game.progression(context)],
+      [texts.performanceFeedback, widget.game.performanceFeedback(context)],
+      [texts.resultsFeedback, widget.game.resultsFeedback(context)],
+      [texts.physicalRequirements, widget.game.physicalRequirements(context)],
+      [texts.motorSkills, widget.game.motorSkills(context)],
+      [texts.sideNotes, widget.game.sideNotes(context)],
+      [texts.cognitiveRequirements, widget.game.cognitiveRequirements(context)],
     ];
 
     return Scaffold(

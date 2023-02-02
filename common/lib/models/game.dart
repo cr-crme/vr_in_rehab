@@ -18,16 +18,20 @@ class Game extends ItemSerializable {
   final String videoPath = '${Game.assetsRoot}/images/placeholder.png';
   final String thumbnailPath = '${Game.assetsRoot}/images/placeholder.png';
 
+  // Information about the game
   final Map<String, String> _description;
-  final Map<String, String> _accessories;
   final Map<String, String> _time;
   final Map<String, String> _position;
   final Map<String, String> _numberPlayers;
-  final Map<String, String> _environment;
-  final Map<String, String> _performance;
-  final Map<String, String> _result;
-  final Map<String, String> _physical;
+  final Map<String, String> _progression;
+  final Map<String, String> _performanceFeedback;
+  final Map<String, String> _resultsFeedback;
+  final Map<String, String> _physicalRequirements;
+  final Map<String, String> _motorSkills;
+  final Map<String, String> _sideNotes;
+  final Map<String, String> _cognitiveRequirements;
 
+  // Decision algorithm elements
   final OptionList<UpperExtremity> upperExtremity;
   final OptionList<LowerExtremity> lowerExtremity;
   final OptionList<Contraindications> contraindications;
@@ -41,15 +45,21 @@ class Game extends ItemSerializable {
         collection = map['collection'],
         console = map['console'],
         _description = map['information']['description'].cast<String, String>(),
-        _accessories = map['information']['accessories'].cast<String, String>(),
         _time = map['information']['time'].cast<String, String>(),
         _position = map['information']['position'].cast<String, String>(),
         _numberPlayers =
             map['information']['numberPlayers'].cast<String, String>(),
-        _environment = map['information']['environment'].cast<String, String>(),
-        _performance = map['information']['performance'].cast<String, String>(),
-        _result = map['information']['result'].cast<String, String>(),
-        _physical = map['information']['physical'].cast<String, String>(),
+        _progression = map['information']['progression'].cast<String, String>(),
+        _performanceFeedback =
+            map['information']['performanceFeedback'].cast<String, String>(),
+        _resultsFeedback =
+            map['information']['resultsFeedback'].cast<String, String>(),
+        _physicalRequirements =
+            map['information']['physicalRequirements'].cast<String, String>(),
+        _motorSkills = map['information']['motorSkills'].cast<String, String>(),
+        _sideNotes = map['information']['sideNotes'].cast<String, String>(),
+        _cognitiveRequirements =
+            map['information']['cognitiveRequirements'].cast<String, String>(),
         upperExtremity = OptionList<UpperExtremity>.deserialize(
           map['filter']['upper'],
           UpperExtremity.from,
@@ -81,14 +91,16 @@ class Game extends ItemSerializable {
       'console': console,
       'information': {
         'description': _description,
-        'accessories': _accessories,
         'time': _time,
         'position': _position,
         'numberPlayers': _numberPlayers,
-        'environment': _environment,
-        'performance': _performance,
-        'result': _result,
-        'physical': _physical,
+        'progression': _progression,
+        'performanceFeedback': _performanceFeedback,
+        'resultsFeedback': _resultsFeedback,
+        'physicalRequirements': _physicalRequirements,
+        'motorSkills': _motorSkills,
+        'sideNotes': _sideNotes,
+        'cognitiveRequirements': _cognitiveRequirements,
       },
       'filter': {
         'upper': upperExtremity.serialize(),
@@ -105,9 +117,6 @@ class Game extends ItemSerializable {
   String description(BuildContext context) =>
       _description[LocaleText.of(context).language] ??
       LocaleText.of(context).informationNotAvailable;
-  String accessories(BuildContext context) =>
-      _accessories[LocaleText.of(context).language] ??
-      LocaleText.of(context).informationNotAvailable;
   String time(BuildContext context) =>
       _time[LocaleText.of(context).language] ??
       LocaleText.of(context).informationNotAvailable;
@@ -117,17 +126,26 @@ class Game extends ItemSerializable {
   String numberPlayers(BuildContext context) =>
       _numberPlayers[LocaleText.of(context).language] ??
       LocaleText.of(context).informationNotAvailable;
-  String environment(BuildContext context) =>
-      _environment[LocaleText.of(context).language] ??
+  String progression(BuildContext context) =>
+      _progression[LocaleText.of(context).language] ??
       LocaleText.of(context).informationNotAvailable;
-  String performance(BuildContext context) =>
-      _performance[LocaleText.of(context).language] ??
+  String performanceFeedback(BuildContext context) =>
+      _performanceFeedback[LocaleText.of(context).language] ??
       LocaleText.of(context).informationNotAvailable;
-  String result(BuildContext context) =>
-      _result[LocaleText.of(context).language] ??
+  String resultsFeedback(BuildContext context) =>
+      _resultsFeedback[LocaleText.of(context).language] ??
       LocaleText.of(context).informationNotAvailable;
-  String physical(BuildContext context) =>
-      _physical[LocaleText.of(context).language] ??
+  String physicalRequirements(BuildContext context) =>
+      _physicalRequirements[LocaleText.of(context).language] ??
+      LocaleText.of(context).informationNotAvailable;
+  String motorSkills(BuildContext context) =>
+      _motorSkills[LocaleText.of(context).language] ??
+      LocaleText.of(context).informationNotAvailable;
+  String sideNotes(BuildContext context) =>
+      _sideNotes[LocaleText.of(context).language] ??
+      LocaleText.of(context).informationNotAvailable;
+  String cognitiveRequirements(BuildContext context) =>
+      _cognitiveRequirements[LocaleText.of(context).language] ??
       LocaleText.of(context).informationNotAvailable;
 }
 

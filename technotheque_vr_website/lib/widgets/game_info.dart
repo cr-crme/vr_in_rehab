@@ -24,19 +24,27 @@ class GameInfo extends StatelessWidget {
               .copyWith(decoration: TextDecoration.underline),
         ),
         Text(
-            '${texts.gameGoal}${texts.colon} ${_optionsToString(context, game.goal)}'),
+            '${texts.description}${texts.colon} ${_optionsToString(context, game.description)}'),
         Text(
-            '${texts.gameLength}${texts.colon} ${_optionsToString(context, game.length)}'),
+            '${texts.time}${texts.colon} ${_optionsToString(context, game.time)}'),
         Text(
-            '${texts.difficulty}${texts.colon} ${_optionsToString(context, game.difficulty)}'),
+            '${texts.position}${texts.colon} ${_optionsToString(context, game.position)}'),
         Text(
-            '${texts.upperExtremity}${texts.colon} ${_optionsToString(context, game.upperExtremity)}'),
+            '${texts.numberPlayers}${texts.colon} ${_optionsToString(context, game.numberPlayers)}'),
         Text(
-            '${texts.lowerExtremity}${texts.colon} ${_optionsToString(context, game.lowerExtremity)}'),
+            '${texts.progression}${texts.colon} ${_optionsToString(context, game.progression)}'),
         Text(
-            '${texts.contraindications}${texts.colon} ${_optionsToString(context, game.contraindications)}'),
+            '${texts.performanceFeedback}${texts.colon} ${_optionsToString(context, game.performanceFeedback)}'),
         Text(
-            '${texts.saveResults}${texts.colon} ${_optionsToString(context, game.canSave)}'),
+            '${texts.resultsFeedback}${texts.colon} ${_optionsToString(context, game.resultsFeedback)}'),
+        Text(
+            '${texts.physicalRequirements}${texts.colon} ${_optionsToString(context, game.physicalRequirements)}'),
+        Text(
+            '${texts.motorSkills}${texts.colon} ${_optionsToString(context, game.motorSkills)}'),
+        Text(
+            '${texts.sideNotes}${texts.colon} ${_optionsToString(context, game.sideNotes)}'),
+        Text(
+            '${texts.cognitiveRequirements}${texts.colon} ${_optionsToString(context, game.cognitiveRequirements)}'),
       ],
     );
   }

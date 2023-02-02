@@ -48,8 +48,7 @@ class LocaleText with ChangeNotifier {
         'fr': 'À l\'extérieur de la base de support'
       }[language]!;
 
-  String get gameGoal =>
-      {'en': 'Game use goal', 'fr': 'But de l\'utilisation'}[language]!;
+  String get gameGoal => {'en': 'Game use goal', 'fr': 'But du jeu'}[language]!;
   String get endurance => {'en': 'Endurance', 'fr': 'Endurance'}[language]!;
   String get coordination =>
       {'en': 'Coordination', 'fr': 'Coordination'}[language]!;
@@ -113,16 +112,26 @@ class LocaleText with ChangeNotifier {
       {'en': 'Position to play', 'fr': 'Position de jeu'}[language]!;
   String get numberPlayers =>
       {'en': 'Number of players', 'fr': 'Nombre de joueurs'}[language]!;
-  String get performance => {
-        'en': 'Knowledge of performance',
+  String get progression =>
+      {'en': 'Progression in game', 'fr': 'Progression dans le jeu'}[language]!;
+  String get performanceFeedback => {
+        'en': 'Performance feedback',
         'fr': 'Connaissance de la performance'
       }[language]!;
-  String get result => {
+  String get resultsFeedback => {
         'en': 'Knowledge of results',
         'fr': 'Connaissance des résultats'
       }[language]!;
-  String get physical =>
-      {'en': 'Physical requirements', 'fr': 'Exigences physiques'}[language]!;
+  String get physicalRequirements => {
+        'en': 'Physical requirements',
+        'fr': 'Exigences physiques minimales'
+      }[language]!;
+  String get motorSkills =>
+      {'en': 'Motor skills', 'fr': 'Habiletés motrices'}[language]!;
+  String get sideNotes =>
+      {'en': 'Side notes', 'fr': 'Considérations particulières'}[language]!;
+  String get cognitiveRequirements =>
+      {'en': 'Cognitive requirements', 'fr': 'Exigences cognitives'}[language]!;
 
   String get colon => {
         'en': ':',

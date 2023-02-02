@@ -14,6 +14,7 @@ class Game:
         self.code: str = ""
         self.name: str = ""
         self.collection: str = ""
+        self.image_path: str = ""
         self.console: Console = Console.unspecified
         self.upper_limb_ability: list[UpperExtremity, ...] = [UpperExtremity.unspecified]
         self.lower_limb_ability: list[LowerExtremity, ...] = [LowerExtremity.unspecified]
@@ -30,16 +31,19 @@ class Game:
             "title": self.name,
             "collection": self.collection,
             "console": self.console.value,
+            "imagePath": self.image_path,
             "information": {
                 "description": {"en": self.information["en"].description, "fr": self.information["fr"].description},
-                "accessories": {"en": self.information["en"].accessories, "fr": self.information["fr"].accessories},
                 "time": {"en": self.information["en"].time, "fr": self.information["fr"].time},
                 "position": {"en": self.information["en"].position, "fr": self.information["fr"].position},
                 "numberPlayers": {"en": self.information["en"].nb_players, "fr": self.information["fr"].nb_players},
-                "environment": {"en": self.information["en"].environment, "fr": self.information["fr"].environment},
-                "performance": {"en": self.information["en"].performance, "fr": self.information["fr"].performance},
-                "result": {"en": self.information["en"].results, "fr": self.information["fr"].results},
-                "physical": {"en": self.information["en"].physical, "fr": self.information["fr"].physical},
+                "progression": {"en": self.information["en"].progression, "fr": self.information["fr"].progression},
+                "performanceFeedback": {"en": self.information["en"].performance_feedback, "fr": self.information["fr"].performance_feedback},
+                "resultsFeedback": {"en": self.information["en"].results_feedback, "fr": self.information["fr"].results_feedback},
+                "physicalRequirements": {"en": self.information["en"].physical_requirements, "fr": self.information["fr"].physical_requirements},
+                "motorSkills": {"en": self.information["en"].motor_skills, "fr": self.information["fr"].motor_skills},
+                "sideNotes": {"en": self.information["en"].side_notes, "fr": self.information["fr"].side_notes},
+                "cognitiveRequirements": {"en": self.information["en"].cognitive_requirements, "fr": self.information["fr"].cognitive_requirements},
             },
             "filter": {
                 "upper": [val.value for val in self.upper_limb_ability],
