@@ -2,13 +2,12 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
-import '/common/providers/decision_algorithm.dart';
-
 class SectionButton extends StatefulWidget {
   const SectionButton(
     this.title, {
     super.key,
     required this.options,
+    this.allowMultipleChoices = false,
     this.width = 200,
     this.cornerRadius = 20,
     this.defaultOption,
@@ -25,6 +24,7 @@ class SectionButton extends StatefulWidget {
   final double cornerRadius;
   final EdgeInsets? padding;
   final bool initiallyExpanded;
+  final bool allowMultipleChoices;
   final Function(Option)? onSelectOption;
 
   @override
@@ -33,7 +33,7 @@ class SectionButton extends StatefulWidget {
 
 class _SectionButtonState extends State<SectionButton>
     with SingleTickerProviderStateMixin {
-  late int? _optionSelected;
+  final List<int> _optionSelected = [];
 
   late bool _isExpanded = widget.initiallyExpanded;
   late AnimationController _expandController;
@@ -42,11 +42,12 @@ class _SectionButtonState extends State<SectionButton>
   @override
   void initState() {
     super.initState();
-    _optionSelected = widget.defaultOption == null
-        ? null
-        : widget.defaultOption! >= 0
-            ? widget.defaultOption
-            : widget.options.length + widget.defaultOption!;
+    if (widget.defaultOption != null) {
+      _optionSelected.add(widget.defaultOption! >= 0
+          ? widget.defaultOption!
+          : widget.options.length + widget.defaultOption!);
+    }
+
     _prepareExpandAnimation();
     _selectExpandDirection();
   }
@@ -130,8 +131,12 @@ class _SectionButtonState extends State<SectionButton>
   }
 
   void _selectOption(int index, Option option) {
-    _optionSelected = index;
-    DecisionAlgorithm.of(context, listen: false).option = option;
+    if (widget.allowMultipleChoices) {
+    } else {
+      _optionSelected.clear();
+      _optionSelected.add(index);
+    }
+
     widget.onSelectOption != null ? widget.onSelectOption!(option) : null;
     setState(() {});
   }
@@ -152,7 +157,7 @@ class _SectionButtonState extends State<SectionButton>
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: _optionSelected == index
+                    color: _optionSelected.contains(index)
                         ? Theme.of(context).colorScheme.onSecondary
                         : Colors.black),
               ),

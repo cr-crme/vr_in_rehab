@@ -43,7 +43,10 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
   }
 
   void _onSelectOption(Option option, DecisionAlgorithm algo) {
+    algo.option = option;
+
     _canSubmit = algo.allChoicesAreMade();
+
     setState(() {});
   }
 
