@@ -2,7 +2,9 @@ import '../locale_text.dart';
 import 'option.dart';
 
 class CanSave extends Option {
-  const CanSave.from({choice = -1}) : super(choice: choice);
+  static const optionName = 'canSave';
+
+  const CanSave.from({choice = -1}) : super(optionName, choice: choice);
 
   static List<CanSave> get values => [
         CanSave.cannotSave,

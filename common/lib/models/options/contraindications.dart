@@ -2,7 +2,10 @@ import '../locale_text.dart';
 import 'option.dart';
 
 class Contraindications extends Option {
-  const Contraindications.from({choice = -1}) : super(choice: choice);
+  static const optionName = 'contra';
+
+  const Contraindications.from({choice = -1})
+      : super(optionName, choice: choice);
 
   static List<Contraindications> get values => [
         Contraindications.epilepsy,

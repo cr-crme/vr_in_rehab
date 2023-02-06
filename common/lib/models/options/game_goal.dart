@@ -2,7 +2,9 @@ import '../locale_text.dart';
 import 'option.dart';
 
 class GameGoal extends Option {
-  const GameGoal.from({choice = -1}) : super(choice: choice);
+  static const optionName = 'goal';
+
+  const GameGoal.from({choice = -1}) : super(optionName, choice: choice);
 
   static List<GameGoal> get values => [
         GameGoal.endurance,

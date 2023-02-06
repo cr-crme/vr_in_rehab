@@ -2,7 +2,9 @@ import '../locale_text.dart';
 import 'option.dart';
 
 class Difficulty extends Option {
-  const Difficulty.from({choice = -1}) : super(choice: choice);
+  static const optionName = 'difficulty';
+
+  const Difficulty.from({choice = -1}) : super(optionName, choice: choice);
 
   static List<Difficulty> get values => [
         Difficulty.predetermined,

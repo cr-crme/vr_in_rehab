@@ -2,7 +2,9 @@ import '../locale_text.dart';
 import 'option.dart';
 
 class GameLength extends Option {
-  const GameLength.from({choice = -1}) : super(choice: choice);
+  static const optionName = 'length';
+
+  const GameLength.from({choice = -1}) : super(optionName, choice: choice);
 
   static List<GameLength> get values => [
         GameLength.predetermined,

@@ -32,13 +32,7 @@ class Game extends ItemSerializable {
   final Map<String, String> _cognitiveRequirements;
 
   // Decision algorithm elements
-  final OptionList<UpperExtremity> upperExtremity;
-  final OptionList<LowerExtremity> lowerExtremity;
-  final OptionList<Contraindications> contraindications;
-  final OptionList<GameGoal> goal;
-  final OptionList<GameLength> length;
-  final Difficulty difficulty;
-  final CanSave canSave;
+  final Map<Type, OptionList> decisionOptions;
 
   Game.fromSerialized(Map<String, dynamic> map)
       : title = map['title'],
@@ -60,28 +54,32 @@ class Game extends ItemSerializable {
         _sideNotes = map['information']['sideNotes'].cast<String, String>(),
         _cognitiveRequirements =
             map['information']['cognitiveRequirements'].cast<String, String>(),
-        upperExtremity = OptionList<UpperExtremity>.deserialize(
-          map['filter']['upper'],
-          UpperExtremity.from,
-        ),
-        lowerExtremity = OptionList<LowerExtremity>.deserialize(
-          map['filter']['lower'],
-          LowerExtremity.from,
-        ),
-        contraindications = OptionList<Contraindications>.deserialize(
-          map['filter']['contra'],
-          Contraindications.from,
-        ),
-        goal = OptionList<GameGoal>.deserialize(
-          map['filter']['goal'],
-          GameGoal.from,
-        ),
-        length = OptionList<GameLength>.deserialize(
-          map['filter']['length'],
-          GameLength.from,
-        ),
-        difficulty = Difficulty.from(choice: map['filter']['difficulty']),
-        canSave = CanSave.from(choice: map['filter']['canSave']);
+        decisionOptions = {
+          UpperExtremity: OptionList<UpperExtremity>.deserialize(
+            map['filter'][UpperExtremity.optionName],
+            UpperExtremity.from,
+          ),
+          LowerExtremity: OptionList<LowerExtremity>.deserialize(
+            map['filter'][LowerExtremity.optionName],
+            LowerExtremity.from,
+          ),
+          Contraindications: OptionList<Contraindications>.deserialize(
+            map['filter'][Contraindications.optionName],
+            Contraindications.from,
+          ),
+          GameGoal: OptionList<GameGoal>.deserialize(
+            map['filter'][GameGoal.optionName],
+            GameGoal.from,
+          ),
+          GameLength: OptionList<GameLength>.deserialize(
+            map['filter'][GameLength.optionName],
+            GameLength.from,
+          ),
+          Difficulty: OptionList<Difficulty>.deserialize(
+              map['filter'][Difficulty.optionName], Difficulty.from),
+          CanSave: OptionList<CanSave>.deserialize(
+              map['filter'][CanSave.optionName], CanSave.from),
+        };
 
   @override
   Map<String, dynamic> serializedMap() {
@@ -102,15 +100,10 @@ class Game extends ItemSerializable {
         'sideNotes': _sideNotes,
         'cognitiveRequirements': _cognitiveRequirements,
       },
-      'filter': {
-        'upper': upperExtremity.serialize(),
-        'lower': lowerExtremity.serialize(),
-        'contra': contraindications.serialize(),
-        'goal': goal.serialize(),
-        'length': length.serialize(),
-        'difficulty': difficulty.serialize(),
-        'canSave': canSave.serialize(),
-      }
+      'filter': decisionOptions.map(
+        (key, value) => MapEntry(
+            decisionOptions[key]!.name, decisionOptions[key]!.serialize()),
+      ),
     };
   }
 

@@ -2,7 +2,9 @@ import '../locale_text.dart';
 import 'option.dart';
 
 class UpperExtremity extends Option {
-  const UpperExtremity.from({choice}) : super(choice: choice);
+  static const optionName = 'upper';
+
+  const UpperExtremity.from({choice}) : super(optionName, choice: choice);
 
   static List<UpperExtremity> get values => [
         UpperExtremity.noArm,

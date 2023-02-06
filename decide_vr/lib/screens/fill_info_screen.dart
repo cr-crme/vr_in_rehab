@@ -25,7 +25,7 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
   @override
   void initState() {
     super.initState();
-    DecisionAlgorithm.of(context, listen: false).resetOptions();
+    DecisionAlgorithm.of(context, listen: false).initializeOptions(context);
   }
 
   void _submit(BuildContext context) async {
@@ -44,9 +44,7 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
 
   void _onSelectOption(Option option, DecisionAlgorithm algo) {
     algo.option = option;
-
     _canSubmit = algo.allChoicesAreMade();
-
     setState(() {});
   }
 
@@ -61,17 +59,16 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            ...algo
-                .formattedOptions(context)
-                .map<Widget>((button) => SectionButton(
-                      button[0] as String,
-                      options: button[1] as List<Option>,
-                      width: _buttonWidth,
-                      cornerRadius: _buttonRadius,
-                      defaultOption: (button[2] as Option?)?.choice,
-                      padding: EdgeInsets.only(top: _spacing),
-                      onSelectOption: (val) => _onSelectOption(val, algo),
-                    )),
+            ...algo.allOptions.entries.map<Widget>((choice) => SectionButton(
+                  choice.value.title,
+                  options: choice.value.availableChoices,
+                  allowMultipleChoices: choice.value.allowMultipleChoices,
+                  width: _buttonWidth,
+                  cornerRadius: _buttonRadius,
+                  highlightedOptions: choice.value.currentChoices.toInt(),
+                  padding: EdgeInsets.only(top: _spacing),
+                  onSelectOption: (val) => _onSelectOption(val, algo),
+                )),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Center(

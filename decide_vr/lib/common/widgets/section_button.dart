@@ -10,22 +10,22 @@ class SectionButton extends StatefulWidget {
     this.allowMultipleChoices = false,
     this.width = 200,
     this.cornerRadius = 20,
-    this.defaultOption,
+    required this.highlightedOptions,
     this.padding,
     this.initiallyExpanded = false,
-    this.onSelectOption,
+    required this.onSelectOption,
   });
 
   final String title;
   final List<Option> options;
-  final int? defaultOption;
+  final List<int> highlightedOptions;
 
   final double width;
   final double cornerRadius;
   final EdgeInsets? padding;
   final bool initiallyExpanded;
   final bool allowMultipleChoices;
-  final Function(Option)? onSelectOption;
+  final Function(Option) onSelectOption;
 
   @override
   State<SectionButton> createState() => _SectionButtonState();
@@ -33,8 +33,6 @@ class SectionButton extends StatefulWidget {
 
 class _SectionButtonState extends State<SectionButton>
     with SingleTickerProviderStateMixin {
-  final List<int> _optionSelected = [];
-
   late bool _isExpanded = widget.initiallyExpanded;
   late AnimationController _expandController;
   late Animation<double> _expandAnimation;
@@ -42,12 +40,6 @@ class _SectionButtonState extends State<SectionButton>
   @override
   void initState() {
     super.initState();
-    if (widget.defaultOption != null) {
-      _optionSelected.add(widget.defaultOption! >= 0
-          ? widget.defaultOption!
-          : widget.options.length + widget.defaultOption!);
-    }
-
     _prepareExpandAnimation();
     _selectExpandDirection();
   }
@@ -131,13 +123,7 @@ class _SectionButtonState extends State<SectionButton>
   }
 
   void _selectOption(int index, Option option) {
-    if (widget.allowMultipleChoices) {
-    } else {
-      _optionSelected.clear();
-      _optionSelected.add(index);
-    }
-
-    widget.onSelectOption != null ? widget.onSelectOption!(option) : null;
+    widget.onSelectOption(option);
     setState(() {});
   }
 
@@ -157,7 +143,7 @@ class _SectionButtonState extends State<SectionButton>
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                    color: _optionSelected.contains(index)
+                    color: widget.highlightedOptions.contains(index)
                         ? Theme.of(context).colorScheme.onSecondary
                         : Colors.black),
               ),
