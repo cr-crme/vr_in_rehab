@@ -7,11 +7,11 @@ class GameLength extends Option {
   static List<GameLength> get values => [
         GameLength.predetermined,
         GameLength.performanceBased,
-        GameLength.all,
+        GameLength.notImportant,
       ];
   static GameLength get predetermined => const GameLength.from(choice: 0);
   static GameLength get performanceBased => const GameLength.from(choice: 1);
-  static GameLength get all => const GameLength.from(choice: 2);
+  static GameLength get notImportant => const GameLength.from(choice: 2);
 
   @override
   String title(context, {listen = true}) {
@@ -21,7 +21,7 @@ class GameLength extends Option {
       case 1:
         return LocaleText.of(context, listen: listen).performanceBased;
       case 2:
-        return LocaleText.of(context, listen: listen).all;
+        return LocaleText.of(context, listen: listen).notImportant;
       default:
         return "Error";
     }

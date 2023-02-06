@@ -8,12 +8,13 @@ class UpperExtremity extends Option {
         UpperExtremity.noArm,
         UpperExtremity.oneArm,
         UpperExtremity.bothArm,
-        UpperExtremity.all,
+        UpperExtremity.notImportant,
       ];
   static UpperExtremity get noArm => const UpperExtremity.from(choice: 0);
   static UpperExtremity get oneArm => const UpperExtremity.from(choice: 1);
   static UpperExtremity get bothArm => const UpperExtremity.from(choice: 2);
-  static UpperExtremity get all => const UpperExtremity.from(choice: 3);
+  static UpperExtremity get notImportant =>
+      const UpperExtremity.from(choice: 3);
 
   @override
   String title(context, {listen = true}) {
@@ -25,7 +26,7 @@ class UpperExtremity extends Option {
       case 2:
         return LocaleText.of(context, listen: listen).bothArm;
       case 3:
-        return LocaleText.of(context, listen: listen).all;
+        return LocaleText.of(context, listen: listen).notImportant;
       default:
         return "Error";
     }

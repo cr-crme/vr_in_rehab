@@ -14,7 +14,8 @@ class DecisionAlgorithm extends ChangeNotifier {
   })  : _upperExtremity = upperExtremity ?? UpperExtremity.noArm,
         _lowerExtremity = lowerExtremity ?? LowerExtremity.static,
         _gameGoal = gameGoal ?? GameGoal.endurance,
-        _contraindications = contraindications ?? Contraindications.none,
+        _contraindications =
+            contraindications ?? Contraindications.noContraindication,
         _gameLength = gameLength ?? GameLength.predetermined,
         _difficulty = Difficulty.predetermined,
         _canSave = CanSave.canSave;
@@ -129,34 +130,36 @@ class DecisionAlgorithm extends ChangeNotifier {
 
     // Upper extremity
     var out = from.where((game) =>
-        _upperExtremity == UpperExtremity.all ||
+        _upperExtremity == UpperExtremity.notImportant ||
         game.upperExtremity.contains(_upperExtremity));
 
     // Lower extremity
     out = out.where((game) =>
-        _lowerExtremity == LowerExtremity.all ||
+        _lowerExtremity == LowerExtremity.notImportant ||
         game.lowerExtremity.contains(_lowerExtremity));
 
     // Contraindication
     out = out.where((game) =>
-        _contraindications == Contraindications.none ||
+        _contraindications == Contraindications.noContraindication ||
         game.contraindications.contains(_contraindications));
 
     // Game goal
-    out = out.where(
-        (game) => _gameGoal == GameGoal.all || game.goal.contains(_gameGoal));
+    out = out.where((game) =>
+        _gameGoal == GameGoal.notImportant || game.goal.contains(_gameGoal));
 
     // Game length
     out = out.where((game) =>
-        _gameLength == GameLength.all || game.length.contains(_gameLength));
+        _gameLength == GameLength.notImportant ||
+        game.length.contains(_gameLength));
 
     // Difficulty
     out = out.where((game) =>
-        _difficulty == Difficulty.all || game.difficulty == _difficulty);
+        _difficulty == Difficulty.notImportant ||
+        game.difficulty == _difficulty);
 
     // Can save
-    out = out
-        .where((game) => _canSave == CanSave.all || game.canSave == _canSave);
+    out = out.where(
+        (game) => _canSave == CanSave.notImportant || game.canSave == _canSave);
 
     return out.toList();
   }

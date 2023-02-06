@@ -8,14 +8,15 @@ class LowerExtremity extends Option {
         LowerExtremity.static,
         LowerExtremity.dynamicInside,
         LowerExtremity.dynamicOutside,
-        LowerExtremity.all,
+        LowerExtremity.notImportant,
       ];
   static LowerExtremity get static => const LowerExtremity.from(choice: 0);
   static LowerExtremity get dynamicInside =>
       const LowerExtremity.from(choice: 1);
   static LowerExtremity get dynamicOutside =>
       const LowerExtremity.from(choice: 2);
-  static LowerExtremity get all => const LowerExtremity.from(choice: 3);
+  static LowerExtremity get notImportant =>
+      const LowerExtremity.from(choice: 3);
 
   @override
   String title(context, {listen = true}) {
@@ -27,7 +28,7 @@ class LowerExtremity extends Option {
       case 2:
         return LocaleText.of(context, listen: listen).dynamicOuside;
       case 3:
-        return LocaleText.of(context, listen: listen).all;
+        return LocaleText.of(context, listen: listen).notImportant;
       default:
         return "Error";
     }

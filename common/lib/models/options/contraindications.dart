@@ -7,13 +7,14 @@ class Contraindications extends Option {
   static List<Contraindications> get values => [
         Contraindications.epilepsy,
         Contraindications.colorBlind,
-        Contraindications.none,
+        Contraindications.noContraindication,
       ];
   static Contraindications get epilepsy =>
       const Contraindications.from(choice: 0);
   static Contraindications get colorBlind =>
       const Contraindications.from(choice: 1);
-  static Contraindications get none => const Contraindications.from(choice: 2);
+  static Contraindications get noContraindication =>
+      const Contraindications.from(choice: 2);
 
   @override
   String title(context, {listen = true}) {
@@ -23,7 +24,7 @@ class Contraindications extends Option {
       case 1:
         return LocaleText.of(context, listen: listen).colorBlind;
       case 2:
-        return LocaleText.of(context, listen: listen).none;
+        return LocaleText.of(context, listen: listen).noContraindication;
       default:
         return "Error";
     }

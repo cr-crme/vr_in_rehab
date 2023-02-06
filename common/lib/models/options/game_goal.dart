@@ -12,7 +12,7 @@ class GameGoal extends Option {
         GameGoal.unimanualUpperExtremity,
         GameGoal.bimanualUpperExtremity,
         GameGoal.dualTasking,
-        GameGoal.all,
+        GameGoal.notImportant,
       ];
   static GameGoal get endurance => const GameGoal.from(choice: 0);
   static GameGoal get coordination => const GameGoal.from(choice: 1);
@@ -21,7 +21,7 @@ class GameGoal extends Option {
   static GameGoal get unimanualUpperExtremity => const GameGoal.from(choice: 4);
   static GameGoal get bimanualUpperExtremity => const GameGoal.from(choice: 5);
   static GameGoal get dualTasking => const GameGoal.from(choice: 6);
-  static GameGoal get all => const GameGoal.from(choice: 7);
+  static GameGoal get notImportant => const GameGoal.from(choice: 7);
 
   @override
   String title(context, {listen = true}) {
@@ -41,7 +41,7 @@ class GameGoal extends Option {
       case 6:
         return LocaleText.of(context, listen: listen).dualTasking;
       case 7:
-        return LocaleText.of(context, listen: listen).all;
+        return LocaleText.of(context, listen: listen).notImportant;
       default:
         return 'Error';
     }

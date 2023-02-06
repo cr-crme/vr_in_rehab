@@ -27,14 +27,16 @@ class LocaleText with ChangeNotifier {
   String get appTitle =>
       {'en': 'Decide your VR game', 'fr': 'Choisi ton jeu RV'}[language]!;
   String get appSelection => {
-        'en': 'Choose the criteria that apply to your patient',
-        'fr': 'Choississez les critères qui s\'appliquent à votre patient'
+        'en': 'Choose the criteria for each category',
+        'fr': 'Choisir les critères pour chacune des catégories'
       }[language]!;
   String get appProposedGames => {
         'en': 'Here a selection of games',
         'fr': 'Voici une sélection de jeux'
       }[language]!;
   String get all => {'en': 'All', 'fr': 'Tous'}[language]!;
+  String get notImportant =>
+      {'en': 'Not important', 'fr': 'Sans importance'}[language]!;
 
   String get upperExtremity =>
       {'en': 'Upper extremity', 'fr': 'Membres supérieurs'}[language]!;
@@ -81,7 +83,10 @@ class LocaleText with ChangeNotifier {
       {'en': 'Contraindications', 'fr': 'Contre-indications'}[language]!;
   String get epilepsy => {'en': 'Epilepsy', 'fr': 'Épilepsie'}[language]!;
   String get colorBlind => {'en': 'Color blind', 'fr': 'Daltonien'}[language]!;
-  String get none => {'en': 'None', 'fr': 'Aucune'}[language]!;
+  String get noContraindication => {
+        'en': 'No contraindication',
+        'fr': 'Pas de contre-indication'
+      }[language]!;
 
   String get gameLength =>
       {'en': 'Game length', 'fr': 'Durée de jeu'}[language]!;
@@ -95,8 +100,8 @@ class LocaleText with ChangeNotifier {
 
   String get saveResults =>
       {'en': 'Saving results', 'fr': 'Sauvegarde des résultats'}[language]!;
-  String get canSave => {'en': 'Can save', 'fr': 'Possible'}[language]!;
-  String get cannotSave => {'en': 'Cannot save', 'fr': 'Impossible'}[language]!;
+  String get canSave => {'en': 'Yes', 'fr': 'Oui'}[language]!;
+  String get cannotSave => {'en': 'No', 'fr': 'Non'}[language]!;
 
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
   String get submitTooltip => {
