@@ -1,7 +1,6 @@
 export 'can_save.dart';
 export 'contraindications.dart';
 export 'difficulty.dart';
-export 'environment.dart';
 export 'game_goal.dart';
 export 'game_length.dart';
 export 'lower_extremity.dart';

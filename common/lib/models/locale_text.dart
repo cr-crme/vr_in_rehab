@@ -22,10 +22,14 @@ class LocaleText with ChangeNotifier {
         'en': 'This app will help you choose a VR that corresponds to your'
             'patient\'s need',
         'fr': 'Cette application vous aidera à choisir un jeu de RV qui '
-            'correspond aux besoin de votre patient'
+            'correspond aux besoins de votre patient'
       }[language]!;
   String get appTitle =>
       {'en': 'Decide your VR game', 'fr': 'Choisi ton jeu RV'}[language]!;
+  String get appSelection => {
+        'en': 'Choose the criteria that apply to your patient',
+        'fr': 'Choississez les critères qui s\'appliquent à votre patient'
+      }[language]!;
   String get appProposedGames => {
         'en': 'Here a selection of games',
         'fr': 'Voici une sélection de jeux'
@@ -37,6 +41,8 @@ class LocaleText with ChangeNotifier {
   String get noArm => {'en': 'No arm', 'fr': 'Aucun bras'}[language]!;
   String get oneArm => {'en': 'One arm', 'fr': 'Un bras'}[language]!;
   String get bothArm => {'en': 'Both arm', 'fr': 'Deux bras'}[language]!;
+  String get allArm =>
+      {'en': 'Non applicable', 'fr': 'Non applicable'}[language]!;
 
   String get lowerExtremity =>
       {'en': 'Lower extremity', 'fr': 'Membres inférieurs'}[language]!;
@@ -93,6 +99,11 @@ class LocaleText with ChangeNotifier {
   String get cannotSave => {'en': 'Cannot save', 'fr': 'Impossible'}[language]!;
 
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
+  String get submitTooltip => {
+        'en': 'All options must be selected to submit',
+        'fr':
+            'Toutes les options doivent avoir été sélectionnées pour soumettre'
+      }[language]!;
   String get start => {'en': 'Start', 'fr': 'Débuter'}[language]!;
 
   String get informationNotAvailable => {

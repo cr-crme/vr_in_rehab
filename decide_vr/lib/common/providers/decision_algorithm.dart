@@ -7,7 +7,6 @@ class DecisionAlgorithm extends ChangeNotifier {
     upperExtremity,
     lowerExtremity,
     gameGoal,
-    environment,
     contraindications,
     gameLength,
     difficulty,
@@ -15,7 +14,6 @@ class DecisionAlgorithm extends ChangeNotifier {
   })  : _upperExtremity = upperExtremity ?? UpperExtremity.noArm,
         _lowerExtremity = lowerExtremity ?? LowerExtremity.static,
         _gameGoal = gameGoal ?? GameGoal.endurance,
-        _environment = environment ?? Environment.clinic,
         _contraindications = contraindications ?? Contraindications.none,
         _gameLength = gameLength ?? GameLength.predetermined,
         _difficulty = Difficulty.predetermined,
@@ -24,76 +22,85 @@ class DecisionAlgorithm extends ChangeNotifier {
   static DecisionAlgorithm of(BuildContext context, {listen = true}) =>
       Provider.of<DecisionAlgorithm>(context, listen: listen);
 
-  UpperExtremity _upperExtremity;
-  UpperExtremity get upperExtremity => _upperExtremity;
+  UpperExtremity? _upperExtremity;
+  UpperExtremity? get upperExtremity => _upperExtremity;
   void setUpperExtremity(UpperExtremity value, {notify = true}) {
     _upperExtremity = value;
     if (notify) notifyListeners();
   }
 
-  LowerExtremity _lowerExtremity;
-  LowerExtremity get lowerExtremity => _lowerExtremity;
+  LowerExtremity? _lowerExtremity;
+  LowerExtremity? get lowerExtremity => _lowerExtremity;
   void setLowerExtremity(LowerExtremity value, {notify = true}) {
     _lowerExtremity = value;
     if (notify) notifyListeners();
   }
 
-  GameGoal _gameGoal;
-  GameGoal get gameGoal => _gameGoal;
-  void setGameGoal(GameGoal value, {notify = true}) {
-    _gameGoal = value;
-    if (notify) notifyListeners();
-  }
-
-  Environment _environment;
-  Environment get environment => _environment;
-  void setEnvironment(Environment value, {notify = true}) {
-    _environment = value;
-    if (notify) notifyListeners();
-  }
-
-  Contraindications _contraindications;
-  Contraindications get contraindications => _contraindications;
+  Contraindications? _contraindications;
+  Contraindications? get contraindications => _contraindications;
   void setContraindications(Contraindications value, {notify = true}) {
     _contraindications = value;
     if (notify) notifyListeners();
   }
 
-  GameLength _gameLength;
-  GameLength get gameLength => _gameLength;
+  GameGoal? _gameGoal;
+  GameGoal? get gameGoal => _gameGoal;
+  void setGameGoal(GameGoal value, {notify = true}) {
+    _gameGoal = value;
+    if (notify) notifyListeners();
+  }
+
+  GameLength? _gameLength;
+  GameLength? get gameLength => _gameLength;
   void setGameLength(GameLength value, {notify = true}) {
     _gameLength = value;
     if (notify) notifyListeners();
   }
 
-  Difficulty _difficulty;
-  Difficulty get difficulty => _difficulty;
+  Difficulty? _difficulty;
+  Difficulty? get difficulty => _difficulty;
   void setDifficulty(Difficulty value, {notify = true}) {
     _difficulty = value;
     if (notify) notifyListeners();
   }
 
-  CanSave _canSave;
-  CanSave get canSave => _canSave;
+  CanSave? _canSave;
+  CanSave? get canSave => _canSave;
   void setCanSave(CanSave value, {notify = true}) {
     _canSave = value;
     if (notify) notifyListeners();
   }
 
-  static List requiredOptions(BuildContext context, {listen = true}) {
+  bool allChoicesAreMade() {
+    return _upperExtremity != null &&
+        _lowerExtremity != null &&
+        _contraindications != null &&
+        _gameGoal != null &&
+        _gameLength != null &&
+        _difficulty != null &&
+        _canSave != null;
+  }
+
+  void resetOptions() {
+    _upperExtremity = null;
+    _lowerExtremity = null;
+    _contraindications = null;
+    _gameGoal = null;
+    _gameLength = null;
+    _difficulty = null;
+    _canSave = null;
+  }
+
+  List formattedOptions(BuildContext context, {listen = true}) {
     final texts = LocaleText.of(context, listen: listen);
     return [
-      [texts.upperExtremity, UpperExtremity.values, UpperExtremity.all],
-      [texts.lowerExtremity, LowerExtremity.values, LowerExtremity.all],
-      [
-        texts.contraindications,
-        Contraindications.values,
-        Contraindications.none
-      ],
-      [texts.gameGoal, GameGoal.values, GameGoal.all],
-      [texts.gameLength, GameLength.values, GameLength.all],
-      [texts.difficulty, Difficulty.values, Difficulty.all],
-      [texts.saveResults, CanSave.values, CanSave.all],
+      [texts.upperExtremity, UpperExtremity.values, _upperExtremity],
+      [texts.lowerExtremity, LowerExtremity.values, _lowerExtremity],
+      [texts.contraindications, Contraindications.values, _contraindications],
+      [texts.gameGoal, GameGoal.values, _gameGoal],
+      [texts.gameLength, GameLength.values, _gameLength],
+      [texts.difficulty, Difficulty.values, _difficulty],
+      [texts.saveResults, CanSave.values, _canSave],
     ];
   }
 

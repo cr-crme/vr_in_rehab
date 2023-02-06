@@ -11,17 +11,21 @@ class SectionButton extends StatefulWidget {
     required this.options,
     this.width = 200,
     this.cornerRadius = 20,
-    this.defaultOption = 0,
+    this.defaultOption,
     this.padding,
+    this.initiallyExpanded = false,
+    this.onSelectOption,
   });
 
   final String title;
   final List<Option> options;
-  final int defaultOption;
+  final int? defaultOption;
 
   final double width;
   final double cornerRadius;
   final EdgeInsets? padding;
+  final bool initiallyExpanded;
+  final Function(Option)? onSelectOption;
 
   @override
   State<SectionButton> createState() => _SectionButtonState();
@@ -29,18 +33,20 @@ class SectionButton extends StatefulWidget {
 
 class _SectionButtonState extends State<SectionButton>
     with SingleTickerProviderStateMixin {
-  late int _optionSelected;
+  late int? _optionSelected;
 
-  bool _isExpanded = false;
+  late bool _isExpanded = widget.initiallyExpanded;
   late AnimationController _expandController;
   late Animation<double> _expandAnimation;
 
   @override
   void initState() {
     super.initState();
-    _optionSelected = widget.defaultOption >= 0
-        ? widget.defaultOption
-        : widget.options.length + widget.defaultOption;
+    _optionSelected = widget.defaultOption == null
+        ? null
+        : widget.defaultOption! >= 0
+            ? widget.defaultOption
+            : widget.options.length + widget.defaultOption!;
     _prepareExpandAnimation();
     _selectExpandDirection();
   }
@@ -126,6 +132,7 @@ class _SectionButtonState extends State<SectionButton>
   void _selectOption(int index, Option option) {
     _optionSelected = index;
     DecisionAlgorithm.of(context, listen: false).option = option;
+    widget.onSelectOption != null ? widget.onSelectOption!(option) : null;
     setState(() {});
   }
 

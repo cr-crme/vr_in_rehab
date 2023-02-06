@@ -16,32 +16,17 @@ class FillingInfoScreen extends StatefulWidget {
   State<FillingInfoScreen> createState() => _FillingInfoScreenState();
 }
 
-void _resetOptions(BuildContext context, {required bool listen}) {
-  final algo = DecisionAlgorithm.of(context, listen: false);
-  final options = DecisionAlgorithm.requiredOptions(context, listen: false);
-  for (final category in options) {
-    for (final option in category[1]) {
-      algo.option = option;
-    }
-  }
-}
-
 class _FillingInfoScreenState extends State<FillingInfoScreen> {
-  @override
-  Widget build(BuildContext context) {
-    // This stateful widget is there just to initialize everything.
-    _resetOptions(context, listen: false);
-
-    return const _FillingInfoContentScreen();
-  }
-}
-
-class _FillingInfoContentScreen extends StatelessWidget {
-  const _FillingInfoContentScreen();
-
   final double _spacing = 10;
   final double _buttonWidth = 250;
   final double _buttonRadius = 20;
+  bool _canSubmit = false;
+
+  @override
+  void initState() {
+    super.initState();
+    DecisionAlgorithm.of(context, listen: false).resetOptions();
+  }
 
   void _submit(BuildContext context) async {
     final algo = DecisionAlgorithm.of(context, listen: false);
@@ -57,31 +42,43 @@ class _FillingInfoContentScreen extends StatelessWidget {
     return algo.findCompatibleGames(allGames);
   }
 
+  void _onSelectOption(Option option, DecisionAlgorithm algo) {
+    _canSubmit = algo.allChoicesAreMade();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    final options = DecisionAlgorithm.requiredOptions(context);
+    final texts = LocaleText.of(context);
+    final algo = DecisionAlgorithm.of(context, listen: true);
 
     return Scaffold(
-      appBar: VrAppBar(title: Text(LocaleText.of(context).appTitle)),
+      appBar: VrAppBar(title: Text(LocaleText.of(context).appSelection)),
       body: SingleChildScrollView(
         child: ListView(
           shrinkWrap: true,
           children: [
-            ...options.map<Widget>((button) => SectionButton(
-                  button[0] as String,
-                  options: button[1] as List<Option>,
-                  width: _buttonWidth,
-                  cornerRadius: _buttonRadius,
-                  defaultOption: (button[2] as Option).choice,
-                  padding: EdgeInsets.only(top: _spacing),
-                )),
+            ...algo
+                .formattedOptions(context)
+                .map<Widget>((button) => SectionButton(
+                      button[0] as String,
+                      options: button[1] as List<Option>,
+                      width: _buttonWidth,
+                      cornerRadius: _buttonRadius,
+                      defaultOption: (button[2] as Option?)?.choice,
+                      padding: EdgeInsets.only(top: _spacing),
+                      onSelectOption: (val) => _onSelectOption(val, algo),
+                    )),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Center(
-                child: SubmitButton(
-                  LocaleText.of(context).submit,
-                  width: 150,
-                  onPressed: () => _submit(context),
+                child: Tooltip(
+                  message: _canSubmit ? "" : texts.submitTooltip,
+                  child: SubmitButton(
+                    texts.submit,
+                    width: 150,
+                    onPressed: _canSubmit ? () => _submit(context) : null,
+                  ),
                 ),
               ),
             ),
