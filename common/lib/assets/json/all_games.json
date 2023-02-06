@@ -71,8 +71,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB02": {
@@ -146,8 +146,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB03": {
@@ -221,8 +221,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB04": {
@@ -297,8 +297,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB05": {
@@ -372,8 +372,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB06": {
@@ -447,8 +447,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB07": {
@@ -522,8 +522,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB08": {
@@ -596,8 +596,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB09": {
@@ -672,8 +672,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB10": {
@@ -746,8 +746,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "BOB11": {
@@ -820,8 +820,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOB12": {
@@ -894,8 +894,8 @@
         0,
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOX01": {
@@ -970,8 +970,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOX02": {
@@ -1048,8 +1048,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOX03": {
@@ -1126,8 +1126,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOX04": {
@@ -1204,8 +1204,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "BOX05": {
@@ -1282,8 +1282,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "HAB01": {
@@ -1362,8 +1362,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB02": {
@@ -1442,8 +1442,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB03": {
@@ -1521,8 +1521,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB04": {
@@ -1600,8 +1600,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB05": {
@@ -1680,8 +1680,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB06": {
@@ -1760,8 +1760,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB07": {
@@ -1840,8 +1840,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB08": {
@@ -1920,8 +1920,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB09": {
@@ -2000,8 +2000,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB10": {
@@ -2080,8 +2080,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB11": {
@@ -2160,8 +2160,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB12": {
@@ -2240,8 +2240,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "HAB13": {
@@ -2320,8 +2320,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN01": {
@@ -2394,8 +2394,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN02": {
@@ -2469,8 +2469,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN03": {
@@ -2545,8 +2545,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN04": {
@@ -2619,8 +2619,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN05": {
@@ -2696,8 +2696,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN06": {
@@ -2773,8 +2773,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN07": {
@@ -2849,8 +2849,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN08": {
@@ -2924,8 +2924,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN09": {
@@ -3000,8 +3000,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN10": {
@@ -3075,8 +3075,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN11": {
@@ -3151,8 +3151,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN12": {
@@ -3228,8 +3228,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN13": {
@@ -3303,8 +3303,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN14": {
@@ -3379,8 +3379,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN15": {
@@ -3454,8 +3454,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN16": {
@@ -3527,8 +3527,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN17": {
@@ -3603,8 +3603,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN18": {
@@ -3677,8 +3677,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN19": {
@@ -3752,8 +3752,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN20": {
@@ -3827,8 +3827,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN21": {
@@ -3902,8 +3902,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN22": {
@@ -3977,8 +3977,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN23": {
@@ -4050,8 +4050,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN24": {
@@ -4126,8 +4126,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN25": {
@@ -4202,8 +4202,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "JIN26": {
@@ -4278,8 +4278,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "OCA01": {
@@ -4357,8 +4357,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "OCB01": {
@@ -4436,8 +4436,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "OCD01": {
@@ -4513,8 +4513,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCE01": {
@@ -4587,8 +4587,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCE02": {
@@ -4661,8 +4661,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCE03": {
@@ -4734,8 +4734,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCE04": {
@@ -4808,8 +4808,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCE05": {
@@ -4882,8 +4882,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCE06": {
@@ -4956,8 +4956,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCE07": {
@@ -5030,8 +5030,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "OCJ01": {
@@ -5104,8 +5104,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCJ02": {
@@ -5178,8 +5178,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCJ03": {
@@ -5252,8 +5252,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCJ04": {
@@ -5326,8 +5326,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCS01": {
@@ -5404,8 +5404,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCS02": {
@@ -5481,8 +5481,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCS03": {
@@ -5557,8 +5557,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCS04": {
@@ -5633,8 +5633,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCS05": {
@@ -5711,8 +5711,8 @@
       "length": [
         1
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "OCS06": {
@@ -5789,8 +5789,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "SWD01": {
@@ -5867,8 +5867,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWD02": {
@@ -5945,8 +5945,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWD03": {
@@ -6023,8 +6023,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWD04": {
@@ -6101,8 +6101,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWD05": {
@@ -6179,8 +6179,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWD06": {
@@ -6257,8 +6257,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWD07": {
@@ -6335,8 +6335,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWD08": {
@@ -6413,8 +6413,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 1
+      "difficulty": [0],
+      "canSave": [1]
     }
   },
   "SWR01": {
@@ -6491,8 +6491,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR02": {
@@ -6569,8 +6569,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR03": {
@@ -6647,8 +6647,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR04": {
@@ -6725,8 +6725,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR05": {
@@ -6803,8 +6803,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR06": {
@@ -6881,8 +6881,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR07": {
@@ -6959,8 +6959,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR08": {
@@ -7034,8 +7034,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR09": {
@@ -7108,8 +7108,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR10": {
@@ -7181,8 +7181,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR11": {
@@ -7256,8 +7256,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR12": {
@@ -7334,8 +7334,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR13": {
@@ -7409,8 +7409,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR14": {
@@ -7483,8 +7483,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR15": {
@@ -7561,8 +7561,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR16": {
@@ -7636,8 +7636,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR17": {
@@ -7714,8 +7714,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR18": {
@@ -7788,8 +7788,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR19": {
@@ -7866,8 +7866,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR20": {
@@ -7939,8 +7939,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR21": {
@@ -8012,8 +8012,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR22": {
@@ -8085,8 +8085,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR23": {
@@ -8164,8 +8164,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR24": {
@@ -8243,8 +8243,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR25": {
@@ -8322,8 +8322,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR26": {
@@ -8401,8 +8401,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR27": {
@@ -8480,8 +8480,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR28": {
@@ -8559,8 +8559,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR29": {
@@ -8638,8 +8638,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR30": {
@@ -8717,8 +8717,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR31": {
@@ -8796,8 +8796,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR32": {
@@ -8875,8 +8875,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR33": {
@@ -8954,8 +8954,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR34": {
@@ -9033,8 +9033,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR35": {
@@ -9112,8 +9112,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "SWR36": {
@@ -9191,8 +9191,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 1
+      "difficulty": [1],
+      "canSave": [1]
     }
   },
   "VIV01": {
@@ -9263,8 +9263,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV02": {
@@ -9337,8 +9337,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV03": {
@@ -9410,8 +9410,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV04": {
@@ -9483,8 +9483,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV05": {
@@ -9555,8 +9555,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV06": {
@@ -9632,8 +9632,8 @@
       "length": [
         0
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV07": {
@@ -9705,8 +9705,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV08": {
@@ -9778,8 +9778,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV09": {
@@ -9855,8 +9855,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV10": {
@@ -9928,8 +9928,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV11": {
@@ -10002,8 +10002,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV12": {
@@ -10075,8 +10075,8 @@
       "length": [
         0
       ],
-      "difficulty": 0,
-      "canSave": 0
+      "difficulty": [0],
+      "canSave": [0]
     }
   },
   "VIV13": {
@@ -10150,8 +10150,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   },
   "VIV14": {
@@ -10223,8 +10223,8 @@
       "length": [
         1
       ],
-      "difficulty": 1,
-      "canSave": 0
+      "difficulty": [1],
+      "canSave": [0]
     }
   }
 }
