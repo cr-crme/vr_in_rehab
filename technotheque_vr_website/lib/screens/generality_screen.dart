@@ -27,6 +27,7 @@ class GeneralityScreen extends StatelessWidget {
         texts.generalityWebsiteNavigationTitle,
         texts.generalityWebsiteNavigationText
       ],
+      [texts.generalityRessourcesTitle, texts.generalityRessourcesText],
     ];
 
     return ScaffoldNavigation(

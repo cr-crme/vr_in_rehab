@@ -4,7 +4,7 @@ import 'package:provider/provider.dart';
 class LocaleText with ChangeNotifier {
   LocaleText({required this.language});
 
-  static const String tab = '    ';
+  static const String tab = '     ';
   static const String bullet = '\u2022';
 
   void setLanguage(language) {
@@ -180,10 +180,12 @@ class LocaleText with ChangeNotifier {
         'fr': 'Qu\'est-ce que la réalité virtuelle (RV)',
       }[language]!;
   String get generalityWhatIsVrText => {
-        'en':
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula ante nec ante vehicula, vel facilisis tellus varius. Quisque fermentum orci in lorem feugiat laoreet. Pellentesque id urna ultrices, mollis nibh sed, malesuada tortor. Curabitur elit libero, mollis ornare luctus non, ultricies eget odio. Sed posuere nunc mi, vel auctor tellus dapibus vel. Vestibulum sed efficitur diam, id volutpat nisi. Ut placerat, sapien eget aliquam tempor, orci sapien efficitur elit, sit amet fermentum massa ante ac sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vitae eros sagittis enim dignissim scelerisque. Integer pulvinar nulla id turpis vestibulum suscipit. Sed ac ligula at odio aliquam pulvinar. Nulla vel lacus tellus. Pellentesque at lectus non lectus lacinia pretium in ac est.',
-        'fr':
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vehicula ante nec ante vehicula, vel facilisis tellus varius. Quisque fermentum orci in lorem feugiat laoreet. Pellentesque id urna ultrices, mollis nibh sed, malesuada tortor. Curabitur elit libero, mollis ornare luctus non, ultricies eget odio. Sed posuere nunc mi, vel auctor tellus dapibus vel. Vestibulum sed efficitur diam, id volutpat nisi. Ut placerat, sapien eget aliquam tempor, orci sapien efficitur elit, sit amet fermentum massa ante ac sapien. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas vitae eros sagittis enim dignissim scelerisque. Integer pulvinar nulla id turpis vestibulum suscipit. Sed ac ligula at odio aliquam pulvinar. Nulla vel lacus tellus. Pellentesque at lectus non lectus lacinia pretium in ac est.',
+        'en': 'To translate',
+        'fr': 'La réalité virtuelle (RV) et les jeux vidéos actifs sont des '
+            'modalités de traitement émergentes dans le domaine de la '
+            'physiothérapie. Ce sont des systèmes où les joueurs utilisent le '
+            'mouvement de leur corps pour interagir avec les objets de '
+            'l\'univers virtuel (Levac et al. 2017).',
       }[language]!;
 
   String get generalityImmersiveVsNonImmersiveTitle => {
@@ -191,10 +193,14 @@ class LocaleText with ChangeNotifier {
         'fr': 'Immersive VS non-immersive réalité virtuelle?',
       }[language]!;
   String get generalityImmersiveVsNonImmersiveText => {
-        'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue nisi, scelerisque ut dictum vitae, pulvinar ac ex. Curabitur iaculis ut magna at tincidunt. Suspendisse erat sem, vestibulum id eleifend non, auctor imperdiet nisl. Morbi fringilla, ipsum et ultrices accumsan, quam dolor gravida felis, vel elementum lectus lectus ac nunc. Aliquam mauris eros, sollicitudin at egestas ac, fringilla auctor turpis. Nunc accumsan ultrices nisl aliquam fringilla. Sed vel nunc vel augue sagittis mollis. Suspendisse pretium, massa sed scelerisque condimentum, ante nisi elementum turpis, in pharetra magna erat sed augue. Proin dictum sem in risus tempor venenatis.\n'
-            'Quisque fringilla consectetur ligula ut malesuada. Duis sagittis elit eget nunc vulputate elementum. Proin venenatis hendrerit velit, nec laoreet purus blandit non. Etiam vulputate est elit, sed hendrerit justo congue tempor. Nunc lobortis tempus risus ut sagittis. Vivamus ac placerat libero, nec dignissim tellus. Fusce vel sapien mollis, scelerisque nunc sit amet, cursus quam. Morbi faucibus sodales orci quis consequat. Nullam tempus vel urna vel varius. Maecenas purus elit, placerat iaculis convallis quis, placerat eget ante. Proin sit amet rutrum nulla. Vestibulum rutrum rhoncus dui nec luctus. Vivamus pellentesque sodales ante sit amet vulputate. Sed euismod mattis odio. Nam tellus arcu, iaculis in dapibus id, pharetra non risus.',
-        'fr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue nisi, scelerisque ut dictum vitae, pulvinar ac ex. Curabitur iaculis ut magna at tincidunt. Suspendisse erat sem, vestibulum id eleifend non, auctor imperdiet nisl. Morbi fringilla, ipsum et ultrices accumsan, quam dolor gravida felis, vel elementum lectus lectus ac nunc. Aliquam mauris eros, sollicitudin at egestas ac, fringilla auctor turpis. Nunc accumsan ultrices nisl aliquam fringilla. Sed vel nunc vel augue sagittis mollis. Suspendisse pretium, massa sed scelerisque condimentum, ante nisi elementum turpis, in pharetra magna erat sed augue. Proin dictum sem in risus tempor venenatis.\n'
-            'Quisque fringilla consectetur ligula ut malesuada. Duis sagittis elit eget nunc vulputate elementum. Proin venenatis hendrerit velit, nec laoreet purus blandit non. Etiam vulputate est elit, sed hendrerit justo congue tempor. Nunc lobortis tempus risus ut sagittis. Vivamus ac placerat libero, nec dignissim tellus. Fusce vel sapien mollis, scelerisque nunc sit amet, cursus quam. Morbi faucibus sodales orci quis consequat. Nullam tempus vel urna vel varius. Maecenas purus elit, placerat iaculis convallis quis, placerat eget ante. Proin sit amet rutrum nulla. Vestibulum rutrum rhoncus dui nec luctus. Vivamus pellentesque sodales ante sit amet vulputate. Sed euismod mattis odio. Nam tellus arcu, iaculis in dapibus id, pharetra non risus.',
+        'en': 'To translate',
+        'fr': 'Il y a deux types de RV : immersive ou non-immersive. La RV '
+            'immersive fait référence à l\'utilisation d\'un casque audiovisuel '
+            'qui permet de s\'immerser dans l\'environnement du jeu.\n\n'
+            'La RV non-immersive fait référence à l\'utilisation d\'une console de '
+            'jeu pour interagir avec un environnement virtuel, sans toutefois '
+            'donner l\'impression de faire partie de cet environnement (Omlor et '
+            'al., Medical Education Online, 2022).',
       }[language]!;
 
   String get generalityProsOfVrTitle => {
@@ -202,18 +208,37 @@ class LocaleText with ChangeNotifier {
         'fr': 'Avantages de la réalité virtuelle en réadaptation pédiatrique',
       }[language]!;
   String get generalityProsOfVrText => {
-        'en': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
-        'fr': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
+        'en': 'To translate',
+        'fr': '$tab$bullet Peut mimer des tâches de la vie réelle (Levac et al. 2015)\n'
+            '$tab$bullet Demande une participation active du patient (Levac et al. 2015)\n'
+            '$tab$bullet Travaille la relation entre la posture et le mouvement '
+            'en plus de donner beaucoup de rétroactions (Levac et al. 2015)\n'
+            '$tab$bullet C\'est une modalité qui est stimulante, motivante et '
+            'dont il est possible de l\'adapter pour individualiser les '
+            'traitements vu les nombreux jeux variables disponible sur le '
+            'marché (Lino, Arcangeli, and Chieffo 2021).\n'
+            '$tab$bullet L\'utilisation de la RV permet d\'augmenter la durée '
+            'des traitements, le nombre de répétitions complétés et '
+            'l\'intensité des sessions en plus de procurer une rétroaction '
+            'constante (Banerjee-Guénette, Bigford, and Glegg 2020).\n'
+            '$tab$bullet Modalité qui suit les principes de la neuroplasticité '
+            'qui stipule que les tâches motivantes, répétitives et orientées '
+            'sur la tâche avec une rétroaction multisensorielle permettent un '
+            'meilleur apprentissage moteur (Levac and Miller 2013).\n'
+            '$tab$bullet La RV a été validé pour la réadaptation motrice et '
+            'cognitive avec de nombreuses conditions tels le trouble du spectre '
+            'de l\'autisme (TSA), le trouble du déficit de l\'attention avec '
+            'hyperactivité (TDAH) , la paralysie cérébrale et son utilisation '
+            'est de plus en plus supporté pour le traitement du trouble '
+            'neurodéveloppemental de la coordination (TDC) (Lino et al. 2021).\n'
+            '$tab$bullet L\'utilisation de la RV en réadaptation permettrait de '
+            'travailler tous les domaines de la CIF (déficiences, limitations '
+            'd\'activités, restrictions de participation, facteurs personnels et '
+            'facteurs environnementaux), ce qui correspond aux objectifs de '
+            'traitements établis par les professionnels de la physiothérapie '
+            '(Lino et al. 2021). En effet, l\'environnement virtuel permet de '
+            'travailler des tâches que l\'enfant réaliserait dans la vie '
+            'réelle (Galvin and Levac 2011).\n',
       }[language]!;
 
   String get generalityContraindicationVrTitle => {
@@ -221,18 +246,15 @@ class LocaleText with ChangeNotifier {
         'fr': 'Contre-indications et précautions',
       }[language]!;
   String get generalityContraindicationVrText => {
-        'en': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
-        'fr': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
+        'en': 'To translate',
+        'fr': 'La RV immersive est contre-indiquée pour les cas suivants :\n'
+            '$tab$bullet  Épilepsie\n\n'
+            'Pour la RV immersive, les précautions sont les suivantes :\n'
+            '$tab$bullet Joueur pourrait trébucher dans des objets s\'il n\'a pas l\'espace adéquat\n'
+            '$tab$bullet Casque peut donner des nausées, étourdissements et mal de cœur\n'
+            '$tab$bullet Casque pourrait tomber s\'il est mal ajusté\n'
+            '$tab$bullet Casque peut effectuer une pression inconfortable sur le visage\n'
+            '$tab$bullet Le joueur peut avoir de la difficulté à repérer son corps dans l\'espace'
       }[language]!;
 
   String get generalityWebsiteNavigationTitle => {
@@ -240,10 +262,95 @@ class LocaleText with ChangeNotifier {
         'fr': 'Fonctionnement du site internet',
       }[language]!;
   String get generalityWebsiteNavigationText => {
-        'en': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue nisi, scelerisque ut dictum vitae, pulvinar ac ex. Curabitur iaculis ut magna at tincidunt. Suspendisse erat sem, vestibulum id eleifend non, auctor imperdiet nisl. Morbi fringilla, ipsum et ultrices accumsan, quam dolor gravida felis, vel elementum lectus lectus ac nunc. Aliquam mauris eros, sollicitudin at egestas ac, fringilla auctor turpis. Nunc accumsan ultrices nisl aliquam fringilla. Sed vel nunc vel augue sagittis mollis. Suspendisse pretium, massa sed scelerisque condimentum, ante nisi elementum turpis, in pharetra magna erat sed augue. Proin dictum sem in risus tempor venenatis.\n'
-            'Quisque fringilla consectetur ligula ut malesuada. Duis sagittis elit eget nunc vulputate elementum. Proin venenatis hendrerit velit, nec laoreet purus blandit non. Etiam vulputate est elit, sed hendrerit justo congue tempor. Nunc lobortis tempus risus ut sagittis. Vivamus ac placerat libero, nec dignissim tellus. Fusce vel sapien mollis, scelerisque nunc sit amet, cursus quam. Morbi faucibus sodales orci quis consequat. Nullam tempus vel urna vel varius. Maecenas purus elit, placerat iaculis convallis quis, placerat eget ante. Proin sit amet rutrum nulla. Vestibulum rutrum rhoncus dui nec luctus. Vivamus pellentesque sodales ante sit amet vulputate. Sed euismod mattis odio. Nam tellus arcu, iaculis in dapibus id, pharetra non risus.',
-        'fr': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus augue nisi, scelerisque ut dictum vitae, pulvinar ac ex. Curabitur iaculis ut magna at tincidunt. Suspendisse erat sem, vestibulum id eleifend non, auctor imperdiet nisl. Morbi fringilla, ipsum et ultrices accumsan, quam dolor gravida felis, vel elementum lectus lectus ac nunc. Aliquam mauris eros, sollicitudin at egestas ac, fringilla auctor turpis. Nunc accumsan ultrices nisl aliquam fringilla. Sed vel nunc vel augue sagittis mollis. Suspendisse pretium, massa sed scelerisque condimentum, ante nisi elementum turpis, in pharetra magna erat sed augue. Proin dictum sem in risus tempor venenatis.\n'
-            'Quisque fringilla consectetur ligula ut malesuada. Duis sagittis elit eget nunc vulputate elementum. Proin venenatis hendrerit velit, nec laoreet purus blandit non. Etiam vulputate est elit, sed hendrerit justo congue tempor. Nunc lobortis tempus risus ut sagittis. Vivamus ac placerat libero, nec dignissim tellus. Fusce vel sapien mollis, scelerisque nunc sit amet, cursus quam. Morbi faucibus sodales orci quis consequat. Nullam tempus vel urna vel varius. Maecenas purus elit, placerat iaculis convallis quis, placerat eget ante. Proin sit amet rutrum nulla. Vestibulum rutrum rhoncus dui nec luctus. Vivamus pellentesque sodales ante sit amet vulputate. Sed euismod mattis odio. Nam tellus arcu, iaculis in dapibus id, pharetra non risus.',
+        'en': 'To translate',
+        'fr': 'Le site web se veut un outil informatif qui permet aux cliniciens '
+            'd\'avoir rapidement l\'information sur les différents jeux qui '
+            'existent pour prendre leur décision sur l\'intervention approprié '
+            'pour l\'enfants en thérapie. 7 différentes consoles ont été analysées '
+            'et plusieurs jeux par consoles, pour un grand total de plus de 100 jeux '
+            'disponibles dans ce site.\n'
+            '\n'
+            'Les informations qui se retrouvent pour chaque console sont les suivantes :'
+            '$tab$bullet Type de RV : immersive vs non-immersive? Il y a '
+            'certaines précautions à prendre en compte pour la RV immersive, '
+            'certains enfants ne la toléreront pas ou il est contre-indiqué '
+            'qu\'ils l\'utilisent.\n'
+            '$tab$bullet La consoles a-t-elle été créée pour la réadaptation ou '
+            'pour le grand public? Dans les consoles qui sont créées '
+            'spécifiquement pour la réadaptation, il y a généralement plus de '
+            'possibilités de paramètres à modifier pour adapter auxpatients. '
+            'Les jeux sont souvent plus simples également.\n'
+            '$tab$bullet Espace requis\n'
+            '$tab$bullet Précautions\n'
+            '$tab$bullet Équipement nécessaire\n'
+            '$tab$bullet Coût\n'
+            '\n'
+            'Les informations qui se retrouvent pour chaque jeu sont les '
+            'suivantes :\n'
+            '$tab$bullet But\n'
+            '$tab$bullet Durée\n'
+            '$tab$bullet Position : assis, debout ou les deux\n'
+            '$tab$bullet Nombre de joueur\n'
+            '$tab$bullet Progression dans le jeu\n'
+            '$tab$bullet Feedback de la performance : cette catégorie indique '
+            'la façon que le joueur peut connaître sa performance de la tâche '
+            'pendant qu\'il joue au jeu. Elle comprend l\'accumulation des '
+            'points que le joueur voit à l\'écran, les commentaires auditifs ou '
+            'les bruits de réussite ou d\'échec de la tâche et l\'avatar à '
+            'l\'écran qui reproduit les mouvements du joueur en temps réel.\n'
+            '$tab$bullet Feedback des résultats : cette catégorie indique '
+            'comment le jeu affiche le résultat final de la performance du '
+            'joueur. C\'est souvent cette catégorie qui peut être utilisée pour '
+            'mettre dans le dossier du clinicien et qui indique s\'il y a eu '
+            'amélioration de la tâche.\n'
+            '$tab$bullet Exigences physiques minimales\n'
+            '$tab$bullet Habiletés motrices\n'
+            '$tab$bullet Considérations\n'
+            '$tab$bullet Exigences cognitives\n',
+      }[language]!;
+  String get generalityRessourcesTitle => {
+        'en': 'List of ressources',
+        'fr': 'Liste de sources et ressources',
+      }[language]!;
+  String get generalityRessourcesText => {
+        'en': 'To translate',
+        'fr': '$tab$bullet Levac, Danielle, Stephanie Glegg, Heather Colquhoun, '
+            'Patricia Miller, and Farzad Noubary. 2017. “Virtual Reality and '
+            'Active Videogame-Based Practice, Learning Needs, and Preferences: '
+            'A Cross-Canada Survey of Physical Therapists and Occupational '
+            'Therapists.” Games for Health Journal 6(4):217–28. '
+            'doi: 10.1089/g4h.2016.0089.\n'
+            '$tab$bullet Levac, Danielle, Deborah Espy, Emily Fox, Sujata '
+            'Pradhan, and Judith E. Deutsch. 2015. “‘Kinect-Ing’ with Clinicians: '
+            'A Knowledge Translation Resource to Support Decision Making about Video '
+            'Game Use in Rehabilitation.” Physical Therapy 95(3):426–40. '
+            'doi: 10.2522/ptj.20130618.\n'
+            '$tab$bullet Lino, Federica, Valentina Arcangeli, and Daniela Pia '
+            'Rosaria Chieffo. 2021. “The Virtual Challenge: Virtual Reality Tools '
+            'for Intervention in Children with Developmental Coordination '
+            'Disorder.” Children 8(4).\n'
+            '$tab$bullet Banerjee-Guénette, Priyanka, Sarah Bigford, and '
+            'Stephanie M. N. Glegg. 2020. “Facilitating the Implementation of '
+            'Virtual Reality-Based Therapies in Pediatric Rehabilitation.” '
+            'Physical and Occupational Therapy in Pediatrics 40(2):201–16. '
+            'doi: 10.1080/01942638.2019.1650867.\n'
+            '$tab$bullet Levac, Danielle E., and Patricia A. Miller. 2013. '
+            '“Integrating Virtual Reality Video Games into Practice: Clinicians’ '
+            'Experiences.” Physiotherapy Theory and Practice 29(7):504–12. '
+            'doi: 10.3109/09593985.2012.762078.\n'
+            '$tab$bullet Lino, Federica, Valentina Arcangeli, and Daniela Pia '
+            'Rosaria Chieffo. 2021. “The Virtual Challenge: Virtual Reality Tools '
+            'for Intervention in Children with Developmental Coordination '
+            'Disorder.” Children 8(4).\n'
+            '$tab$bullet Galvin, Jane, and Danielle Levac. 2011. “Facilitating '
+            'Clinical Decision-Making about the Use of Virtual Reality within '
+            'Paediatric Motor Rehabilitation: Describing and Classifying Virtual '
+            'Reality Systems.” Developmental Neurorehabilitation 14(2):112–22.\n'
+            '\n'
+            'Site web des consoles créées pour la réadaptation :\n'
+            '$tab$bullet Site Web Habilup : https://ubique-site.com/\n'
+            '$tab$bullet Site Web BootleBlast : https://pearlinteractives.com/\n'
+            '$tab$bullet Site Web de Jintronix : https://jintronix.com/fr/',
       }[language]!;
 
   String get consoleClickHereForGames => {
