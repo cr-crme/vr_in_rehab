@@ -56,7 +56,7 @@ Future<List<Console>> readConsoles() async {
       precautions: _toStrMap(map[console]['precautions']),
       equipments: _toStrMap(map[console]['equipments']),
       costs: _toStrMap(map[console]['costs']),
-      imagePath: '$rootAssetsPath/images/${map[console]['imagePath']}',
+      imagePath: '$rootAssetsPath/images/consoles/${map[console]['imagePath']}',
     ));
   }
   return out;

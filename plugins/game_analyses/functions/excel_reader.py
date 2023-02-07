@@ -40,8 +40,8 @@ def read_excel_file(filepath) -> list[Game, ...]:
             game.contraindications = [Contraindications.from_tag(tag) for tag in row[6].value.split(";")]
             game.goal = [GameGoals.from_tag(tag) for tag in row[7].value.split(";")]
             game.length = [GameLength.from_tag(tag) for tag in row[8].value.split(";")]
-            game.difficulty = Difficulty.from_tag(row[9].value)
-            game.can_save = CanSave.from_tag(row[10].value)
+            game.difficulty = [Difficulty.from_tag(row[9].value)]
+            game.can_save = [CanSave.from_tag(row[10].value)]
             game.image_path = row[11].value
 
             game.information["en"] = Information.parse_all_columns([r.value for r in row[12:23]])

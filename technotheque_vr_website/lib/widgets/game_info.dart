@@ -15,17 +15,14 @@ class GameInfo extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '$title$colon ',
-          style: Theme.of(context)
-              .textTheme
-              .bodyLarge!
-              .copyWith(fontWeight: FontWeight.bold),
-        ),
+        Text('$title$colon ',
+            style: Theme.of(context)
+                .textTheme
+                .bodyLarge!
+                .copyWith(fontWeight: FontWeight.bold)),
         Padding(
           padding: const EdgeInsets.only(left: 15.0),
-          child: Flexible(
-              child: Text(text, style: Theme.of(context).textTheme.bodyLarge!)),
+          child: Text(text, style: Theme.of(context).textTheme.bodyLarge!),
         ),
       ],
     );

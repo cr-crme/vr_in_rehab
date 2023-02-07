@@ -19,8 +19,10 @@ class GameThumbnail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Ink(
       decoration: BoxDecoration(
-        image: DecorationImage(
-            image: NetworkImage(game.thumbnailPath), fit: BoxFit.cover),
+        image: game.thumbnailPath != null
+            ? DecorationImage(
+                image: NetworkImage(game.thumbnailPath!), fit: BoxFit.contain)
+            : null,
       ),
       child: Stack(
         children: [

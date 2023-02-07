@@ -104,7 +104,9 @@ class _ResultGameDetailsScreenState extends State<ResultGameDetailsScreen>
                     width: MediaQuery.of(context).size.width,
                     child: FittedBox(
                         fit: BoxFit.contain,
-                        child: Image.network(widget.game.thumbnailPath)),
+                        child: widget.game.thumbnailPath != null
+                            ? Image.network(widget.game.thumbnailPath!)
+                            : null),
                   ),
                   TextWithTitle(
                     texts.description,

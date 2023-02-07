@@ -21,8 +21,8 @@ class Game:
         self.contraindications: list[Contraindications, ...] = [Contraindications.unspecified]
         self.goal: list[GameGoals, ...] = [GameGoals.unspecified]
         self.length: list[GameLength, ...] = [GameLength.unspecified]
-        self.difficulty: Difficulty = Difficulty.unspecified
-        self.can_save: CanSave = CanSave.unspecified
+        self.difficulty: list[Difficulty, ...] = [Difficulty.unspecified]
+        self.can_save: list[CanSave, ...] = [CanSave.unspecified]
 
         self.information: dict[str, Information] = {"en": Information(), "fr": Information()}
 
@@ -51,7 +51,7 @@ class Game:
                 "contra": [val.value for val in self.contraindications],
                 "goal": [val.value for val in self.goal],
                 "length": [val.value for val in self.length],
-                "difficulty": self.difficulty.value,
-                "canSave": self.can_save.value,
+                "difficulty": [val.value for val in self.difficulty],
+                "canSave": [val.value for val in self.can_save],
             },
         }

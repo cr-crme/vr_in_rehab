@@ -29,10 +29,13 @@ class GameInfoScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 2,
                     child: GameInfo(game: game)),
                 SizedBox(
-                    width: MediaQuery.of(context).size.width / 3,
-                    child: FittedBox(
-                        fit: BoxFit.contain,
-                        child: Image.network(game.videoPath)))
+                  width: MediaQuery.of(context).size.width / 3,
+                  child: FittedBox(
+                      fit: BoxFit.contain,
+                      child: game.thumbnailPath != null
+                          ? Image.network(game.thumbnailPath!)
+                          : null),
+                ),
               ],
             ),
           ),

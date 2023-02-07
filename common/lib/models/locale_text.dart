@@ -308,11 +308,41 @@ class LocaleText with ChangeNotifier {
             '$tab$bullet Considérations\n'
             '$tab$bullet Exigences cognitives\n',
       }[language]!;
-  String get generalityRessourcesTitle => {
-        'en': 'List of ressources',
-        'fr': 'Liste de sources et ressources',
+
+  String get consoleClickHereForGames => {
+        'en': 'Click here to see the games for this console',
+        'fr': 'Cliquer ici pour voir les jeux sur cette console',
       }[language]!;
-  String get generalityRessourcesText => {
+  String get consoleImmersiveTitle => {
+        'en': 'Immersive / non-immersive',
+        'fr': 'Immersive / non-immersive',
+      }[language]!;
+  String get consoleTargetTitle => {
+        'en': 'Created for the readaptation or for the general public',
+        'fr': 'Créée pour la réadaptation ou pour le grand public',
+      }[language]!;
+  String get consoleRequiredSpaceTitle => {
+        'en': 'Required space',
+        'fr': 'Espace requis',
+      }[language]!;
+  String get consolePrecautionsTitle => {
+        'en': 'Precautions',
+        'fr': 'Précautions',
+      }[language]!;
+  String get consoleEquipmentsTitle => {
+        'en': 'Equipments',
+        'fr': 'Équipements',
+      }[language]!;
+  String get consoleCostsTitle => {
+        'en': 'Costs',
+        'fr': 'Coûts',
+      }[language]!;
+
+  String get ressourcesListTitle => {
+        'en': 'List of ressources',
+        'fr': 'Liste des ressources',
+      }[language]!;
+  String get ressourcesListText => {
         'en': 'To translate',
         'fr': '$tab$bullet Levac, Danielle, Stephanie Glegg, Heather Colquhoun, '
             'Patricia Miller, and Farzad Noubary. 2017. “Virtual Reality and '
@@ -351,54 +381,6 @@ class LocaleText with ChangeNotifier {
             '$tab$bullet Site Web Habilup : https://ubique-site.com/\n'
             '$tab$bullet Site Web BootleBlast : https://pearlinteractives.com/\n'
             '$tab$bullet Site Web de Jintronix : https://jintronix.com/fr/',
-      }[language]!;
-
-  String get consoleClickHereForGames => {
-        'en': 'Click here to see the games for this console',
-        'fr': 'Cliquer ici pour voir les jeux sur cette console',
-      }[language]!;
-  String get consoleImmersiveTitle => {
-        'en': 'Immersive / non-immersive',
-        'fr': 'Immersive / non-immersive',
-      }[language]!;
-  String get consoleTargetTitle => {
-        'en': 'Created for the readaptation or for the general public',
-        'fr': 'Créée pour la réadaptation ou pour le grand public',
-      }[language]!;
-  String get consoleRequiredSpaceTitle => {
-        'en': 'Required space',
-        'fr': 'Espace requis',
-      }[language]!;
-  String get consolePrecautionsTitle => {
-        'en': 'Precautions',
-        'fr': 'Précautions',
-      }[language]!;
-  String get consoleEquipmentsTitle => {
-        'en': 'Equipments',
-        'fr': 'Équipements',
-      }[language]!;
-  String get consoleCostsTitle => {
-        'en': 'Costs',
-        'fr': 'Coûts',
-      }[language]!;
-
-  String get ressourcesListTitle => {
-        'en': 'List of ressources',
-        'fr': 'Liste des ressources',
-      }[language]!;
-  String get ressourcesListText => {
-        'en': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
-        'fr': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n'
-            '$tab$bullet ut magna at tincidunt. Suspendisse erat sem, vestibulum\n'
-            '$tab$bullet id eleifend non, auctor imperdiet nisl. Morbi fringilla\n'
-            '$tab$bullet ipsum et ultrices accumsan, quam dolor gravida felis\n',
       }[language]!;
   String get ressourcesContactUsTitle => {
         'en': 'Contact us',

@@ -8,7 +8,7 @@ def main():
     serialized = serialize_all_games(games)
     json_object = json.dumps(serialized, indent=2)
 
-    with open("../json/all_games.json", "w") as outfile:
+    with open("all_games.json", "w") as outfile:
         outfile.write(json_object)
 
 
