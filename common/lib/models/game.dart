@@ -1,22 +1,18 @@
 import 'dart:convert';
 
+import 'package:common/common.dart';
 import 'package:enhanced_containers/enhanced_containers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-
-import 'locale_text.dart';
-import 'options/options.dart';
 
 class Game extends ItemSerializable {
   final String title;
   final String collection;
   final String console;
 
-  static const String assetsRoot =
-      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets';
-
-  final String videoPath = '${Game.assetsRoot}/images/placeholder.png';
-  final String thumbnailPath = '${Game.assetsRoot}/images/placeholder.png';
+  final String videoPath = '$rootAssetsPath/images/games/placeholder.png';
+  final String thumbnailPath =
+      '$rootAssetsPath/images/games/Bootleblast/AstroBootle.PNG';
 
   // Information about the game
   final Map<String, String> _description;
@@ -143,7 +139,7 @@ class Game extends ItemSerializable {
 }
 
 Future<List<Game>> readGames() async {
-  const jsonPath = '${Game.assetsRoot}/json/all_games.json';
+  const jsonPath = '$rootAssetsPath/json/all_games.json';
 
   final input = await http.get(Uri.parse(jsonPath));
   Map<String, dynamic> map = jsonDecode(input.body);

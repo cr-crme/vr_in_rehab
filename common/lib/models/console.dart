@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
+import 'helpers.dart';
 
 class Console {
   const Console({
@@ -23,9 +24,6 @@ class Console {
   final Map<String, String> costs;
   final String imagePath;
 
-  static const String assetsRoot =
-      'https://raw.githubusercontent.com/cr-crme/vr_in_readaptation/main/common/lib/assets';
-
   @override
   bool operator ==(covariant Console other) {
     return runtimeType == other.runtimeType && other.title == title;
@@ -44,7 +42,7 @@ Map<String, String> _toStrMap(Map<String, dynamic> map) {
 }
 
 Future<List<Console>> readConsoles() async {
-  const jsonPath = '${Console.assetsRoot}/json/all_consoles.json';
+  const jsonPath = '$rootAssetsPath/json/all_consoles.json';
 
   final input = await http.get(Uri.parse(jsonPath));
   Map<String, dynamic> map = jsonDecode(input.body);
@@ -52,13 +50,13 @@ Future<List<Console>> readConsoles() async {
   for (final console in map.keys) {
     out.add(Console(
       title: console,
-      immersive: _toStrMap(map[console]["immersive"]),
-      target: _toStrMap(map[console]["target"]),
-      requiredSpace: _toStrMap(map[console]["requiredSpace"]),
-      precautions: _toStrMap(map[console]["precautions"]),
-      equipments: _toStrMap(map[console]["equipments"]),
-      costs: _toStrMap(map[console]["costs"]),
-      imagePath: '${Console.assetsRoot}/images/${map[console]["imagePath"]}',
+      immersive: _toStrMap(map[console]['immersive']),
+      target: _toStrMap(map[console]['target']),
+      requiredSpace: _toStrMap(map[console]['requiredSpace']),
+      precautions: _toStrMap(map[console]['precautions']),
+      equipments: _toStrMap(map[console]['equipments']),
+      costs: _toStrMap(map[console]['costs']),
+      imagePath: '$rootAssetsPath/images/${map[console]['imagePath']}',
     ));
   }
   return out;
