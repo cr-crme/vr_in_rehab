@@ -5,12 +5,14 @@ import 'package:provider/provider.dart';
 class FormattedOption<T extends Option> {
   FormattedOption({
     required this.title,
+    required this.tooltip,
     required this.availableChoices,
     required this.currentChoices,
     required this.allowMultipleChoices,
     this.acceptAll,
   });
   final String title;
+  final String tooltip;
   final List<T> availableChoices;
   OptionList<T> currentChoices;
   final bool allowMultipleChoices;
@@ -37,6 +39,7 @@ class DecisionAlgorithm extends ChangeNotifier {
     allOptions = {
       UpperExtremity: FormattedOption<UpperExtremity>(
         title: texts.upperExtremity,
+        tooltip: texts.upperExtremityTooltip,
         availableChoices: UpperExtremity.values,
         currentChoices: OptionList(),
         allowMultipleChoices: false,
@@ -44,6 +47,7 @@ class DecisionAlgorithm extends ChangeNotifier {
       ),
       LowerExtremity: FormattedOption<LowerExtremity>(
         title: texts.lowerExtremity,
+        tooltip: texts.lowerExtremityTooltip,
         availableChoices: LowerExtremity.values,
         currentChoices: OptionList(),
         allowMultipleChoices: false,
@@ -51,6 +55,7 @@ class DecisionAlgorithm extends ChangeNotifier {
       ),
       Contraindications: FormattedOption<Contraindications>(
         title: texts.contraindications,
+        tooltip: texts.contraindicationsTooltip,
         availableChoices: Contraindications.values,
         currentChoices: OptionList(),
         allowMultipleChoices: false,
@@ -58,6 +63,7 @@ class DecisionAlgorithm extends ChangeNotifier {
       ),
       GameGoal: FormattedOption<GameGoal>(
         title: texts.gameGoal,
+        tooltip: texts.gameGoalTooltip,
         availableChoices: GameGoal.values,
         currentChoices: OptionList(),
         allowMultipleChoices: true,
@@ -65,6 +71,7 @@ class DecisionAlgorithm extends ChangeNotifier {
       ),
       GameLength: FormattedOption<GameLength>(
         title: texts.gameLength,
+        tooltip: texts.gameLengthTooltip,
         availableChoices: GameLength.values,
         currentChoices: OptionList(),
         allowMultipleChoices: false,
@@ -72,6 +79,7 @@ class DecisionAlgorithm extends ChangeNotifier {
       ),
       Difficulty: FormattedOption<Difficulty>(
         title: texts.difficulty,
+        tooltip: texts.difficultyTooltip,
         availableChoices: Difficulty.values,
         currentChoices: OptionList(),
         allowMultipleChoices: false,
@@ -79,6 +87,7 @@ class DecisionAlgorithm extends ChangeNotifier {
       ),
       CanSave: FormattedOption<CanSave>(
         title: texts.saveResults,
+        tooltip: texts.saveResultsTooltip,
         availableChoices: CanSave.values,
         currentChoices: OptionList(),
         allowMultipleChoices: false,

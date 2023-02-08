@@ -8,8 +8,8 @@ class VrAppBar extends AppBar {
     actions,
   }) : super(actions: [
           if (actions != null) ...actions,
-          const _LanguageSwitcher(),
-          const SizedBox(width: 10),
+          // const _LanguageSwitcher(),
+          // const SizedBox(width: 10),
         ]);
 }
 

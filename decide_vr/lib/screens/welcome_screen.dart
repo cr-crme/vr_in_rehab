@@ -11,53 +11,54 @@ class WelcomeScreen extends StatelessWidget {
   static const route = '/';
 
   void _clickStartCallback(BuildContext context) {
-    Navigator.of(context).pushReplacementNamed(FillingInfoScreen.route);
+    Navigator.of(context).pushNamed(FillingInfoScreen.route);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Stack(
-              alignment: AlignmentDirectional.center,
-              children: [
-                SizedBox(
-                  height: 200,
-                  width: 200,
-                  child: Image.network(
-                      '$rootAssetsPath/images/misc/logo.png'),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Stack(
+                alignment: AlignmentDirectional.center,
+                children: [
+                  SizedBox(
+                    height: 200,
+                    width: 200,
+                    child:
+                        Image.network('$rootAssetsPath/images/misc/logo.png'),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 30),
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.75,
+                child: Text(
+                  LocaleText.of(context).appExplanation,
+                  style: Theme.of(context).textTheme.titleLarge!.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: Theme.of(context).colorScheme.onBackground),
+                  textAlign: TextAlign.center,
                 ),
-              ],
-            ),
-            const SizedBox(height: 30),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.75,
-              height: 100,
-              child: Text(
-                LocaleText.of(context).appExplanation,
-                style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                    fontStyle: FontStyle.italic,
-                    color: Theme.of(context).colorScheme.onBackground),
-                textAlign: TextAlign.center,
               ),
-            ),
-            const SizedBox(height: 15),
-            const LanguageSwitcher(width: 125, height: 35),
-            const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: StartButton(
-                LocaleText.of(context).start,
-                width: 150,
-                clickCallback: _clickStartCallback,
+              const SizedBox(height: 15),
+              const LanguageSwitcher(width: 125, height: 35),
+              const SizedBox(height: 15),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20.0),
+                child: StartButton(
+                  LocaleText.of(context).start,
+                  width: 150,
+                  clickCallback: _clickStartCallback,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

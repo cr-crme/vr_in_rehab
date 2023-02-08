@@ -61,6 +61,7 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
           children: [
             ...algo.allOptions.entries.map<Widget>((choice) => SectionButton(
                   choice.value.title,
+                  tooltip: choice.value.tooltip,
                   options: choice.value.availableChoices,
                   allowMultipleChoices: choice.value.allowMultipleChoices,
                   width: _buttonWidth,

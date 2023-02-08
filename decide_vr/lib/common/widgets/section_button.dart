@@ -7,6 +7,7 @@ class SectionButton extends StatefulWidget {
     this.title, {
     super.key,
     required this.options,
+    required this.tooltip,
     this.allowMultipleChoices = false,
     this.width = 200,
     this.cornerRadius = 20,
@@ -17,6 +18,7 @@ class SectionButton extends StatefulWidget {
   });
 
   final String title;
+  final String tooltip;
   final List<Option> options;
   final List<int> highlightedOptions;
 
@@ -78,23 +80,26 @@ class _SectionButtonState extends State<SectionButton>
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              decoration: const BoxDecoration(shape: BoxShape.circle),
-              child: ElevatedButton(
-                onPressed: _clickExpand,
-                style: ElevatedButton.styleFrom(
-                  fixedSize: Size(widget.width, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(widget.cornerRadius),
+            Tooltip(
+              message: widget.tooltip,
+              child: Container(
+                decoration: const BoxDecoration(shape: BoxShape.circle),
+                child: ElevatedButton(
+                  onPressed: _clickExpand,
+                  style: ElevatedButton.styleFrom(
+                    fixedSize: Size(widget.width, 50),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(widget.cornerRadius),
+                    ),
                   ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(7.0),
-                  child: AutoSizeText(
-                    widget.title,
-                    maxLines: 1,
-                    style: Theme.of(context).textTheme.titleLarge,
-                    textAlign: TextAlign.center,
+                  child: Padding(
+                    padding: const EdgeInsets.all(7.0),
+                    child: AutoSizeText(
+                      widget.title,
+                      maxLines: 1,
+                      style: Theme.of(context).textTheme.titleLarge,
+                      textAlign: TextAlign.center,
+                    ),
                   ),
                 ),
               ),

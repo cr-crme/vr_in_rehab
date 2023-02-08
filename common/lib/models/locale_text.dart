@@ -22,14 +22,19 @@ class LocaleText with ChangeNotifier {
         'en': 'This app will help you choose a VR that corresponds to your'
             'patient\'s need',
         'fr': 'Cette application vous aidera à choisir un jeu de RV qui '
-            'correspond aux besoins de votre patient'
+            'correspond aux besoins de votre patient\n'
+            '\n'
+            'Pour chacune des catégories qui vous sera présentée, '
+            'veuillez choisir le critère qui correspond à ce que vous '
+            'attendez du jeu.\n'
+            '\n'
+            'Pour avoir plus d\'information sur chaque catégorie, vous pouvez '
+            'faire un long clique sur elle.'
       }[language]!;
   String get appTitle =>
       {'en': 'Decide your VR game', 'fr': 'Choisi ton jeu RV'}[language]!;
-  String get appSelection => {
-        'en': 'Choose the criteria for each category',
-        'fr': 'Choisir les critères pour chacune des catégories'
-      }[language]!;
+  String get appSelection =>
+      {'en': 'Choose the criteria', 'fr': 'Choisir les critères'}[language]!;
   String get appProposedGames => {
         'en': 'Here a selection of games',
         'fr': 'Voici une sélection de jeux'
@@ -40,6 +45,10 @@ class LocaleText with ChangeNotifier {
 
   String get upperExtremity =>
       {'en': 'Upper extremity', 'fr': 'Membres supérieurs'}[language]!;
+  String get upperExtremityTooltip => {
+        'en': 'To translate',
+        'fr': 'Indiquer l\'exigence pour les membres supérieurs'
+      }[language]!;
   String get noArm => {'en': 'No arm', 'fr': 'Aucun bras'}[language]!;
   String get oneArm => {'en': 'One arm', 'fr': 'Un bras'}[language]!;
   String get bothArm => {'en': 'Both arm', 'fr': 'Deux bras'}[language]!;
@@ -48,6 +57,10 @@ class LocaleText with ChangeNotifier {
 
   String get lowerExtremity =>
       {'en': 'Lower extremity', 'fr': 'Membres inférieurs'}[language]!;
+  String get lowerExtremityTooltip => {
+        'en': 'To translate',
+        'fr': 'Indiquer l\'exigence pour les membres inférieurs'
+      }[language]!;
   String get static => {'en': 'Static', 'fr': 'Statique'}[language]!;
   String get dynamicInside =>
       {'en': 'Inside base support', 'fr': 'Dans la base de support'}[language]!;
@@ -56,7 +69,25 @@ class LocaleText with ChangeNotifier {
         'fr': 'À l\'extérieur de la base de support'
       }[language]!;
 
+  String get contraindications =>
+      {'en': 'Contraindications', 'fr': 'Contre-indications'}[language]!;
+  String get contraindicationsTooltip => {
+        'en': 'To translate',
+        'fr': 'Indiquer les contre-indications de l\'enfant'
+      }[language]!;
+  String get epilepsy => {'en': 'Epilepsy', 'fr': 'Épilepsie'}[language]!;
+  String get colorBlind => {'en': 'Color blind', 'fr': 'Daltonien'}[language]!;
+  String get noContraindication => {
+        'en': 'No contraindication',
+        'fr': 'Pas de contre-indication'
+      }[language]!;
+
   String get gameGoal => {'en': 'Game use goal', 'fr': 'But du jeu'}[language]!;
+  String get gameGoalTooltip => {
+        'en': 'To translate',
+        'fr': 'Indiquer le ou les objectifs que le jeu devrait viser '
+            '(plus d\'un choix possible)'
+      }[language]!;
   String get endurance => {'en': 'Endurance', 'fr': 'Endurance'}[language]!;
   String get coordination =>
       {'en': 'Coordination', 'fr': 'Coordination'}[language]!;
@@ -72,36 +103,34 @@ class LocaleText with ChangeNotifier {
   String get dualTasking =>
       {'en': 'Dual tasking', 'fr': 'Double tâche'}[language]!;
 
-  String get environment =>
-      {'en': 'Environment', 'fr': 'Environnement'}[language]!;
-  String get clinic => {'en': 'Clinic', 'fr': 'Clinique'}[language]!;
-  String get homeWithTherapist =>
-      {'en': 'Home with therapist', 'fr': 'Thérapie à la maison'}[language]!;
-  String get home => {'en': 'Home', 'fr': 'À la maison'}[language]!;
-
-  String get contraindications =>
-      {'en': 'Contraindications', 'fr': 'Contre-indications'}[language]!;
-  String get epilepsy => {'en': 'Epilepsy', 'fr': 'Épilepsie'}[language]!;
-  String get colorBlind => {'en': 'Color blind', 'fr': 'Daltonien'}[language]!;
-  String get noContraindication => {
-        'en': 'No contraindication',
-        'fr': 'Pas de contre-indication'
-      }[language]!;
-
   String get gameLength =>
       {'en': 'Game length', 'fr': 'Durée de jeu'}[language]!;
+  String get gameLengthTooltip => {
+        'en': 'To translate',
+        'fr': 'Inquiquer comment la durée du jeu devrait être déterminée'
+      }[language]!;
   String get predetermined =>
       {'en': 'Predetermined', 'fr': 'Prédéterminée'}[language]!;
   String get performanceBased =>
       {'en': 'Performance based', 'fr': 'Basée sur la performance'}[language]!;
 
   String get difficulty => {'en': 'Difficulty', 'fr': 'Difficulté'}[language]!;
+  String get difficultyTooltip => {
+        'en': 'To translate',
+        'fr':
+            'Indiquer comment les niveaux de difficulté du jeu devraient évoluer'
+      }[language]!;
   String get adjustable => {'en': 'Adjustable', 'fr': 'Ajustable'}[language]!;
 
   String get saveResults =>
       {'en': 'Saving results', 'fr': 'Sauvegarde des résultats'}[language]!;
-  String get canSave => {'en': 'Yes', 'fr': 'Oui'}[language]!;
-  String get cannotSave => {'en': 'No', 'fr': 'Non'}[language]!;
+  String get saveResultsTooltip => {
+        'en': 'To translate',
+        'fr':
+            'Indiquer s\'il est important de pouvoir sauvegarder les résultats du jeu'
+      }[language]!;
+  String get canSave => {'en': 'No', 'fr': 'Non'}[language]!;
+  String get cannotSave => {'en': 'Yes', 'fr': 'Oui'}[language]!;
 
   String get submit => {'en': 'Submit', 'fr': 'Soumettre'}[language]!;
   String get submitTooltip => {

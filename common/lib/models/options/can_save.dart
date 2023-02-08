@@ -8,7 +8,7 @@ class CanSave extends Option {
 
   static List<CanSave> get values => [
         CanSave.cannotSave,
-        CanSave.canSave,
+        //CanSave.canSave,
         CanSave.notImportant,
       ];
   static CanSave get cannotSave => const CanSave.from(choice: 0);
