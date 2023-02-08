@@ -122,8 +122,7 @@ class LocaleText with ChangeNotifier {
       }[language]!;
   String get adjustable => {'en': 'Adjustable', 'fr': 'Ajustable'}[language]!;
 
-  String get saveResults =>
-      {'en': 'Saving results', 'fr': 'Sauvegarde des résultats'}[language]!;
+  String get saveResults => {'en': 'Saving', 'fr': 'Sauvegarde'}[language]!;
   String get saveResultsTooltip => {
         'en': 'To translate',
         'fr':

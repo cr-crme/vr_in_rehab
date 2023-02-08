@@ -55,36 +55,34 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
 
     return Scaffold(
       appBar: VrAppBar(title: Text(LocaleText.of(context).appSelection)),
-      body: SingleChildScrollView(
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            ...algo.allOptions.entries.map<Widget>((choice) => SectionButton(
-                  choice.value.title,
-                  tooltip: choice.value.tooltip,
-                  options: choice.value.availableChoices,
-                  allowMultipleChoices: choice.value.allowMultipleChoices,
-                  width: _buttonWidth,
-                  cornerRadius: _buttonRadius,
-                  highlightedOptions: choice.value.currentChoices.toInt(),
-                  padding: EdgeInsets.only(top: _spacing),
-                  onSelectOption: (val) => _onSelectOption(val, algo),
-                )),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: Center(
-                child: Tooltip(
-                  message: _canSubmit ? "" : texts.submitTooltip,
-                  child: SubmitButton(
-                    texts.submit,
-                    width: 150,
-                    onPressed: _canSubmit ? () => _submit(context) : null,
-                  ),
+      body: ListView(
+        shrinkWrap: true,
+        children: [
+          ...algo.allOptions.entries.map<Widget>((choice) => SectionButton(
+                choice.value.title,
+                tooltip: choice.value.tooltip,
+                options: choice.value.availableChoices,
+                allowMultipleChoices: choice.value.allowMultipleChoices,
+                width: _buttonWidth,
+                cornerRadius: _buttonRadius,
+                highlightedOptions: choice.value.currentChoices.toInt(),
+                padding: EdgeInsets.only(top: _spacing),
+                onSelectOption: (val) => _onSelectOption(val, algo),
+              )),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20.0),
+            child: Center(
+              child: Tooltip(
+                message: _canSubmit ? "" : texts.submitTooltip,
+                child: SubmitButton(
+                  texts.submit,
+                  width: 150,
+                  onPressed: _canSubmit ? () => _submit(context) : null,
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
