@@ -19,21 +19,37 @@ class ResultsSummaryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final texts = LocaleText.of(context);
+
     return Scaffold(
-      appBar: VrAppBar(title: Text(LocaleText.of(context).appProposedGames)),
-      body: ListView(
-        shrinkWrap: true,
-        children: games
-            .map<Widget>(
-              (game) => ResultButton(
-                game,
-                width: _buttonWidth,
-                cornerRadius: _buttonRadius,
-                padding: EdgeInsets.only(top: _spacing),
-              ),
+      appBar: VrAppBar(title: Text(texts.appProposedGames)),
+      body: games.isNotEmpty
+          ? ListView(
+              shrinkWrap: true,
+              children: games
+                  .map<Widget>(
+                    (game) => ResultButton(
+                      game,
+                      width: _buttonWidth,
+                      cornerRadius: _buttonRadius,
+                      padding: EdgeInsets.only(top: _spacing),
+                    ),
+                  )
+                  .toList(),
             )
-            .toList(),
-      ),
+          : Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: Text(
+                  texts.noGameFound,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge!
+                      .copyWith(color: Colors.white),
+                ),
+              )),
     );
   }
 }

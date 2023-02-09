@@ -39,6 +39,10 @@ class LocaleText with ChangeNotifier {
         'en': 'Here a selection of games',
         'fr': 'Voici une sélection de jeux'
       }[language]!;
+  String get noGameFound => {
+        'en': 'No game found corresponds to requested criteria',
+        'fr': 'Aucun jeu ne correspond aux critères demandés'
+      }[language]!;
   String get all => {'en': 'All', 'fr': 'Tous'}[language]!;
   String get notImportant =>
       {'en': 'Not important', 'fr': 'Sans importance'}[language]!;
@@ -47,7 +51,8 @@ class LocaleText with ChangeNotifier {
       {'en': 'Upper extremity', 'fr': 'Membres supérieurs'}[language]!;
   String get upperExtremityTooltip => {
         'en': 'To translate',
-        'fr': 'Indiquer l\'exigence pour les membres supérieurs'
+        'fr':
+            'Pour les membres supérieurs, indiquer si le jeu doit exiger l\'utilisation de :'
       }[language]!;
   String get noArm => {'en': 'No arm', 'fr': 'Aucun bras'}[language]!;
   String get oneArm => {'en': 'One arm', 'fr': 'Un bras'}[language]!;
@@ -59,7 +64,8 @@ class LocaleText with ChangeNotifier {
       {'en': 'Lower extremity', 'fr': 'Membres inférieurs'}[language]!;
   String get lowerExtremityTooltip => {
         'en': 'To translate',
-        'fr': 'Indiquer l\'exigence pour les membres inférieurs'
+        'fr':
+            'Pour les membres inférieurs, indiquer si le jeu doit exiger les mouvements suivants :'
       }[language]!;
   String get static => {'en': 'Static', 'fr': 'Statique'}[language]!;
   String get dynamicInside =>

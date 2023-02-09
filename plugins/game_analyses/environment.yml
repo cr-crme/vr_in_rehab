@@ -1,5 +1,5 @@
 # create a dev conda environment with: `conda env create -f environment.yml`
-name: vr_in_rehabilitation
+name: vr_in_rehab
 channels:
 - conda-forge
 dependencies:
