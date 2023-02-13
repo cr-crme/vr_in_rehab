@@ -1,30 +1,30 @@
 import 'package:flutter/material.dart';
 
-ThemeData myTheme() {
-  const textTitleSize = 36.0;
-  const textSubtitleSize = 30.0;
-  const textSubsubtitleSize = 24.0;
-  const textSize = 18.0;
-  const textButtonSize = 18.0;
+const Color _backgroundColor = Color.fromARGB(255, 5, 94, 154);
 
+ThemeData get websiteTheme {
   return ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: Colors.lightBlue[800],
-    fontFamily: 'Hind',
-    elevatedButtonTheme: ElevatedButtonThemeData(
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all<Color>(
-            const Color.fromARGB(255, 106, 128, 146)),
-      ),
+    fontFamily: "Lato",
+    colorScheme: const ColorScheme(
+      brightness: Brightness.light,
+      primary: Color.fromARGB(255, 114, 184, 212),
+      onPrimary: Colors.black,
+      secondary: Color.fromARGB(255, 73, 163, 223),
+      onSecondary: Colors.white,
+      error: Colors.red,
+      onError: Colors.black,
+      background: _backgroundColor,
+      onBackground: Colors.white,
+      surface: _backgroundColor,
+      onSurface: Colors.black,
     ),
+    scaffoldBackgroundColor: _backgroundColor,
     textTheme: const TextTheme(
-      titleLarge:
-          TextStyle(fontSize: textTitleSize, fontStyle: FontStyle.italic),
-      titleMedium: TextStyle(fontSize: textSubtitleSize),
-      titleSmall: TextStyle(
-          fontSize: textSubsubtitleSize, decoration: TextDecoration.underline),
-      labelLarge: TextStyle(fontSize: textButtonSize),
-      bodyMedium: TextStyle(fontSize: textSize),
+      titleLarge: TextStyle(fontStyle: FontStyle.italic, color: Colors.white),
+      titleSmall:
+          TextStyle(decoration: TextDecoration.underline, color: Colors.white),
+      titleMedium: TextStyle(color: Colors.white),
+      bodyMedium: TextStyle(color: Colors.white),
     ),
   );
 }

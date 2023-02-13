@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
             create: (context) => LocaleText(language: defaultLanguage)),
       ],
       child: MaterialApp(
-        theme: myTheme(),
+        theme: websiteTheme,
         initialRoute: HomeScreen.route,
         routes: {
           HomeScreen.route: (ctx) => const HomeScreen(),
