@@ -200,10 +200,6 @@ class LocaleText with ChangeNotifier {
         'en': 'Consoles',
         'fr': 'Consoles',
       }[language]!;
-  String get forum => {
-        'en': 'Forum',
-        'fr': 'Forum',
-      }[language]!;
   String get ressources => {
         'en': 'Ressources',
         'fr': 'Ressources',

@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '/widgets/main_menu_button.dart';
 import '/widgets/scaffold_navigation.dart';
 import 'consoles_screen.dart';
-import 'forum_screen.dart';
 import 'generality_screen.dart';
 import 'ressources_screen.dart';
 
@@ -39,11 +38,6 @@ class HomeScreen extends StatelessWidget {
                       MainMenuButton(
                         title: texts.consoles,
                         route: ConsolesScreen.route,
-                      ),
-                      const SizedBox(height: 25),
-                      MainMenuButton(
-                        title: texts.forum,
-                        route: ForumScreen.route,
                       ),
                       const SizedBox(height: 25),
                       MainMenuButton(
