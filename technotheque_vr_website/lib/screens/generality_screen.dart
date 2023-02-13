@@ -23,10 +23,6 @@ class GeneralityScreen extends StatelessWidget {
         texts.generalityContraindicationVrTitle,
         texts.generalityContraindicationVrText
       ],
-      [
-        texts.generalityWebsiteNavigationTitle,
-        texts.generalityWebsiteNavigationText
-      ],
     ];
 
     return ScaffoldNavigation(

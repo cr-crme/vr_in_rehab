@@ -41,6 +41,7 @@ class ScaffoldNavigation extends StatelessWidget {
                             children: [
                               IconButton(
                                   icon: const Icon(Icons.arrow_back),
+                                  color: Colors.white,
                                   onPressed: () => _clickedBack(context)),
                             ],
                           ),

@@ -5,6 +5,7 @@ import '/widgets/main_menu_button.dart';
 import '/widgets/scaffold_navigation.dart';
 import 'consoles_screen.dart';
 import 'generality_screen.dart';
+import 'navigating_screen.dart';
 import 'ressources_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -57,6 +58,7 @@ class HomeScreen extends StatelessWidget {
     final buttons = {
       texts.generalityAndDescription: GeneralityScreen.route,
       texts.consoles: ConsolesScreen.route,
+      texts.navigationTitle: NavigatingScreen.route,
       texts.ressources: RessourcesScreen.route,
     };
 

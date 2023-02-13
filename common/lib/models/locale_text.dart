@@ -301,11 +301,11 @@ class LocaleText with ChangeNotifier {
             '$tab$bullet Le joueur peut avoir de la difficulté à repérer son corps dans l\'espace'
       }[language]!;
 
-  String get generalityWebsiteNavigationTitle => {
+  String get navigationTitle => {
         'en': 'Navigating this website',
         'fr': 'Fonctionnement du site internet',
       }[language]!;
-  String get generalityWebsiteNavigationText => {
+  String get navigationText => {
         'en': 'To translate',
         'fr': 'Le site web se veut un outil informatif qui permet aux cliniciens '
             'd\'avoir rapidement l\'information sur les différents jeux qui '
