@@ -8,7 +8,7 @@ class Console(Enum):
     habilup = "Habilup"
     xbox = "XBox"
     nintendo_switch = "Nintendo Switch"
-    oculus = "Oculus"
+    oculus = "Oculus VR/Meta Quest"
     vive = "Vive"
     unspecified = ""
 
@@ -24,7 +24,7 @@ class Console(Enum):
             return Console.xbox
         elif tag == "Nintendo Switch":
             return Console.nintendo_switch
-        elif tag == "Oculus":
+        elif tag == "Oculus VR/Meta Quest":
             return Console.oculus
         elif tag == "Vive":
             return Console.vive
