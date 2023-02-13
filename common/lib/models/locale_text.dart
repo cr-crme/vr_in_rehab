@@ -192,6 +192,20 @@ class LocaleText with ChangeNotifier {
         'en': 'Virtual reality in readapt',
         'fr': 'La réalité virtuelle en réadaptation',
       }[language]!;
+  String get websiteMain => {
+        'en': 'To translate',
+        'fr': 'Un site web fournissant des informations sur les jeux '
+            'vidéo en réalité virtuelle  et sur la pertinence de cette '
+            'technologie pour la réadaptation pédiatrique.\n'
+            'Bienvenue !',
+      }[language]!;
+  String get websiteGrants => {
+        'en': 'To translate',
+        'fr': 'Ce site web est disponible grâce à un projet financé par le FRQS '
+            'et dirigé par Danielle Levac, chercheuse au Technopole en '
+            'réadaptation pédiatrique, Centre de Réadaptation Marie Enfant, '
+            'CHU Sainte Justine.',
+      }[language]!;
   String get generalityAndDescription => {
         'en': 'Description and generality',
         'fr': 'Description et généralité',
@@ -417,11 +431,7 @@ class LocaleText with ChangeNotifier {
         'fr': 'Nous contacter',
       }[language]!;
   String get ressourcesContactUsText => {
-        'en': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n',
-        'fr': '$tab$bullet Lorem ipsum dolor sit amet, consectetur\n'
-            '$tab$bullet adipiscing elit. Phasellus augue nisi, scelerisque\n'
-            '$tab$bullet ut dictum vitae, pulvinar ac ex. Curabitur iaculi\n',
+        'en': '$tab$bullet laboinspire@gmail.com',
+        'fr': '$tab$bullet laboinspire@gmail.com',
       }[language]!;
 }
