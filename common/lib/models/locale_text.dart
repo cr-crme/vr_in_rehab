@@ -225,26 +225,27 @@ class LocaleText with ChangeNotifier {
       }[language]!;
   String get generalityWhatIsVrText => {
         'en': 'To translate',
-        'fr': 'La réalité virtuelle (RV) et les jeux vidéos actifs sont des '
-            'modalités de traitement émergentes dans le domaine de la '
-            'physiothérapie. Ce sont des systèmes où les joueurs utilisent le '
-            'mouvement de leur corps pour interagir avec les objets de '
-            'l\'univers virtuel (Levac et al. 2017).',
+        'fr': 'La réalité virtuelle se définit comme étant toute technologie '
+            'permettant une simulation interactive et en temps réel de la réalité, '
+            'par la création par ordinateur, à l\'aide d\'images de synthèse, d\'un '
+            'environnement virtuel en 3D dans lequel on peut évoluer (Office '
+            'québécois de la langue française, 2016).',
       }[language]!;
 
   String get generalityImmersiveVsNonImmersiveTitle => {
-        'en': 'Immersive VS non-immersive virtual reality?',
-        'fr': 'Immersive VS non-immersive réalité virtuelle?',
+        'en': 'To translate',
+        'fr': 'La réalité virtuelle immersive vs non-immersive',
       }[language]!;
   String get generalityImmersiveVsNonImmersiveText => {
         'en': 'To translate',
-        'fr': 'Il y a deux types de RV : immersive ou non-immersive. La RV '
-            'immersive fait référence à l\'utilisation d\'un casque audiovisuel '
-            'qui permet de s\'immerser dans l\'environnement du jeu.\n\n'
-            'La RV non-immersive fait référence à l\'utilisation d\'une console de '
-            'jeu pour interagir avec un environnement virtuel, sans toutefois '
-            'donner l\'impression de faire partie de cet environnement (Omlor et '
-            'al., Medical Education Online, 2022).',
+        'fr': 'La réalité virtuelle (RV) immersive s’agit des visiocasques '
+            'qui offrent une expérience tridimensionnelle (3D) où l\'affichage '
+            'visuel change en fonction de l’interaction avec un environnement '
+            'virtuel.\n'
+            'Add the picture of the child wearing the visiocasque (either one) in Element.\n'
+            'Dans la réalité virtuelle non immersive, l\'environnement virtuel est '
+            'affiché sur un écran 2D devant l\'utilisateur.\n'
+            '(add the picture of the child in front of the TV screen from Element.',
       }[language]!;
 
   String get generalityProsOfVrTitle => {

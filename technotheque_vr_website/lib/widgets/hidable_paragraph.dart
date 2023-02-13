@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 
 class HidableParagraph extends StatefulWidget {
   const HidableParagraph(
-      {super.key, required this.title, required this.paragraph});
+      {super.key,
+      required this.title,
+      required this.paragraph,
+      this.crossAxisAlignment = CrossAxisAlignment.start});
 
   final Widget title;
   final Widget paragraph;
+  final CrossAxisAlignment crossAxisAlignment;
 
   @override
   State<HidableParagraph> createState() => _HidableParagraphState();
@@ -59,7 +63,7 @@ class _HidableParagraphState extends State<HidableParagraph>
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: widget.crossAxisAlignment,
         children: [
           GestureDetector(
               onTap: _clickExpand,

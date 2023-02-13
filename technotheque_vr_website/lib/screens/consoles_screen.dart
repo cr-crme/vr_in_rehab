@@ -44,23 +44,23 @@ class ConsolesScreen extends StatelessWidget {
                 children: snapshot.data!
                     .map<Widget>((console) => Padding(
                           padding: const EdgeInsets.only(bottom: 10.0),
-                          child: Row(
-                            children: [
-                              HidableParagraph(
-                                  title: Text(console.title,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleSmall),
-                                  paragraph: _ConsoleDescription(
-                                    console: console,
-                                    onTap: () =>
-                                        _clickedConsole(context, console),
-                                  )),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width / 3,
-                                child: Image.network(console.imagePath),
-                              )
-                            ],
+                          child: HidableParagraph(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            title: Column(
+                              children: [
+                                Text(console.title,
+                                    style:
+                                        Theme.of(context).textTheme.titleSmall),
+                                SizedBox(
+                                  width: MediaQuery.of(context).size.width / 3,
+                                  child: Image.network(console.imagePath),
+                                )
+                              ],
+                            ),
+                            paragraph: _ConsoleDescription(
+                              console: console,
+                              onTap: () => _clickedConsole(context, console),
+                            ),
                           ),
                         ))
                     .toList(),
@@ -86,24 +86,21 @@ class _ConsoleDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
     const bullet = LocaleText.bullet;
-    return SizedBox(
-      width: MediaQuery.of(context).size.width / 2,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SelectableText(
-              '$bullet ${texts.consoleImmersiveTitle}${texts.colon} ${console.immersive[texts.language]}\n'
-              '$bullet ${texts.consoleTargetTitle}${texts.colon} ${console.target[texts.language]}\n'
-              '$bullet ${texts.consoleRequiredSpaceTitle}${texts.colon} ${console.requiredSpace[texts.language]}\n'
-              '$bullet ${texts.consolePrecautionsTitle}${texts.colon} ${console.precautions[texts.language]}\n'
-              '$bullet ${texts.consoleEquipmentsTitle}${texts.colon} ${console.equipments[texts.language]}\n'
-              '$bullet ${texts.consoleCostsTitle}${texts.colon} ${console.costs[texts.language]}\n'),
-          TextButton(
-            onPressed: onTap,
-            child: Text(texts.consoleClickHereForGames),
-          ),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SelectableText(
+            '$bullet ${texts.consoleImmersiveTitle}${texts.colon} ${console.immersive[texts.language]}\n'
+            '$bullet ${texts.consoleTargetTitle}${texts.colon} ${console.target[texts.language]}\n'
+            '$bullet ${texts.consoleRequiredSpaceTitle}${texts.colon} ${console.requiredSpace[texts.language]}\n'
+            '$bullet ${texts.consolePrecautionsTitle}${texts.colon} ${console.precautions[texts.language]}\n'
+            '$bullet ${texts.consoleEquipmentsTitle}${texts.colon} ${console.equipments[texts.language]}\n'
+            '$bullet ${texts.consoleCostsTitle}${texts.colon} ${console.costs[texts.language]}\n'),
+        TextButton(
+          onPressed: onTap,
+          child: Text(texts.consoleClickHereForGames),
+        ),
+      ],
     );
   }
 }
