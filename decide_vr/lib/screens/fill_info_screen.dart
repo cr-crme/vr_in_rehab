@@ -21,6 +21,7 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
   final double _buttonWidth = 250;
   final double _buttonRadius = 20;
   bool _canSubmit = false;
+  bool _hasSubmitted = false;
 
   @override
   void initState() {
@@ -55,35 +56,46 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
 
     return Scaffold(
       appBar: VrAppBar(title: Text(LocaleText.of(context).appSelection)),
-      body: ListView(
-        shrinkWrap: true,
-        children: [
-          ...algo.allOptions.entries.map<Widget>((choice) => SectionButton(
-                choice.value.title,
-                tooltip: choice.value.tooltip,
-                options: choice.value.availableChoices,
-                allowMultipleChoices: choice.value.allowMultipleChoices,
-                width: _buttonWidth,
-                cornerRadius: _buttonRadius,
-                highlightedOptions: choice.value.currentChoices.toInt(),
-                padding: EdgeInsets.only(top: _spacing),
-                onSelectOption: (val) => _onSelectOption(val, algo),
-              )),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 20.0),
-            child: Center(
-              child: Tooltip(
-                message: _canSubmit ? "" : texts.submitTooltip,
-                child: SubmitButton(
-                  texts.submit,
-                  width: 150,
-                  onPressed: _canSubmit ? () => _submit(context) : null,
+      body: _hasSubmitted
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : ListView(
+              shrinkWrap: true,
+              children: [
+                ...algo.allOptions.entries.map<Widget>((choice) =>
+                    SectionButton(
+                      choice.value.title,
+                      tooltip: choice.value.tooltip,
+                      options: choice.value.availableChoices,
+                      allowMultipleChoices: choice.value.allowMultipleChoices,
+                      width: _buttonWidth,
+                      cornerRadius: _buttonRadius,
+                      highlightedOptions: choice.value.currentChoices.toInt(),
+                      padding: EdgeInsets.only(top: _spacing),
+                      onSelectOption: (val) => _onSelectOption(val, algo),
+                    )),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  child: Center(
+                    child: Tooltip(
+                      message: _canSubmit ? "" : texts.submitTooltip,
+                      child: SubmitButton(
+                        texts.submit,
+                        width: 150,
+                        onPressed: _canSubmit
+                            ? () {
+                                _hasSubmitted = true;
+                                setState(() {});
+                                _submit(context);
+                              }
+                            : null,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+              ],
             ),
-          ),
-        ],
-      ),
     );
   }
 }
