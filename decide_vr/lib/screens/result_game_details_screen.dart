@@ -1,7 +1,6 @@
 import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
-import '/common/widgets/text_with_title.dart';
 import '/common/widgets/vr_app_bar.dart';
 
 class ResultGameDetailsScreen extends StatefulWidget {

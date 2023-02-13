@@ -1,3 +1,4 @@
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
 
 class TextWithTitle extends StatelessWidget {
@@ -5,8 +6,8 @@ class TextWithTitle extends StatelessWidget {
     this.title,
     this.text, {
     Key? key,
-    required this.titleStyle,
-    required this.textStyle,
+    this.titleStyle,
+    this.textStyle,
   }) : super(key: key);
 
   final String title;
@@ -16,10 +17,16 @@ class TextWithTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var textToPrint = text;
+    if (textToPrint.contains('\n')) {
+      textToPrint = textToPrint.replaceAll('\n', '\n\t${LocaleText.bullet} ');
+      textToPrint = '\n\t${LocaleText.bullet} $textToPrint';
+    }
+
     return RichText(
       text: TextSpan(children: [
         TextSpan(text: '$title : ', style: titleStyle ?? textStyle),
-        TextSpan(text: text, style: textStyle)
+        TextSpan(text: textToPrint, style: textStyle)
       ]),
     );
   }

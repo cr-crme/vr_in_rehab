@@ -76,22 +76,40 @@ class _ConsoleDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
-    const bullet = LocaleText.bullet;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SelectableText(
-            '$bullet ${texts.consoleImmersiveTitle}${texts.colon} ${console.immersive[texts.language]}\n'
-            '$bullet ${texts.consoleTargetTitle}${texts.colon} ${console.target[texts.language]}\n'
-            '$bullet ${texts.consoleRequiredSpaceTitle}${texts.colon} ${console.requiredSpace[texts.language]}\n'
-            '$bullet ${texts.consolePrecautionsTitle}${texts.colon} ${console.precautions[texts.language]}\n'
-            '$bullet ${texts.consoleEquipmentsTitle}${texts.colon} ${console.equipments[texts.language]}\n'
-            '$bullet ${texts.consoleCostsTitle}${texts.colon} ${console.costs[texts.language]}\n'),
-        TextButton(
-          onPressed: onTap,
-          child: Text(texts.consoleClickHereForGames),
-        ),
-      ],
+
+    final textStyle =
+        Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white);
+    const titleStyle = TextStyle(
+        fontWeight: FontWeight.bold, color: Color.fromARGB(255, 123, 255, 213));
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextWithTitle(
+              texts.consoleImmersiveTitle, console.immersive[texts.language]!,
+              titleStyle: titleStyle, textStyle: textStyle),
+          TextWithTitle(
+              texts.consoleTargetTitle, console.target[texts.language]!,
+              titleStyle: titleStyle, textStyle: textStyle),
+          TextWithTitle(texts.consoleRequiredSpaceTitle,
+              console.requiredSpace[texts.language]!,
+              titleStyle: titleStyle, textStyle: textStyle),
+          TextWithTitle(texts.consolePrecautionsTitle,
+              console.precautions[texts.language]!,
+              titleStyle: titleStyle, textStyle: textStyle),
+          TextWithTitle(
+              texts.consoleEquipmentsTitle, console.equipments[texts.language]!,
+              titleStyle: titleStyle, textStyle: textStyle),
+          TextWithTitle(texts.consoleCostsTitle, console.costs[texts.language]!,
+              titleStyle: titleStyle, textStyle: textStyle),
+          TextButton(
+            onPressed: onTap,
+            child: Text(texts.consoleClickHereForGames),
+          ),
+        ],
+      ),
     );
   }
 }
