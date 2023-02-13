@@ -10,18 +10,6 @@ class ConsolesScreen extends StatelessWidget {
 
   static const String route = '/consoles';
 
-  Future<List<Console>> _fetchConsoles() async {
-    return await readConsoles();
-  }
-
-  void _clickedConsole(BuildContext context, Console console) async {
-    final navigator = Navigator.of(context);
-    final allGames = await readGames();
-    final games =
-        allGames.where((game) => game.console == console.title).toList();
-    navigator.pushNamed(GamesScreen.route, arguments: [console, games]);
-  }
-
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
@@ -33,7 +21,7 @@ class ConsolesScreen extends StatelessWidget {
       child: Flexible(
         child: SingleChildScrollView(
           child: FutureBuilder<List<Console>>(
-            future: _fetchConsoles(),
+            future: readConsoles(),
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return const Center(child: CircularProgressIndicator());
@@ -60,7 +48,9 @@ class ConsolesScreen extends StatelessWidget {
                             ),
                             paragraph: _ConsoleDescription(
                               console: console,
-                              onTap: () => _clickedConsole(context, console),
+                              onTap: () => Navigator.of(context).pushNamed(
+                                  GamesScreen.route,
+                                  arguments: console),
                             ),
                           ),
                         ))

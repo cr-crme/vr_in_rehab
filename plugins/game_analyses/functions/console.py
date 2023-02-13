@@ -6,10 +6,10 @@ class Console(Enum):
     bootle_blast = "Bootle Blast"
     jintronix = "Jintronix"
     habilup = "Habilup"
-    xbox = "XBox"
+    xbox = "XBox 360 Kinect"
     nintendo_switch = "Nintendo Switch"
     oculus = "Oculus VR/Meta Quest"
-    vive = "Vive"
+    vive = "HTC Vive"
     unspecified = ""
 
     @staticmethod
@@ -20,13 +20,13 @@ class Console(Enum):
             return Console.jintronix
         elif tag == "Habilup":
             return Console.habilup
-        elif tag == "Xbox":
+        elif tag == "XBox 360 Kinect":
             return Console.xbox
         elif tag == "Nintendo Switch":
             return Console.nintendo_switch
         elif tag == "Oculus VR/Meta Quest":
             return Console.oculus
-        elif tag == "Vive":
+        elif tag == "HTC Vive":
             return Console.vive
         else:
             raise RuntimeError(f"Wrong choice of console ({tag})")
