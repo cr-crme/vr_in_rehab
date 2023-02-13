@@ -46,6 +46,7 @@ class ConsolesScreen extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 10.0),
                           child: HidableParagraph(
                             crossAxisAlignment: CrossAxisAlignment.center,
+                            textToExpand: texts.moreInformation,
                             title: Column(
                               children: [
                                 Text(console.title,
@@ -54,7 +55,7 @@ class ConsolesScreen extends StatelessWidget {
                                 SizedBox(
                                   width: MediaQuery.of(context).size.width / 3,
                                   child: Image.network(console.imagePath),
-                                )
+                                ),
                               ],
                             ),
                             paragraph: _ConsoleDescription(
