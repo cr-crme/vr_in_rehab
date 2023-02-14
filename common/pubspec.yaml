@@ -13,6 +13,7 @@ dependencies:
   enhanced_containers: ^0.1.0
   provider: ^6.0.4
   http: ^0.13.5
+  url_launcher: ^6.1.9
 
 dependency_overrides:
   enhanced_containers:

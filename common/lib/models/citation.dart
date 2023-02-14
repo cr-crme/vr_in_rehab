@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Author {
   const Author({
@@ -49,7 +50,7 @@ class Citation {
       }
     }
 
-    return RichText(
+    final out = RichText(
         text: TextSpan(children: [
       TextSpan(
           text: authors, style: const TextStyle(fontWeight: FontWeight.bold)),
@@ -66,7 +67,21 @@ class Citation {
             text: pages!.length == 1
                 ? ':${pages![0]}.'
                 : ':${pages!.first}-${pages!.last}.'),
-      if (doi != null) TextSpan(text: ' DOI: $doi'),
     ]));
+    return doi != null
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              out,
+              MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () => launchUrl(Uri.parse('http://dx.doi.org/$doi')),
+                  child: Text('DOI: $doi'),
+                ),
+              ),
+            ],
+          )
+        : out;
   }
 }
