@@ -13,13 +13,20 @@ class HomeScreen extends StatelessWidget {
 
   static const String route = '/home';
 
-  Widget _buildImageRow(BuildContext context, List<String> paths) {
+  Widget _buildImageRow(
+    BuildContext context,
+    List<String> paths, {
+    double? maxWidth,
+  }) {
     List<Widget> images = [];
+    var imageWidth = MediaQuery.of(context).size.width / (paths.length + 1);
+    if (maxWidth != null && imageWidth > maxWidth) imageWidth = maxWidth;
+
     for (final path in paths) {
       images.add(Padding(
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(
-          width: MediaQuery.of(context).size.width / (paths.length + 1),
+          width: imageWidth,
           child: Image.network('$rootAssetsPath/images/misc/$path'),
         ),
       ));
@@ -113,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  _buildImageRow(context, logoImagesPath),
+                  _buildImageRow(context, logoImagesPath, maxWidth: 100),
                 ],
               ),
             ),

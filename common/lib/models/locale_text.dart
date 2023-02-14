@@ -241,11 +241,17 @@ class LocaleText with ChangeNotifier {
         'fr': 'La réalité virtuelle (RV) immersive s’agit des visiocasques '
             'qui offrent une expérience tridimensionnelle (3D) où l\'affichage '
             'visuel change en fonction de l’interaction avec un environnement '
-            'virtuel.\n'
-            'Add the picture of the child wearing the visiocasque (either one) in Element.\n'
+            'virtuel.\n\n'
             'Dans la réalité virtuelle non immersive, l\'environnement virtuel est '
-            'affiché sur un écran 2D devant l\'utilisateur.\n'
-            '(add the picture of the child in front of the TV screen from Element.',
+            'affiché sur un écran 2D devant l\'utilisateur.\n',
+      }[language]!;
+  String get nonImmersiveGame => {
+        'en': 'To translate',
+        'fr': 'Exemple de jeu non-immersif',
+      }[language]!;
+  String get immersiveGame => {
+        'en': 'To translate',
+        'fr': 'Exemple de jeu immersif',
       }[language]!;
 
   String get generalityProsOfVrTitle => {
