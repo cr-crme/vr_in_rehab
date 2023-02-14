@@ -7,9 +7,9 @@ import '/screens/consoles_screen.dart';
 import '/screens/game_info_screen.dart';
 import '/screens/games_screen.dart';
 import '/screens/generality_screen.dart';
-import 'screens/navigating_screen.dart';
+import '/screens/navigating_screen.dart';
 import '/screens/home_screen.dart';
-import '/screens/ressources_screen.dart';
+import '/screens/resources_screen.dart';
 
 void main() {
   runApp(const MyApp(defaultLanguage: 'fr'));
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           NavigatingScreen.route: (ctx) => const NavigatingScreen(),
           GamesScreen.route: (ctx) => const GamesScreen(),
           GameInfoScreen.route: (ctx) => const GameInfoScreen(),
-          RessourcesScreen.route: (ctx) => const RessourcesScreen(),
+          ResourcesScreen.route: (ctx) => const ResourcesScreen(),
         },
       ),
     );

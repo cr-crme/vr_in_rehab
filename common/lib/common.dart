@@ -1,3 +1,4 @@
+export 'models/citation.dart';
 export 'models/console.dart';
 export 'models/game.dart';
 export 'models/helpers.dart';

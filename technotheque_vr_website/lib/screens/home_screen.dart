@@ -6,7 +6,7 @@ import '/widgets/scaffold_navigation.dart';
 import 'consoles_screen.dart';
 import 'generality_screen.dart';
 import 'navigating_screen.dart';
-import 'ressources_screen.dart';
+import 'resources_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -69,7 +69,7 @@ class HomeScreen extends StatelessWidget {
       texts.generalityAndDescription: GeneralityScreen.route,
       texts.consolesAndGames: ConsolesScreen.route,
       texts.navigationTitle: NavigatingScreen.route,
-      texts.ressources: RessourcesScreen.route,
+      texts.resources: ResourcesScreen.route,
     };
 
     final mainImagesPath = [

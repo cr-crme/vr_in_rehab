@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../models/citation.dart';
+
 class LocaleText with ChangeNotifier {
   LocaleText({required this.language});
 
@@ -214,8 +216,8 @@ class LocaleText with ChangeNotifier {
         'en': 'Consoles and games',
         'fr': 'Consoles et jeux',
       }[language]!;
-  String get ressources => {
-        'en': 'Ressources',
+  String get resources => {
+        'en': 'Resources',
         'fr': 'Ressources',
       }[language]!;
 
@@ -388,55 +390,119 @@ class LocaleText with ChangeNotifier {
         'fr': 'Coûts',
       }[language]!;
 
-  String get ressourcesListTitle => {
-        'en': 'List of ressources',
-        'fr': 'Liste des ressources',
+  String get resourcesListTitle => {
+        'en': 'List of scientific resources',
+        'fr': 'Liste des ressources scientifiques',
       }[language]!;
-  String get ressourcesListText => {
+  List<Citation> get resourcesListText => [
+        const Citation(
+            authors: [
+              Author(firstName: 'Danielle', lastName: 'Levac'),
+              Author(firstName: 'Stephanie', lastName: 'Glegg'),
+              Author(firstName: 'Heather', lastName: 'Colquhoun'),
+              Author(firstName: 'Patricia', lastName: 'Miller'),
+              Author(firstName: 'Farzad', lastName: 'Noubary'),
+            ],
+            year: 2017,
+            title: 'Virtual Reality and Active Videogame-Based Practice, '
+                'Learning Needs, and Preferences: A Cross-Canada Survey of '
+                'Physical Therapists and Occupational Therapists',
+            journal: 'Games for Health Journal',
+            volume: 6,
+            issue: 4,
+            pages: [217, 228],
+            doi: '10.1089/g4h.2016.0089'),
+        const Citation(
+            authors: [
+              Author(firstName: 'Danielle', lastName: 'Levac'),
+              Author(firstName: 'Deborah', lastName: 'Espy'),
+              Author(firstName: 'Emily', lastName: 'Fox'),
+              Author(firstName: 'Sujata', lastName: 'Pradhan'),
+              Author(firstName: 'Judith', middleName: 'E', lastName: 'Deutsch'),
+            ],
+            year: 2015,
+            title: '‘Kinect-Ing’ with Clinicians: A Knowledge Translation '
+                'Resource to Support Decision Making about Video Game Use in '
+                'Rehabilitation',
+            journal: 'Physical Therapy',
+            volume: 95,
+            issue: 3,
+            pages: [426, 440],
+            doi: '10.2522/ptj.20130618'),
+        const Citation(
+            authors: [
+              Author(firstName: 'Federica', lastName: 'Lino'),
+              Author(firstName: 'Valentina', lastName: 'Arcangeli'),
+              Author(firstName: 'Daniela', lastName: 'Pia'),
+            ],
+            year: 2021,
+            title: 'The Virtual Challenge: Virtual Reality Tools for '
+                'Intervention in Children with Developmental Coordination '
+                'Disorder',
+            journal: 'Children',
+            volume: 8,
+            issue: 4),
+        const Citation(
+            authors: [
+              Author(firstName: 'Priyanka', lastName: 'Banerjee-Guénette'),
+              Author(firstName: 'Sarah', lastName: 'Bigford'),
+              Author(
+                  firstName: 'Stephanie', middleName: 'M', lastName: 'Glegg'),
+            ],
+            year: 2020,
+            title: 'Facilitating the Implementation of Virtual Reality-Based '
+                'Therapies in Pediatric Rehabilitation',
+            journal: 'Physical and Occupational Therapy in Pediatrics',
+            volume: 40,
+            issue: 2,
+            pages: [201, 216],
+            doi: '10.1080/01942638.2019.1650867'),
+        const Citation(
+            authors: [
+              Author(firstName: 'Danielle', lastName: 'Levac'),
+              Author(firstName: 'Danielle', lastName: 'E'),
+              Author(
+                  firstName: 'Patricia', middleName: 'A', lastName: 'Miller'),
+            ],
+            year: 2013,
+            title: 'Integrating Virtual Reality Video Games into Practice: '
+                'Clinicians’ Experiences',
+            journal: 'Physiotherapy Theory and Practice',
+            volume: 29,
+            issue: 7,
+            pages: [504, 12],
+            doi: '10.3109/09593985.2012.762078'),
+        const Citation(
+            authors: [
+              Author(firstName: 'Jane', lastName: 'Galvin'),
+              Author(firstName: 'Danielle', lastName: 'Levac'),
+            ],
+            year: 2011,
+            title: '“Facilitating Clinical Decision-Making about the Use of '
+                'Virtual Reality within Paediatric Motor Rehabilitation: '
+                'Describing and Classifying Virtual Reality Systems',
+            journal: 'Developmental Neurorehabilitation',
+            volume: 14,
+            issue: 2,
+            pages: [112, 122]),
+      ];
+
+  String get resourcesInternetTitle => {
+        'en': 'Internet resources',
+        'fr': 'Site web des consoles créées pour la réadaptation',
+      }[language]!;
+  String get resourcesInternetText => {
         'en': 'To translate',
-        'fr': '$tab${bullet}Levac, Danielle, Stephanie Glegg, Heather Colquhoun, '
-            'Patricia Miller, and Farzad Noubary. 2017. “Virtual Reality and '
-            'Active Videogame-Based Practice, Learning Needs, and Preferences: '
-            'A Cross-Canada Survey of Physical Therapists and Occupational '
-            'Therapists.” Games for Health Journal 6(4):217–28. '
-            'doi: 10.1089/g4h.2016.0089.\n'
-            '$tab${bullet}Levac, Danielle, Deborah Espy, Emily Fox, Sujata '
-            'Pradhan, and Judith E. Deutsch. 2015. “‘Kinect-Ing’ with Clinicians: '
-            'A Knowledge Translation Resource to Support Decision Making about Video '
-            'Game Use in Rehabilitation.” Physical Therapy 95(3):426–40. '
-            'doi: 10.2522/ptj.20130618.\n'
-            '$tab${bullet}Lino, Federica, Valentina Arcangeli, and Daniela Pia '
-            'Rosaria Chieffo. 2021. “The Virtual Challenge: Virtual Reality Tools '
-            'for Intervention in Children with Developmental Coordination '
-            'Disorder.” Children 8(4).\n'
-            '$tab${bullet}Banerjee-Guénette, Priyanka, Sarah Bigford, and '
-            'Stephanie M. N. Glegg. 2020. “Facilitating the Implementation of '
-            'Virtual Reality-Based Therapies in Pediatric Rehabilitation.” '
-            'Physical and Occupational Therapy in Pediatrics 40(2):201–16. '
-            'doi: 10.1080/01942638.2019.1650867.\n'
-            '$tab${bullet}Levac, Danielle E., and Patricia A. Miller. 2013. '
-            '“Integrating Virtual Reality Video Games into Practice: Clinicians’ '
-            'Experiences.” Physiotherapy Theory and Practice 29(7):504–12. '
-            'doi: 10.3109/09593985.2012.762078.\n'
-            '$tab${bullet}Lino, Federica, Valentina Arcangeli, and Daniela Pia '
-            'Rosaria Chieffo. 2021. “The Virtual Challenge: Virtual Reality Tools '
-            'for Intervention in Children with Developmental Coordination '
-            'Disorder.” Children 8(4).\n'
-            '$tab${bullet}Galvin, Jane, and Danielle Levac. 2011. “Facilitating '
-            'Clinical Decision-Making about the Use of Virtual Reality within '
-            'Paediatric Motor Rehabilitation: Describing and Classifying Virtual '
-            'Reality Systems.” Developmental Neurorehabilitation 14(2):112–22.\n'
-            '\n'
-            'Site web des consoles créées pour la réadaptation :\n'
-            '$tab${bullet}Site Web Habilup : https://ubique-site.com/\n'
-            '$tab${bullet}Site Web BootleBlast : https://pearlinteractives.com/\n'
-            '$tab${bullet}Site Web de Jintronix : https://jintronix.com/fr/',
+        'fr': '$tab${bullet}Habilup : https://ubique-site.com/\n'
+            '$tab${bullet}BootleBlast : https://pearlinteractives.com/\n'
+            '$tab${bullet}Jintronix : https://jintronix.com/fr/',
       }[language]!;
-  String get ressourcesContactUsTitle => {
+
+  String get resourcesContactUsTitle => {
         'en': 'Contact us',
         'fr': 'Nous contacter',
       }[language]!;
-  String get ressourcesContactUsText => {
+  String get resourcesContactUsText => {
         'en': '$tab${bullet}laboinspire@gmail.com',
         'fr': '$tab${bullet}laboinspire@gmail.com',
       }[language]!;
