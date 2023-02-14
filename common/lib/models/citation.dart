@@ -60,7 +60,7 @@ class Citation {
       TextSpan(
           text: ' $journal',
           style: TextStyle(fontStyle: FontStyle.italic, color: color)),
-      TextSpan(text: ', $volume'),
+      TextSpan(text: ', $volume', style: TextStyle(color: color)),
       if (issue != null)
         TextSpan(text: '($issue)', style: TextStyle(color: color)),
       if (pages == null) TextSpan(text: '.', style: TextStyle(color: color)),

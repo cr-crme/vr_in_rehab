@@ -16,6 +16,7 @@ class ClickableText extends StatelessWidget {
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
+        // TODO: See why this does not work with web
         onTap: () => launchUrl(Uri.parse(url ?? text)),
         child: Text(text),
       ),
