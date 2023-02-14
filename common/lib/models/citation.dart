@@ -1,5 +1,5 @@
+import 'package:common/common.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Author {
   const Author({
@@ -73,13 +73,7 @@ class Citation {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               out,
-              MouseRegion(
-                cursor: SystemMouseCursors.click,
-                child: GestureDetector(
-                  onTap: () => launchUrl(Uri.parse('http://dx.doi.org/$doi')),
-                  child: Text('DOI: $doi'),
-                ),
-              ),
+              ClickableText('DOI: $doi', url: 'http://dx.doi.org/$doi'),
             ],
           )
         : out;

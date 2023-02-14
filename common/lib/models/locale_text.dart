@@ -491,19 +491,20 @@ class LocaleText with ChangeNotifier {
         'en': 'Internet resources',
         'fr': 'Site web des consoles créées pour la réadaptation',
       }[language]!;
-  String get resourcesInternetText => {
-        'en': 'To translate',
-        'fr': '$tab${bullet}Habilup : https://ubique-site.com/\n'
-            '$tab${bullet}BootleBlast : https://pearlinteractives.com/\n'
-            '$tab${bullet}Jintronix : https://jintronix.com/fr/',
-      }[language]!;
+  List<List<String>> get resourcesInternetText => [
+        ['$tab${bullet}Habilup :', 'https://ubique-site.com/'],
+        ['$tab${bullet}BootleBlast :', 'https://pearlinteractives.com/'],
+        ['$tab${bullet}Jintronix :', 'https://jintronix.com/fr/']
+      ];
 
   String get resourcesContactUsTitle => {
         'en': 'Contact us',
         'fr': 'Nous contacter',
       }[language]!;
   String get resourcesContactUsText => {
-        'en': '$tab${bullet}laboinspire@gmail.com',
-        'fr': '$tab${bullet}laboinspire@gmail.com',
+        'en': 'To translate',
+        'fr':
+            'Pour nous contacter, vous êtes invités à nous écrire à cette adresse : ',
       }[language]!;
+  String get email => 'laboinspire@gmail.com';
 }

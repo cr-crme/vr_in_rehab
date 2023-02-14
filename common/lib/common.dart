@@ -4,5 +4,6 @@ export 'models/game.dart';
 export 'models/helpers.dart';
 export 'models/locale_text.dart';
 export 'models/options/options.dart';
+export 'widgets/clickable_text.dart';
 export 'widgets/selectable_separated_text.dart';
 export 'widgets/text_with_title.dart';

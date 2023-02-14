@@ -7,9 +7,11 @@ class SelectableSeparatedText extends StatelessWidget {
   const SelectableSeparatedText({
     Key? key,
     required this.text,
+    this.childToAppend,
   }) : super(key: key);
 
   final String text;
+  final Widget? childToAppend;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +27,13 @@ class SelectableSeparatedText extends StatelessWidget {
 
       out.add(Padding(
         padding: EdgeInsets.only(left: hasTab ? 20 : 0, bottom: 8),
-        child: hasBullet
+        child: hasBullet || childToAppend != null
             ? Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('${LocaleText.bullet} '),
-                  Expanded(child: SelectableText(t))
+                  if (hasBullet) const Text('${LocaleText.bullet} '),
+                  Flexible(child: SelectableText(t)),
+                  if (childToAppend != null) childToAppend!,
                 ],
               )
             : SelectableText(t),
