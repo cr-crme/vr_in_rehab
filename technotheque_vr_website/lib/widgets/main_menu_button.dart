@@ -13,7 +13,7 @@ class MainMenuButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => Navigator.of(context).pushNamed(route),
         child: SizedBox(
-          width: 250,
+          width: MediaQuery.of(context).size.width / 3,
           height: 60,
           child: Center(
               child: Text(

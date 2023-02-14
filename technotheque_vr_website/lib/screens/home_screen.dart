@@ -64,7 +64,7 @@ class HomeScreen extends StatelessWidget {
 
     final buttons = {
       texts.generalityAndDescription: GeneralityScreen.route,
-      texts.consoles: ConsolesScreen.route,
+      texts.consolesAndGames: ConsolesScreen.route,
       texts.navigationTitle: NavigatingScreen.route,
       texts.ressources: RessourcesScreen.route,
     };
@@ -90,11 +90,17 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 40, right: 40),
+                    padding:
+                        const EdgeInsets.only(left: 40, right: 40, bottom: 40),
                     child: Text(
                       texts.websiteMain,
                       textAlign: TextAlign.center,
                     ),
+                  ),
+                  SizedBox(
+                    width: MediaQuery.of(context).size.width / 3,
+                    child: Image.network(
+                        '$rootAssetsPath/images/misc/logo_technotheque.png'),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
@@ -102,16 +108,29 @@ class HomeScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _buildMenuColumn(buttons),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width / 3,
+                          width: MediaQuery.of(context).size.width / 4,
                           child: Image.network(
-                              '$rootAssetsPath/images/misc/logo_technotheque.png'),
+                              '$rootAssetsPath/images/misc/${mainImagesPath[0]}'),
+                        ),
+                        _buildMenuColumn(buttons),
+                        Column(
+                          children: [
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 4,
+                              child: Image.network(
+                                  '$rootAssetsPath/images/misc/${mainImagesPath[1]}'),
+                            ),
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 4,
+                              child: Image.network(
+                                  '$rootAssetsPath/images/misc/${mainImagesPath[2]}'),
+                            ),
+                          ],
                         ),
                       ],
                     ),
                   ),
-                  _buildImageRow(context, mainImagesPath),
                   Padding(
                     padding:
                         const EdgeInsets.only(top: 50, left: 40.0, right: 40.0),

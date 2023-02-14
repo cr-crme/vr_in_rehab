@@ -210,9 +210,9 @@ class LocaleText with ChangeNotifier {
         'en': 'Description and generality',
         'fr': 'Description et généralité',
       }[language]!;
-  String get consoles => {
-        'en': 'Consoles',
-        'fr': 'Consoles',
+  String get consolesAndGames => {
+        'en': 'Consoles and games',
+        'fr': 'Consoles et jeux',
       }[language]!;
   String get ressources => {
         'en': 'Ressources',

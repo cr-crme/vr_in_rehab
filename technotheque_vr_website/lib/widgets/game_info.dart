@@ -10,21 +10,15 @@ class GameInfo extends StatelessWidget {
   final Game game;
 
   Widget _buildText(BuildContext context, String title, String text) {
-    final colon = LocaleText.of(context, listen: false).colon;
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text('$title$colon ',
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(fontWeight: FontWeight.bold)),
-        Padding(
-          padding: const EdgeInsets.only(left: 15.0),
-          child: Text(text, style: Theme.of(context).textTheme.bodyLarge!),
-        ),
-      ],
+    final textStyle =
+        Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.white);
+    const titleStyle = TextStyle(
+        fontWeight: FontWeight.bold, color: Color.fromARGB(255, 123, 255, 213));
+
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0),
+      child: TextWithTitle(title, text,
+          titleStyle: titleStyle, textStyle: textStyle),
     );
   }
 

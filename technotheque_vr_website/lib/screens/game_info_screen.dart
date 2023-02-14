@@ -12,7 +12,6 @@ class GameInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
-
     final game = ModalRoute.of(context)!.settings.arguments as Game;
 
     return ScaffoldNavigation(

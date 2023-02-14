@@ -19,23 +19,22 @@ class GamesScreen extends StatelessWidget {
     const tileWidth = 200;
     final nbTiles = screenSize.width ~/ tileWidth;
 
-    return ScaffoldNavigation(
-        mainTitle: texts.websiteTitle,
-        subTitle: console.title,
-        withBackButton: true,
-        child: FutureBuilder<List<Game>>(
-            future: readGames(),
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return const Center(child: CircularProgressIndicator());
-              }
+    return FutureBuilder<List<Game>>(
+        future: readGames(),
+        builder: (context, snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
 
-              final allGames = snapshot.data!;
-              final games = allGames
-                  .where((game) => game.console == console.title)
-                  .toList();
+          final allGames = snapshot.data!;
+          final games =
+              allGames.where((game) => game.console == console.title).toList();
 
-              return SizedBox(
+          return ScaffoldNavigation(
+              mainTitle: texts.websiteTitle,
+              subTitle: console.title,
+              withBackButton: true,
+              child: SizedBox(
                 width: (nbTiles * tileWidth).toDouble(),
                 height: screenSize.height - 100,
                 child: GridView.count(
@@ -48,7 +47,7 @@ class GamesScreen extends StatelessWidget {
                       .map<GameThumbnail>((game) => GameThumbnail(game: game))
                       .toList(),
                 ),
-              );
-            }));
+              ));
+        });
   }
 }
