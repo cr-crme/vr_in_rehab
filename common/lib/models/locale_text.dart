@@ -241,7 +241,7 @@ class LocaleText with ChangeNotifier {
         'fr': 'La réalité virtuelle (RV) immersive s’agit des visiocasques '
             'qui offrent une expérience tridimensionnelle (3D) où l\'affichage '
             'visuel change en fonction de l’interaction avec un environnement '
-            'virtuel.\n\n'
+            'virtuel.\n'
             'Dans la réalité virtuelle non immersive, l\'environnement virtuel est '
             'affiché sur un écran 2D devant l\'utilisateur.\n',
       }[language]!;
@@ -289,7 +289,7 @@ class LocaleText with ChangeNotifier {
             'traitements établis par les professionnels de la physiothérapie '
             '(Lino et al. 2021). En effet, l\'environnement virtuel permet de '
             'travailler des tâches que l\'enfant réaliserait dans la vie '
-            'réelle (Galvin and Levac 2011).\n',
+            'réelle (Galvin and Levac 2011).',
       }[language]!;
 
   String get generalityContraindicationVrTitle => {
@@ -299,7 +299,7 @@ class LocaleText with ChangeNotifier {
   String get generalityContraindicationVrText => {
         'en': 'To translate',
         'fr': 'La RV immersive est contre-indiquée pour les cas suivants :\n'
-            '$tab$bullet  Épilepsie\n\n'
+            '$tab$bullet Épilepsie\n\n'
             'Pour la RV immersive, les précautions sont les suivantes :\n'
             '$tab$bullet Joueur pourrait trébucher dans des objets s\'il n\'a pas l\'espace adéquat\n'
             '$tab$bullet Casque peut donner des nausées, étourdissements et mal de cœur\n'
@@ -320,8 +320,7 @@ class LocaleText with ChangeNotifier {
             'pour l\'enfants en thérapie. 7 différentes consoles ont été analysées '
             'et plusieurs jeux par consoles, pour un grand total de plus de 100 jeux '
             'disponibles dans ce site.\n'
-            '\n'
-            'Les informations qui se retrouvent pour chaque console sont les suivantes :'
+            'Les informations qui se retrouvent pour chaque console sont les suivantes :\n'
             '$tab$bullet Type de RV : immersive vs non-immersive? Il y a '
             'certaines précautions à prendre en compte pour la RV immersive, '
             'certains enfants ne la toléreront pas ou il est contre-indiqué '

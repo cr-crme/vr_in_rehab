@@ -39,6 +39,26 @@ class GeneralityScreen extends StatelessWidget {
         paragraph: child);
   }
 
+  Widget _separateText(String text) {
+    final textToAdd = separateText(text);
+
+    final List<Widget> tp = [];
+    for (var t in textToAdd) {
+      final hasTab = t.indexOf(LocaleText.tab) == 0;
+      t = hasTab ? t.substring(LocaleText.tab.length) : t;
+
+      tp.add(Padding(
+        padding: EdgeInsets.only(left: hasTab ? 20 : 0, bottom: 8.0),
+        child: SelectableText(t),
+      ));
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: tp,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
@@ -54,12 +74,12 @@ class GeneralityScreen extends StatelessWidget {
               children: [
                 _buildHidable(context,
                     title: texts.generalityWhatIsVrTitle,
-                    child: SelectableText(texts.generalityWhatIsVrText)),
+                    child: _separateText(texts.generalityWhatIsVrText)),
                 _buildHidable(context,
                     title: texts.generalityImmersiveVsNonImmersiveTitle,
                     child: Column(
                       children: [
-                        SelectableText(
+                        _separateText(
                             texts.generalityImmersiveVsNonImmersiveText),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -78,11 +98,11 @@ class GeneralityScreen extends StatelessWidget {
                     )),
                 _buildHidable(context,
                     title: texts.generalityProsOfVrTitle,
-                    child: SelectableText(texts.generalityProsOfVrText)),
+                    child: _separateText(texts.generalityProsOfVrText)),
                 _buildHidable(context,
                     title: texts.generalityContraindicationVrTitle,
                     child:
-                        SelectableText(texts.generalityContraindicationVrText)),
+                        _separateText(texts.generalityContraindicationVrText)),
               ],
             ),
           ),
