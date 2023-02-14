@@ -36,8 +36,7 @@ class MyApp extends StatelessWidget {
                 builder: (ctx) => const FillingInfoScreen());
           } else if (settings.name == ResultsSummaryScreen.route) {
             return MaterialPageRoute(
-                builder: (ctx) => ResultsSummaryScreen(
-                    games: settings.arguments as List<Game>));
+                builder: (ctx) => const ResultsSummaryScreen());
           } else if (settings.name == ResultGameDetailsScreen.route) {
             return MaterialPageRoute(
                 builder: (ctx) =>
