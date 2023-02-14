@@ -17,17 +17,33 @@ class TextWithTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textToPrint = text;
-    if (textToPrint.contains('\n')) {
-      textToPrint = textToPrint.replaceAll('\n', '\n\t${LocaleText.bullet} ');
-      textToPrint = '\n\t${LocaleText.bullet} $textToPrint';
-    }
+    final mainText = separateText(text);
+    final hasBullet = mainText.length > 1;
 
-    return RichText(
-      text: TextSpan(children: [
-        TextSpan(text: '$title : ', style: titleStyle ?? textStyle),
-        TextSpan(text: textToPrint, style: textStyle)
-      ]),
-    );
+    return hasBullet
+        ? Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('$title : ', style: titleStyle ?? textStyle),
+              ...mainText.map<Widget>(
+                (e) => Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text('${LocaleText.bullet} '),
+                      Expanded(child: Text(e, style: textStyle)),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          )
+        : RichText(
+            text: TextSpan(children: [
+              TextSpan(text: '$title : ', style: titleStyle ?? textStyle),
+              TextSpan(text: mainText[0], style: textStyle)
+            ]),
+          );
   }
 }

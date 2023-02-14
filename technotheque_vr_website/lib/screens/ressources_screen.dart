@@ -29,10 +29,12 @@ class RessourcesScreen extends StatelessWidget {
                   .map<Widget>((e) => HidableParagraph(
                       title: Text(e[0],
                           style: Theme.of(context).textTheme.titleSmall),
-                      paragraph: SelectableText(e[1])))
+                      paragraph: SelectableSeparatedText(text: e[1])))
                   .toList(),
             ),
           ),
         ));
   }
 }
+
+

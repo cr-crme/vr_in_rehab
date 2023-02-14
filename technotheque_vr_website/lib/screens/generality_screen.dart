@@ -39,26 +39,6 @@ class GeneralityScreen extends StatelessWidget {
         paragraph: child);
   }
 
-  Widget _separateText(String text) {
-    final textToAdd = separateText(text);
-
-    final List<Widget> tp = [];
-    for (var t in textToAdd) {
-      final hasTab = t.indexOf(LocaleText.tab) == 0;
-      t = hasTab ? t.substring(LocaleText.tab.length) : t;
-
-      tp.add(Padding(
-        padding: EdgeInsets.only(left: hasTab ? 20 : 0, bottom: 8.0),
-        child: SelectableText(t),
-      ));
-    }
-
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: tp,
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final texts = LocaleText.of(context);
@@ -74,13 +54,14 @@ class GeneralityScreen extends StatelessWidget {
               children: [
                 _buildHidable(context,
                     title: texts.generalityWhatIsVrTitle,
-                    child: _separateText(texts.generalityWhatIsVrText)),
+                    child: SelectableSeparatedText(
+                        text: texts.generalityWhatIsVrText)),
                 _buildHidable(context,
                     title: texts.generalityImmersiveVsNonImmersiveTitle,
                     child: Column(
                       children: [
-                        _separateText(
-                            texts.generalityImmersiveVsNonImmersiveText),
+                        SelectableSeparatedText(
+                            text: texts.generalityImmersiveVsNonImmersiveText),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
@@ -98,11 +79,12 @@ class GeneralityScreen extends StatelessWidget {
                     )),
                 _buildHidable(context,
                     title: texts.generalityProsOfVrTitle,
-                    child: _separateText(texts.generalityProsOfVrText)),
+                    child: SelectableSeparatedText(
+                        text: texts.generalityProsOfVrText)),
                 _buildHidable(context,
                     title: texts.generalityContraindicationVrTitle,
-                    child:
-                        _separateText(texts.generalityContraindicationVrText)),
+                    child: SelectableSeparatedText(
+                        text: texts.generalityContraindicationVrText)),
               ],
             ),
           ),
