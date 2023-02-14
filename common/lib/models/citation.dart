@@ -41,7 +41,7 @@ class Citation {
   final List<int>? pages;
   final String? doi;
 
-  Widget get toWidget {
+  Widget toWidget({Color? color}) {
     String authors = '';
     for (int i = 0; i < this.authors.length; i++) {
       authors += this.authors[i].toString();
@@ -53,20 +53,23 @@ class Citation {
     final out = RichText(
         text: TextSpan(children: [
       TextSpan(
-          text: authors, style: const TextStyle(fontWeight: FontWeight.bold)),
-      TextSpan(text: ' ($year)'),
-      TextSpan(text: ', "$title",'),
+          text: authors,
+          style: TextStyle(fontWeight: FontWeight.bold, color: color)),
+      TextSpan(text: ' ($year)', style: TextStyle(color: color)),
+      TextSpan(text: ', "$title",', style: TextStyle(color: color)),
       TextSpan(
           text: ' $journal',
-          style: const TextStyle(fontStyle: FontStyle.italic)),
+          style: TextStyle(fontStyle: FontStyle.italic, color: color)),
       TextSpan(text: ', $volume'),
-      if (issue != null) TextSpan(text: '($issue)'),
-      if (pages == null) const TextSpan(text: '.'),
+      if (issue != null)
+        TextSpan(text: '($issue)', style: TextStyle(color: color)),
+      if (pages == null) TextSpan(text: '.', style: TextStyle(color: color)),
       if (pages != null)
         TextSpan(
             text: pages!.length == 1
                 ? ':${pages![0]}.'
-                : ':${pages!.first}-${pages!.last}.'),
+                : ':${pages!.first}-${pages!.last}.',
+            style: TextStyle(color: color)),
     ]));
     return doi != null
         ? Column(

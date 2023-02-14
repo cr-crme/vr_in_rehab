@@ -34,7 +34,8 @@ class ResourcesScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     const Text('${LocaleText.bullet} '),
-                                    Expanded(child: e.toWidget),
+                                    Expanded(
+                                        child: e.toWidget(color: Colors.white)),
                                   ],
                                 ),
                               ))
