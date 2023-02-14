@@ -332,7 +332,7 @@ class LocaleText with ChangeNotifier {
             'Les jeux sont souvent plus simples également.\n'
             '$tab${bullet}Espace requis\n'
             '$tab${bullet}Précautions\n'
-            '$tab${bullet}Équipement nécessaire\n'
+            '$tab$bulletÉquipement nécessaire\n'
             '$tab${bullet}Coût\n'
             '\n'
             'Les informations qui se retrouvent pour chaque jeu sont les '

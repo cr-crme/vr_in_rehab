@@ -27,7 +27,10 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: SizedBox(
           width: imageWidth,
-          child: Image.network('$rootAssetsPath/images/misc/$path'),
+          child: Image.network(
+            '$rootAssetsPath/images/misc/$path',
+            errorBuilder: (context, error, stackTrace) => Container(),
+          ),
         ),
       ));
     }
@@ -100,7 +103,9 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 3,
                     child: Image.network(
-                        '$rootAssetsPath/images/misc/logo_technotheque.png'),
+                      '$rootAssetsPath/images/misc/logo_technotheque.png',
+                      errorBuilder: (context, error, stackTrace) => Container(),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
@@ -111,7 +116,10 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           width: MediaQuery.of(context).size.width / 4,
                           child: Image.network(
-                              '$rootAssetsPath/images/misc/${mainImagesPath[0]}'),
+                            '$rootAssetsPath/images/misc/${mainImagesPath[0]}',
+                            errorBuilder: (context, error, stackTrace) =>
+                                Container(),
+                          ),
                         ),
                         _buildMenuColumn(buttons),
                         Column(
@@ -119,12 +127,18 @@ class HomeScreen extends StatelessWidget {
                             SizedBox(
                               width: MediaQuery.of(context).size.width / 4,
                               child: Image.network(
-                                  '$rootAssetsPath/images/misc/${mainImagesPath[1]}'),
+                                '$rootAssetsPath/images/misc/${mainImagesPath[1]}',
+                                errorBuilder: (context, error, stackTrace) =>
+                                    Container(),
+                              ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width / 4,
                               child: Image.network(
-                                  '$rootAssetsPath/images/misc/${mainImagesPath[2]}'),
+                                '$rootAssetsPath/images/misc/${mainImagesPath[2]}',
+                                errorBuilder: (context, error, stackTrace) =>
+                                    Container(),
+                              ),
                             ),
                           ],
                         ),

@@ -15,7 +15,10 @@ class GeneralityScreen extends StatelessWidget {
       width: MediaQuery.of(context).size.width / 3,
       child: Column(
         children: [
-          Image.network(path),
+          Image.network(
+            path,
+            errorBuilder: (context, error, stackTrace) => Container(),
+          ),
           Text(title, textAlign: TextAlign.center),
         ],
       ),

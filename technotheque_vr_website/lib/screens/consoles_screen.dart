@@ -42,7 +42,12 @@ class ConsolesScreen extends StatelessWidget {
                                         Theme.of(context).textTheme.titleSmall),
                                 SizedBox(
                                   width: MediaQuery.of(context).size.width / 3,
-                                  child: Image.network(console.imagePath),
+                                  child: Image.network(
+                                    console.imagePath,
+                                    errorBuilder:
+                                        (context, error, stackTrace) =>
+                                            Container(),
+                                  ),
                                 ),
                               ],
                             ),

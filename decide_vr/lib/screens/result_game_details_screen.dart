@@ -104,7 +104,11 @@ class _ResultGameDetailsScreenState extends State<ResultGameDetailsScreen>
                     child: FittedBox(
                         fit: BoxFit.contain,
                         child: widget.game.thumbnailPath != null
-                            ? Image.network(widget.game.thumbnailPath!)
+                            ? Image.network(
+                                widget.game.thumbnailPath!,
+                                errorBuilder: (context, error, stackTrace) =>
+                                    Container(),
+                              )
                             : null),
                   ),
                   TextWithTitle(

@@ -31,7 +31,7 @@ class TextWithTitle extends StatelessWidget {
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('${LocaleText.bullet} '),
+                      Text('${LocaleText.bullet} ', style: textStyle),
                       Expanded(child: Text(e, style: textStyle)),
                     ],
                   ),

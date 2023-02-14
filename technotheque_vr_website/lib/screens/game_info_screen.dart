@@ -32,7 +32,11 @@ class GameInfoScreen extends StatelessWidget {
                   child: FittedBox(
                       fit: BoxFit.contain,
                       child: game.thumbnailPath != null
-                          ? Image.network(game.thumbnailPath!)
+                          ? Image.network(
+                              game.thumbnailPath!,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  Container(),
+                            )
                           : null),
                 ),
               ],
