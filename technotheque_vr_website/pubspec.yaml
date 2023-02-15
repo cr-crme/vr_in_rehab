@@ -24,11 +24,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  fonts: 
-    - family: Lato
-      fonts:
-        - asset: ../common/fonts/Lato/Lato-Regular.ttf
-        - asset: ../common/fonts/Lato/Lato-Italic.ttf
-          style: italic
-        - asset: ../common/fonts/Lato/Lato-Bold.ttf
-          weight: 700

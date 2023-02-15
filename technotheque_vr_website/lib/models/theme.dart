@@ -4,7 +4,6 @@ const Color _backgroundColor = Color.fromARGB(255, 5, 94, 154);
 
 ThemeData get websiteTheme {
   return ThemeData(
-    fontFamily: "Lato",
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
       primary: Color.fromARGB(255, 114, 184, 212),
