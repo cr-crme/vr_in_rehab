@@ -12,7 +12,7 @@ class Console {
     required this.precautions,
     required this.equipments,
     required this.costs,
-    required this.imagePath,
+    required this.thumbnailPath,
   });
 
   final String title;
@@ -22,7 +22,7 @@ class Console {
   final Map<String, String> precautions;
   final Map<String, String> equipments;
   final Map<String, String> costs;
-  final String imagePath;
+  final String thumbnailPath;
 
   @override
   bool operator ==(covariant Console other) {
@@ -56,7 +56,8 @@ Future<List<Console>> readConsoles() async {
       precautions: _toStrMap(map[console]['precautions']),
       equipments: _toStrMap(map[console]['equipments']),
       costs: _toStrMap(map[console]['costs']),
-      imagePath: '$rootAssetsPath/images/consoles/${map[console]['imagePath']}',
+      thumbnailPath:
+          '$rootAssetsPath/images/consoles/${map[console]['thumbnailPath']}',
     ));
   }
   return out;

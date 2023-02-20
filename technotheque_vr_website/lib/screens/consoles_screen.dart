@@ -43,7 +43,7 @@ class ConsolesScreen extends StatelessWidget {
                                 SizedBox(
                                   width: MediaQuery.of(context).size.width / 3,
                                   child: Image.network(
-                                    console.imagePath,
+                                    console.thumbnailPath,
                                     errorBuilder:
                                         (context, error, stackTrace) =>
                                             Container(),

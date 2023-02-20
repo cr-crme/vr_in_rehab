@@ -10,6 +10,7 @@ class Game extends ItemSerializable {
   final String collection;
   final String console;
   final String? thumbnailPath;
+  final String? videoDemoPath;
 
   // Information about the game
   final Map<String, String> _description;
@@ -31,8 +32,11 @@ class Game extends ItemSerializable {
       : title = map['title'],
         collection = map['collection'],
         console = map['console'],
-        thumbnailPath = map['imagePath'] != null
-            ? '$rootAssetsPath/images/games/${map['imagePath']}'
+        thumbnailPath = map['thumbnailPath'] != null
+            ? '$rootAssetsPath/images/games/${map['thumbnailPath']}'
+            : null,
+            videoDemoPath = map['videoDemoPath'] != null
+            ? '$rootAssetsPath/images/games/${map['videoDemoPath']}'
             : null,
         _description = map['information']['description'].cast<String, String>(),
         _time = map['information']['time'].cast<String, String>(),

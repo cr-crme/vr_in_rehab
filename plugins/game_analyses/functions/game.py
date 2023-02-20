@@ -31,7 +31,7 @@ class Game:
             "title": self.name,
             "collection": self.collection,
             "console": self.console.value,
-            "imagePath": self.image_path,
+            "thumbnailPath": self.image_path,
             "information": {
                 "description": {"en": self.information["en"].description, "fr": self.information["fr"].description},
                 "time": {"en": self.information["en"].time, "fr": self.information["fr"].time},
