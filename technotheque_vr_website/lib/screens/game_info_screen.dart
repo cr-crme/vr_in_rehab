@@ -57,31 +57,14 @@ class _GameInfoThumbnail extends StatefulWidget {
 }
 
 class _GameInfoThumbnailState extends State<_GameInfoThumbnail> {
-  late final VideoPlayerController? _controller;
-  late final Future<void>? _initializeVideoPlayerFuture;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _controller = widget.videoPath != null
-        ? VideoPlayerController.network(widget.videoPath!)
-        : null;
-    _initializeVideoPlayerFuture = _controller?.initialize();
-  }
+  late final VideoPlayerController? _controller = widget.videoPath != null
+      ? VideoPlayerController.network(widget.videoPath!)
+      : null;
 
   @override
   void dispose() {
     super.dispose();
     _controller?.dispose();
-  }
-
-  void _toggleVideoPlaying() {
-    if (_controller!.value.isPlaying) {
-      _controller!.pause();
-    } else {
-      _controller!.play();
-    }
   }
 
   @override
@@ -96,25 +79,43 @@ class _GameInfoThumbnailState extends State<_GameInfoThumbnail> {
     if (widget.videoPath == null) {
       return imageWidget;
     }
-    return imageWidget; // To remove when videos work
 
+    // If we get here, _controller was successfully initialized
     return FutureBuilder(
-      future: _initializeVideoPlayerFuture,
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return Stack(alignment: Alignment.center, children: [
-            imageWidget,
-            const Center(
-                child: SizedBox(
-                    width: 20, height: 20, child: CircularProgressIndicator())),
-          ]);
-        }
-
-        return GestureDetector(
-          onTap: _toggleVideoPlaying,
-          child: VideoPlayer(_controller!),
-        );
-      },
-    );
+        future: _controller!.initialize(),
+        builder: (context, snapshot) {
+          return Column(
+            children: [
+              _controller!.value.isInitialized
+                  ? AspectRatio(
+                      aspectRatio: 16.0 / 9.0, child: VideoPlayer(_controller!))
+                  : Image.network(
+                      widget.imagePath!,
+                      errorBuilder: (context, error, stackTrace) => Container(),
+                    ),
+              if (_controller!.value.isInitialized)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _controller!.value.isPlaying
+                      ? ElevatedButton(
+                          onPressed: () async {
+                            await _controller!.pause();
+                            setState(() {});
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.orange),
+                          child: const Icon(Icons.pause))
+                      : ElevatedButton(
+                          onPressed: () async {
+                            await _controller!.play();
+                            setState(() {});
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green),
+                          child: const Icon(Icons.play_arrow)),
+                )
+            ],
+          );
+        });
   }
 }
