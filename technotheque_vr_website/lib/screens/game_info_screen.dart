@@ -29,14 +29,11 @@ class GameInfoScreen extends StatelessWidget {
                     width: MediaQuery.of(context).size.width / 2,
                     child: GameInfo(game: game)),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width / 3,
-                  child: FittedBox(
-                      fit: BoxFit.contain,
-                      child: _GameInfoThumbnail(
-                        videoPath: game.videoDemoPath,
-                        imagePath: game.thumbnailPath,
-                      )),
-                ),
+                    width: MediaQuery.of(context).size.width / 3,
+                    child: _GameInfoThumbnail(
+                      videoPath: game.videoDemoPath,
+                      imagePath: game.thumbnailPath,
+                    )),
               ],
             ),
           ),
@@ -89,10 +86,13 @@ class _GameInfoThumbnailState extends State<_GameInfoThumbnail> {
               _controller!.value.isInitialized
                   ? AspectRatio(
                       aspectRatio: 16.0 / 9.0, child: VideoPlayer(_controller!))
-                  : Image.network(
-                      widget.imagePath!,
-                      errorBuilder: (context, error, stackTrace) => Container(),
-                    ),
+                  : FittedBox(
+                      fit: BoxFit.contain,
+                      child: Image.network(
+                        widget.imagePath!,
+                        errorBuilder: (context, error, stackTrace) =>
+                            Container(),
+                      )),
               if (_controller!.value.isInitialized)
                 Padding(
                   padding: const EdgeInsets.all(8.0),

@@ -35,8 +35,8 @@ class Game extends ItemSerializable {
         thumbnailPath = map['thumbnailPath'] != null
             ? '$rootAssetsPath/images/games/${map['thumbnailPath']}'
             : null,
-            videoDemoPath = map['videoDemoPath'] != null
-            ? '$rootAssetsPath/images/games/${map['videoDemoPath']}'
+        videoDemoPath = map['videoDemoPath'] != null
+            ? '$rootAssetsPath/videos/games/${map['videoDemoPath']}'
             : null,
         _description = map['information']['description'].cast<String, String>(),
         _time = map['information']['time'].cast<String, String>(),
