@@ -50,7 +50,7 @@ class _LanguageSwitcherState extends State<LanguageSwitcher>
 
   @override
   Widget build(BuildContext context) {
-    final textHeight = widget.height * 0.7;
+    final textHeight = widget.height * 0.6;
     return GestureDetector(
       onTap: _clickedChangeLanguage,
       child: Stack(

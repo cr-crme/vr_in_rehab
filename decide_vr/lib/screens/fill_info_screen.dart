@@ -62,7 +62,7 @@ class _FillingInfoScreenState extends State<FillingInfoScreen> {
                 message: _canSubmit ? "" : texts.submitTooltip,
                 child: SubmitButton(
                   texts.submit,
-                  width: 150,
+                  width: 200,
                   onPressed: _canSubmit
                       ? () => Navigator.of(context)
                           .pushNamed(ResultsSummaryScreen.route)

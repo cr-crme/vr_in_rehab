@@ -41,7 +41,7 @@ class __LanguageSwitcherState extends State<_LanguageSwitcher> {
         alignment: Alignment.center,
         child: Text(
           _currentLanguage == 'fr' ? 'en' : 'fr',
-          style: Theme.of(context).textTheme.headline6,
+          style: Theme.of(context).textTheme.titleLarge,
         ),
       ),
     );

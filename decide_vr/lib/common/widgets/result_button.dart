@@ -29,7 +29,7 @@ class ResultButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: () => _viewGameDetails(context, game),
         style: ElevatedButton.styleFrom(
-          fixedSize: Size(width, 50),
+          fixedSize: Size(width, 52),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(cornerRadius),
           ),
