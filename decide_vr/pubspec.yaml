@@ -12,13 +12,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
   provider: ^6.0.4
-  enhanced_containers: ^0.1.0
   auto_size_text: ^3.0.0
   common:
 
 dependency_overrides:
-  enhanced_containers:
-    path: ../plugins/enhanced_containers
   common:
     path: ../common
 

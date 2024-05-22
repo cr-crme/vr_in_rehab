@@ -1,11 +1,10 @@
 import 'dart:convert';
 
 import 'package:common/common.dart';
-import 'package:enhanced_containers/enhanced_containers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
-class Game extends ItemSerializable {
+class Game {
   final String title;
   final String collection;
   final String console;
@@ -81,7 +80,6 @@ class Game extends ItemSerializable {
               map['filter'][CanSave.optionName], CanSave.from),
         };
 
-  @override
   Map<String, dynamic> serializedMap() {
     return {
       'title': title,
