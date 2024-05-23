@@ -30,9 +30,10 @@ class TextWithTitle extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 20.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text('${LocaleText.bullet} ', style: textStyle),
-                      Expanded(child: Text(e, style: textStyle)),
+                      Flexible(child: Text(e, style: textStyle)),
                     ],
                   ),
                 ),

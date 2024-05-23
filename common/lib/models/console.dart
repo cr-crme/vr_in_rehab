@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:http/http.dart' as http;
 import 'helpers.dart';
@@ -44,7 +45,15 @@ Map<String, String> _toStrMap(Map<String, dynamic> map) {
 Future<List<Console>> readConsoles() async {
   const jsonPath = '$rootAssetsPath/json/all_consoles.json';
 
-  final input = await http.get(Uri.parse(jsonPath));
+  http.Response? input;
+  try {
+    input = await http.get(Uri.parse(jsonPath), headers: {
+      HttpHeaders.contentTypeHeader: 'application/json',
+      HttpHeaders.acceptHeader: 'application/json',
+    });
+  } on Exception {
+    return [];
+  }
   Map<String, dynamic> map = jsonDecode(input.body);
   List<Console> out = [];
   for (final console in map.keys) {

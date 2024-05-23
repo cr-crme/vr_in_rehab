@@ -51,11 +51,13 @@ class ConsolesScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            paragraph: _ConsoleDescription(
-                              console: console,
-                              onTap: () => Navigator.of(context).pushNamed(
-                                  GamesScreen.route,
-                                  arguments: console),
+                            paragraph: Center(
+                              child: _ConsoleDescription(
+                                console: console,
+                                onTap: () => Navigator.of(context).pushNamed(
+                                    GamesScreen.route,
+                                    arguments: console),
+                              ),
                             ),
                           ),
                         ))

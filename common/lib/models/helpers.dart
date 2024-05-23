@@ -1,5 +1,5 @@
 const String rootAssetsPath =
-    'http://laboinspire-tech.ca/technotheque/VrInRehab/assets';
+    'https://laboinspire-tech.ca/technotheque/VrInRehab/assets';
 
 List<String> separateText(String text) {
   final List<String> out = [];

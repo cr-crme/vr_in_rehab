@@ -102,6 +102,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   SizedBox(
                     width: MediaQuery.of(context).size.width / 3,
+                    height: 200,
                     child: Image.network(
                       '$rootAssetsPath/images/misc/logo_technotheque.png',
                       errorBuilder: (context, error, stackTrace) => Container(),
